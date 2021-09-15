@@ -10,7 +10,7 @@ import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Services from './pages/Services/Services';
 import Testimonial from './pages/Testimonial/Testsimonial';
-import About from './pages/About/About';
+ 
  
  
 
@@ -23,10 +23,6 @@ const  App = () => {
         
           <Route path="/" exact>
             <Home/>
-          </Route>
-        
-          <Route path="/About" exact>
-            <About/>
           </Route>
         
           <Route path="/Contact" exact>

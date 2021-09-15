@@ -1,11 +1,41 @@
-import React , {useEffect} from 'react'
+import React , {useCallback,useEffect,useState} from 'react'
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
-
+import { Link } from 'react-scroll';
 const Navbar = () => {
+  const [show, setShow] = useState(true); 
+  
+  
+  const [y, setY] = useState(window.scrollY);
+  const handleNavigation = useCallback(
+    (e) => {
+      const window = e.currentTarget;
+      if (y > window.scrollY) {
+        setShow(true);;
+      } else if (y < window.scrollY) {
+        setShow(false);
+      }
+      setY(window.scrollY);
+    },
+    [y]
+  );
+  
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
+
+
+
 
   function animation(){
+    
     var tabsNewAnim = $('#navbarSupportedContent');
     var activeItemNewAnim = tabsNewAnim.find('.active');
     var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
@@ -33,8 +63,7 @@ const Navbar = () => {
       });
     });
   }
-
-  useEffect(() => {
+ useEffect(() => {
     
     animation();
     $(window).on('resize', function(){
@@ -43,12 +72,14 @@ const Navbar = () => {
     
   }, []);
 
+
+
   return (
-  <nav className="navbar navbar-expand-lg navbar-mainbg">
+  <nav className={ ` ${show && 'navbar navbar-expand-lg navbar-mainbg'} `}>
     
-      <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        Web Solutions
-      </NavLink>
+      <Link className="navbar-brand navbar-logo" to="MainSection" exact>
+        Rapid OUEDZEM
+      </Link>
     
     
       <button 
@@ -61,7 +92,7 @@ const Navbar = () => {
       </button>
  
       <div 
-        className="collapse navbar-collapse" id="navbarSupportedContent">
+        className={"collapse navbar-collapse"} id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
             
             <div className="hori-selector">
@@ -70,27 +101,18 @@ const Navbar = () => {
             </div>
             
             <li className="nav-item active">
-              <NavLink className="nav-link" to="/" exact>
+              <Link className="nav-link" to="MainSection" exact>
                 <i 
                 className="fas fa-tachometer-alt">
                 </i>Home
-              </NavLink>
-            </li>
-
+              </Link>
+            </li>           
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about" exact>
-                <i 
-                className="far fa-address-book">
-                </i>About
-              </NavLink> 
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/service" exact>
-                <i 
+              <Link  className="nav-link" to="Services" smooth={true} duration={100} > 
+              <i 
                 className="far fa-clone">
-                </i>Services
-              </NavLink>
+                </i>Services</Link>
+                
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/testimonial" exact>
@@ -106,6 +128,14 @@ const Navbar = () => {
                 </i>Contact Us
               </NavLink>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="About" exact>
+                <i 
+                className="far fa-address-book">
+                </i>About
+              </Link> 
+            </li>
+
         </ul>
       </div>
   </nav>

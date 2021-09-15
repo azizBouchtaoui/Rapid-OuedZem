@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         
-        <div className="footer-container" id="aide">
+        <div className="footer-container" id="About">
         <section className="footer-subscription">
             <p className="footer-subscription-heading">
             rejoignez la newsletter aventure pour recevoir nos meilleures offres promotionnelles
