@@ -181,7 +181,60 @@
       flex-direction: column;
     }
   }
+   
+  .Contact_And_Company{
+    
+    flex-direction: column; 
   
-  @media screen and (max-width: 768px) {
+    text-align: center;
   }
   
+
+  .pulse {
+    animation: pulse-animation 1s infinite;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: 1px solid #fff !important;
+    padding: 7px 26px;
+    border-radius: 2px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    
+  }
+  .pulse:hover {
+    background-color: white;
+    color: #242424 !important;
+    
+}
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgb(255, 255, 255);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+  }
+
+  @media screen and (min-width: 820px) {
+    .Contact_And_Company{
+      margin-top: -0px;
+    }
+    .Company_Signat{
+      margin-top: 0px;
+    }
+
+  }  
+  @media screen and (max-width: 825px) {
+    .Contact_And_Company{
+      margin-top: 0px;
+      margin-bottom: 0px
+    }
+    .Company_Signat{
+      margin-top: 0px;
+    }
+  
+
+  }

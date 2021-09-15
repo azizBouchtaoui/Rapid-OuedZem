@@ -67,8 +67,19 @@ const Footer = (props) => {
         Rapide<i className="fas fa-bus"/><br/>OUEDZEM
            
         </Link>
-      </div>
+      </div> 
+      
+      <div className="Contact_And_Company">
+      
+        <button className="pulse " >Contactez-nous</button>
+        <div className="Company_Signat">
       <small className='website-rights'>Rapide OZ© 2020</small>
+ </div>
+      </div>
+      
+      
+      
+      
       <div className='social-icons'>
         <Link
           className='social-icon-link facebook'
