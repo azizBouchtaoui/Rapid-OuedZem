@@ -1,8 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react';
+import { Link } from 'react-router-dom'; 
 import './Footer.css';
+import Results from './Contact/Contact';
+const Footer = (props) => {
+  
+     
 
-const Footer = () => {
+
     return (
         
         <div className="footer-container" id="About">
@@ -53,6 +57,7 @@ const Footer = () => {
         <Link to='/'>Youtube</Link>
         <Link to='/'>Twitter</Link>
       </div>
+      
     </div>
   </div>
   <section className='social-media'>

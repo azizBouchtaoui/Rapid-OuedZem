@@ -6,9 +6,9 @@ Switch, } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 
 
-import Contact from './pages/Contact/Contact';
+ 
 import Home from './pages/Home/Home';
-import Services from './pages/Services/Services';
+ 
 import Testimonial from './pages/Testimonial/Testsimonial';
  
  
@@ -24,15 +24,7 @@ const  App = () => {
           <Route path="/" exact>
             <Home/>
           </Route>
-        
-          <Route path="/Contact" exact>
-            <Contact/>
-          </Route>
-
-          <Route path="/Services" exact>
-            <Services/>
-          </Route>
-       
+         
           <Route path="/Testimonial" exact>
             <Testimonial/>
           </Route>

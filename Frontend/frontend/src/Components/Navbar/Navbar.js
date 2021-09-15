@@ -4,9 +4,8 @@ import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 import { Link } from 'react-scroll';
 const Navbar = () => {
+
   const [show, setShow] = useState(true); 
-  
-  
   const [y, setY] = useState(window.scrollY);
   const handleNavigation = useCallback(
     (e) => {
@@ -74,6 +73,7 @@ const Navbar = () => {
 
 
 
+
   return (
   <nav className={ ` ${show && 'navbar navbar-expand-lg navbar-mainbg'} `}>
     
@@ -122,11 +122,11 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact" exact>
+              <Link className="nav-link" to="About"  exact>
                 <i 
                 className="far fa-copy">
                 </i>Contact Us
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="About" exact>
