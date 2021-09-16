@@ -17,14 +17,19 @@ body {
   transition-timing-function: ease-in;
   transition:0.5s;
   z-index: 1;
+  
 }
-
+ 
 i {
   margin-right: 10px;
 }
 .navbar-logo {
   padding: 15px;
   color: #fff;
+  cursor: pointer;
+}
+.navbar-logo:hover{
+  color:white;
 }
 .navbar-mainbg {
   background-color: #000000;

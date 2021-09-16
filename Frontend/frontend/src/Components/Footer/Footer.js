@@ -1,10 +1,14 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom'; 
 import './Footer.css';
-import Results from './Contact/Contact';
+ import ContactUsPopupForm from'./Contact/Contact'
 const Footer = (props) => {
   
-     
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
 
 
     return (
@@ -71,10 +75,13 @@ const Footer = (props) => {
       
       <div className="Contact_And_Company">
       
-        <button className="pulse " >Contactez-nous</button>
+        <button className="pulse " onClick={togglePopup}>Contactez-nous</button>
+        {isOpen && <ContactUsPopupForm    
+          handleClose={togglePopup}
+         />}
         <div className="Company_Signat">
-      <small className='website-rights'>Rapide OZ© 2020</small>
- </div>
+          <small className='website-rights'>Rapide OZ© 2020</small>
+       </div>
       </div>
       
       
