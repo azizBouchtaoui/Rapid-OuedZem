@@ -1,63 +1,45 @@
-import React from "react";
-import { useForm } from 'react-hook-form';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
-import emailjs from 'emailjs-com';
+import React,{Component} from "react";
+ import { contactUS } from "../../../Services";
+ 
+ import { toast } from 'react-toastify'
 
  import './Contact.css'
 
   
-const ContactUsPopupForm = (props) => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm();
-  
-  // Function that displays a success toast on bottom right of the page when form submission is successful
-  const toastifySuccess = () => {
-    toast('Form sent!', {
-      position: 'bottom-right',
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      className: 'submit-feedback success',
-      toastId: 'notifyToast'
-    });
-  };
-  
-  // Function called on submit that uses emailjs to send email of valid contact form
-  const onSubmit = async (data) => {
-    // Destrcture data object
-    const { name, email, subject, message } = data;
-    try {
-      const templateParams = {
-        name:data.name,
-        email:data.email,
-        subject:data.subject,
-        message:data.message,
-      };
+class  ContactUsPopupForm extends Component{
+   constructor (props) {
+     super(props);
+     this.state = {
+       name:'',
+       email:'',
+       subject:'',
+       message:''
+     };
+     this.baseState = this.state;
+   }
 
-      await emailjs.send(
-        "service_q5c4ciw",
-        "template_mxsh9r6",
-        templateParams, 
-        "user_mSZwbOX0gwnUgnf7qSMs2"
-      );
-
-      reset();
-      toastifySuccess();
-      console.log(data);
-    } catch (e) {
-      console.log(e);
+    handleChange = type => event =>{
+      let value = event
+      if(event.target){
+        value = event.target.value
+      }
+      this.setState({[type]: value})
     }
-  };
 
-  
-  return (
+    handleSubmit = event => {
+      event.preventDefault()
+      event.stopPropagation() 
+      contactUS(this.state)
+        .then(res => {
+          toast.success("Votre message a été envoyé..")
+          this.setState({...this.baseState})
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+   render(){
+     return (
     <div className="popup-box">
       <div className="box">
         <div className="controleHeaderPopup">
@@ -71,7 +53,7 @@ const ContactUsPopupForm = (props) => {
             </svg>
           <h1 className="ContactNousHeader">Contactez-nous</h1>
         </div>
-        <span className="close-icon" onClick={props.handleClose}>x</span>
+        <span className="close-icon" onClick={this.handleClose}>x</span>
         <div className="box-2">
       <div className="shadow-lg"> 
       <div className='ContactForm'>
@@ -80,39 +62,31 @@ const ContactUsPopupForm = (props) => {
         <div className='row'>
           <div className='col-12 text-center'>
             <div className='contactForm'>
-              <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
+              <form  onSubmit={e => this.handleSubmit(e)}   >
                 {/* Row 1 of form */}
                 <div className=' row formRow'>
                   <div className='col-6'>
                     <input
                       type='text'
-                      name='name'
-                      {...register('name', {
-                        required: { value: true, message: 'Please enter your name' },
-                        maxLength: {
-                          value: 30,
-                          message: 'Please use 30 characters or less'
-                        }
-                      })}
+                      name='name'                    
                       className='form-control formInput'
                       placeholder='Name'
+                      onChange={this.handleChange('name')} 
+                      value={this.state.name}
                     ></input>
-                    {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
+                    
                   </div>
                   <div className='col-6'>
                     <input
                       type='email'
-                      name='email'
-                      {...register('email', {
-                        required: true,
-                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-                      })}
+                      name='email'                   
                       className='form-control formInput'
                       placeholder='Email address'
+                      onChange={this.handleChange('email')} 
+                      value={this.state.email}
                     ></input>
-                    {errors.email && (
-                      <span className='errorMessage'>Please enter a valid email address</span>
-                    )}
+                   
+                      
                   </div>
                 </div>
                 {/* Row 2 of form */}
@@ -121,19 +95,13 @@ const ContactUsPopupForm = (props) => {
                     <input
                       type='text'
                       name='subject'
-                      {...register('subject', {
-                        required: { value: true, message: 'Please enter a subject' },
-                        maxLength: {
-                          value: 75,
-                          message: 'Subject cannot exceed 75 characters'
-                        }
-                      })}
+                     
                       className='form-control formInput'
                       placeholder='Subject'
+                      onChange={this.handleChange('subject')} 
+                      value={this.state.subject}
                     ></input>
-                    {errors.subject && (
-                      <span className='errorMessage'>{errors.subject.message}</span>
-                    )}
+                     
                   </div>
                 </div>
                 {/* Row 3 of form */}
@@ -142,13 +110,13 @@ const ContactUsPopupForm = (props) => {
                     <textarea
                       rows={3}
                       name='message'
-                      {...register('message', {
-                        required: true
-                      })}
+                       
                       className='form-control formInput'
                       placeholder='Message'
+                      onChange={this.handleChange('message')} 
+                      value={this.state.message}
                     ></textarea>
-                    {errors.message && <span className='errorMessage'>Please enter a message</span>}
+                    
                   </div>
                 </div>
                 <button className='submit-btn' type='submit'>
@@ -156,7 +124,7 @@ const ContactUsPopupForm = (props) => {
                 </button>
               </form>
             </div>
-            <ToastContainer />
+             
           </div>
         </div>
       </div>
@@ -165,6 +133,8 @@ const ContactUsPopupForm = (props) => {
       </div>
     </div>
   );
+   }
+  
 };
  
 export default ContactUsPopupForm;

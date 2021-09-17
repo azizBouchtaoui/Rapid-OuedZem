@@ -1,0 +1,10 @@
+{
+    "emailClient": {
+    "host": "smtp.gmail.com",
+    "email": "azizbouchtaoui1996@gmail.com",
+    "auth": {
+        "user": "equitationmaroc@gmail.com",
+        "pass": "equitationmaroc123456"
+    }
+}
+}
