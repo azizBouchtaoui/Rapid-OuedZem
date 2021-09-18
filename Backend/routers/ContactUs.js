@@ -1,4 +1,4 @@
-const nodemailerr = require('nodemailer')
+const nodemailerr = require('nodemailer') 
 const express = require('express');
 const router = express.Router();
 const contactUsModel= require('../model/Contactus');
@@ -21,24 +21,22 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
         
 
 
-
-
-        const transporter = nodemailerr.createTransport({
-            service:'Gmail',
+        var transporter = nodemailerr.createTransport( {
+            service: 'gmail',
+            host: 'smtp.gmail.com',
             secure: false, // use SSL
-            port: 25,
+            port: 25, // port for secure SMTP
             auth: {
                 user: 'equitationmaroc@gmail.com',
                 pass: 'equitationmaroc123456'
-            },
-            tls: {
-                rejectUnauthorized: false
             }
-        })
+          });
+
+ 
      
         const mailOptions = {
             from: 'equitationmaroc@gmail.com',
-            to: 'azizboch996@gmail.com',
+            to: 'rapideoz101@gmail.com',
             subject: body.subject,
             html:  html
         };
@@ -48,7 +46,7 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
                 console.log(body);
                 console.log(" smtp "+error)
             } else {
-                console.log(body);
+                console.log("body is "+body);
                 console.log('Email sent: ' + info.response);
             }
         });
