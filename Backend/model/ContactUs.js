@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
  const contactUsSchema = mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         required: true,
     },
-    Subject: {
-        type: String,
-        required: true,
+    subject: {
+        type: String, 
     },
     email: {
         type: String,

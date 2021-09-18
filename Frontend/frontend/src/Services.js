@@ -5,7 +5,7 @@ const baseUrl = config.baseUrl
 
 
 export function contactUS(body) {  
-    return callPost('http://192.168.10.206:3001/rapidOZ/ContactUs', body);
+    return callPost(baseUrl+'/rapidOZ/ContactUs', body);
 }
 
 
@@ -16,10 +16,8 @@ const callGet = (url) => {
 
 const callPost = (url, body) => {
  console.log(url)
-    return fetch(url, {
-       
-        method: 'POST',
-        
+    return fetch(url, {       
+        method: 'POST',        
         body: JSON.stringify(body),
         headers: { "Content-Type" : "application/json" }
     }).then(handleres);
