@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
 import './MainSection.css';
  const MainSection = () => {
      return (
@@ -14,7 +15,16 @@ import './MainSection.css';
                             buttonSize='btn--large'>
                                 Explorez <i className="fab fa-wpexplorer"/>
                     </button>
-                </Link>    
+                    
+                </Link>  
+                
+              <NavLink to ="/Reservation" exact>
+                 <button className="btnt" buttonStyle='btn--outline'
+                            buttonSize='btn--large'>
+                                Reservation <i className="fab fa-wpexplorer"/>
+                    </button>
+              </NavLink>
+                  
             </div> 
          </div>
      )

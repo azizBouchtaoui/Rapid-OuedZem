@@ -10,17 +10,11 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
     try {
         const body = req.body
 
-
-        console.log("boooooooooooodddddddddddddoooooyyy"+JSON.stringify(body))
        
         const  contact = new contactUsModel(body);
-        console.log(" resullltaaat "+contact);
        
         const html= '<h2> <u>  Contact utilisateur </u> </h2> <br><br> <p> Name : <b> ' + body.name + ' </b> <br>  Subject : <b>'  + body.subject + ' </b> <br> Email :  <b> ' + body.email + ' </b>  <br> Message : <b>' + body.message + ' </b> </p>';
         
-        
-
-
         var transporter = nodemailerr.createTransport( {
             service: 'gmail',
             host: 'smtp.gmail.com',
@@ -31,8 +25,6 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
                 pass: 'equitationmaroc123456'
             }
           });
-
- 
      
         const mailOptions = {
             from: 'equitationmaroc@gmail.com',
@@ -46,44 +38,12 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
                 console.log(body);
                 console.log(" smtp "+error)
             } else {
-                console.log("body is "+body);
+                console.log(body);
                 console.log('Email sent: ' + info.response);
             }
         });
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           consol.log(res.send("success"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         res.status(200).json(result)
     } catch (err) {

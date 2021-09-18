@@ -15,7 +15,7 @@ const callGet = (url) => {
 
 
 const callPost = (url, body) => {
- console.log(url)
+ 
     return fetch(url, {       
         method: 'POST',        
         body: JSON.stringify(body),
@@ -41,7 +41,7 @@ const callDelete = (url) => {
 }
 
 const handleres = (res) => {
-    console.log("resultat "+res);
+ 
     if (res.ok) {
         return res.json();
     }
