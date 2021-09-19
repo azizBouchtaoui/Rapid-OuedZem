@@ -32,8 +32,6 @@ class  ContactUsPopupForm extends Component{
       event.stopPropagation() 
       contactUS(this.state)
         .then(res => {
-          console.log("Successsssssssssssssss")
-           
           toast.success(' Votre message a été envoyé..', {
             position: "top-right",
             autoClose: 5000,
@@ -47,6 +45,15 @@ class  ContactUsPopupForm extends Component{
           this.setState({...this.baseState})
         })
         .catch(err => {
+          toast.warn(err, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
           console.log(err)
         })
     }
