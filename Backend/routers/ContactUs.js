@@ -10,9 +10,11 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
     try {
         const body = req.body
 
-       
+       delete body._id;
         const  contact = new contactUsModel(body);
-       
+       const  result = await contact.save()
+        .then(()=> res.status(201).json({message:"Objet Enregistre!"}))
+        .catch((error)=>res.status(400).json({error}));
         const html= '<h2> <u>  Contact utilisateur </u> </h2> <br><br> <p> Name : <b> ' + body.name + ' </b> <br>  Subject : <b>'  + body.subject + ' </b> <br> Email :  <b> ' + body.email + ' </b>  <br> Message : <b>' + body.message + ' </b> </p>';
         
         var transporter = nodemailerr.createTransport( {
@@ -35,15 +37,14 @@ router.post('/rapidOZ/ContactUs', async (req, res) => {
     
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.log(body);
+                console.log("error" +body);
                 console.log(" smtp "+error)
             } else {
-                console.log(body);
-                console.log('Email sent: ' + info.response);
+                 console.log('Email sent: ' + info.response);
             }
         });
 
-          consol.log(res.send("success"));
+        
 
         res.status(200).json(result)
     } catch (err) {

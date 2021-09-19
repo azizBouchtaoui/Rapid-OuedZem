@@ -1,8 +1,9 @@
 import React,{Component} from "react";
  import { contactUS } from "../../../Services";
  
- import { toast } from 'react-toastify'
-
+ import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
  import './Contact.css'
 
   
@@ -31,7 +32,18 @@ class  ContactUsPopupForm extends Component{
       event.stopPropagation() 
       contactUS(this.state)
         .then(res => {
-          toast.success("Votre message a été envoyé..")
+          console.log("Successsssssssssssssss")
+           
+          toast.success(' Votre message a été envoyé..', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+          
           this.setState({...this.baseState})
         })
         .catch(err => {
@@ -122,6 +134,7 @@ class  ContactUsPopupForm extends Component{
                 <button className='submit-btn' type='submit'>
                   Submit
                 </button>
+                <ToastContainer />
               </form>
             </div>
              
