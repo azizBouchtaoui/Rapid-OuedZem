@@ -2,7 +2,7 @@ const nodemailerr = require('nodemailer')
 const express = require('express');
 const router = express.Router();
 const contactUsModel= require('../model/Contactus');
-var client = require("../client");
+ 
 
  
 router.post('/rapidOZ/ContactUs', async (req, res) => {
