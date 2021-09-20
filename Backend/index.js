@@ -12,9 +12,10 @@ mongoose.connect('mongodb+srv://aziz123:aziz123@cluster0.hguh3.mongodb.net/myFir
         }
     )
     .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+     
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-
+ 
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use(contact)
 app.use(Reservation)
+ 
 
 app.listen(3001, err => {
     if (err) {
