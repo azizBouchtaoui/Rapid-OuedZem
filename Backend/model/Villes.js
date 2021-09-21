@@ -5,5 +5,5 @@ const villeSchema = mongoose.Schema({
         type :String,
     }
 })
-const Ville = module.exports = mongoose.model('Ville',villeSchema)
+const Villes = module.exports = mongoose.model('Villes',villeSchema)
 

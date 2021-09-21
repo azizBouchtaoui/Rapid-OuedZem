@@ -3,9 +3,12 @@ const express = require('express');
 const app = express();
 const contact = require('./routers/ContactUs');
 const Reservation = require('./routers/Reservation');
+const Villes = require("./model/Villes")
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://aziz123:aziz123@cluster0.hguh3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+const url = "mongodb://localhost/RapidOZ";
+
+mongoose.connect('mongodb+srv://aziz123:aziz123@cluster0.hguh3.mongodb.net/RapidOZ?retryWrites=true&w=majority',
         {
             useNewUrlParser:true,
             useUnifiedTopology:true
@@ -27,7 +30,12 @@ app.use((req, res, next) => {
 
 app.use(contact)
 app.use(Reservation)
- 
+
+
+
+app.use('/test', function(req,res, next){
+  
+});
 
 app.listen(3001, err => {
     if (err) {
