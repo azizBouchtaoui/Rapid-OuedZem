@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import { Villes } from '../../Services';
-
-
+import './Testimonial.css'
+import { Button, Form, Col, Row, Table,Container } from 'react-bootstrap'
   class Testimonial  extends Component {
     constructor(props){
         super(props);
@@ -14,39 +14,73 @@ import { Villes } from '../../Services';
     componentDidMount(){
       
       Villes()
-          .then(response =>{
-            console.log("helooo"+response)
+          .then(response =>{ 
             const  options = []
             response.map((option,i )=>{
               return options.push({value: option.name,  label: option.label, id: option._id})
-            })
-            console.log(options)
+            })        
             this.setState({ fromOptions: options})
-            console.log("data has been received!!");
-
-          })
+           })
           .catch((err )=>{
             console.log(err)
           });
     }        
       render(){
             return (
-          <div className="container"> 
-          <h1 className="text-center" style={{paddingTop:"30%"}}>
-           
-         
-         
-       
-                  Testimonial
-             </h1> 
-              <Select
-               className="basic-single"
-               classNamePrefix="select"
-               defaultValue={this.state.selectedOption}
-               onChange={this.setState.selectedOption}  
-               options={this.state.fromOptions}
-            /> 
-         </div>
+              <div className="container_reservation">
+
+                
+              <div className="Section--center"> 
+              <div className="row--center" >
+                <div className="first-col">
+                  <h1 className="text-center" >
+                      J'achète mon billet 
+                        </h1> 
+                </div>
+                <div className="second-col">
+                  <div className="ReservationForm">
+                    <div className="Select-form">
+                    <Form >
+                    <Container>
+                    <Row  className="rowSelect" >
+                      <Col  className="Col-From">
+                      <Form.Group  className="Col-From"  controlId="from">
+                            <Form.Label>Lieu de depart</Form.Label>
+                         
+                            <Select 
+                              defaultValue={this.state.selectedOption}
+                              onChange={this.setState.selectedOption}  
+                              options={this.state.fromOptions} /> 
+                        </Form.Group> 
+                      </Col>
+                      <Col md="auto">   
+                        </Col>
+                      <Col  className="Col-To">
+                      <Form.Group  className="Col-To" controlId="to">
+                            <Form.Label>Destination</Form.Label>
+                                                     
+                            <Select className="select__control"  
+                              defaultValue={this.state.selectedOption}
+                              onChange={this.setState.selectedOption}  
+                              options={this.state.fromOptions} /> 
+                        </Form.Group>
+                        </Col>
+                    </Row>
+                    </Container>
+                  </Form>
+
+                   
+
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+                        
+              </div>
+                
+                </div>
+              </div>
      )
       }
       

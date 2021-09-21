@@ -29,13 +29,9 @@ app.use((req, res, next) => {
   });
 
 app.use(contact)
-//app.use(Reservation)
+app.use(Reservation)
 
-app.get('/Villes',(req, res) =>{
-    Villes.find({},(err, villes)=>{
-        res.json(villes)
-    })
-} )
+
 
 
 app.listen(3001, err => {

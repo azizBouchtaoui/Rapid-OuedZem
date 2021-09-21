@@ -1,0 +1,66 @@
+.container_reservation{
+   background-color:rgba(192, 186, 186, 0.425);
+    height: 100vh;
+    width: 100%;
+
+}
+ .Section--center{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    right: 50px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 450px
+ }
+ .row--center{
+     margin-left:30px;
+     margin-right:30px;
+      
+ }
+ .first-col{
+     width:30%;
+     float: left;
+     align-items: center;
+ }
+ .second-col{
+    width:50%;
+    float: right;
+    align-items: center;
+    
+   
+ }
+ .ReservationForm{
+     position: relative;
+     background:black;
+     height: 500px;
+    border-radius: 30px;
+   
+ }
+.select__control{
+   
+    border-radius: 15px;
+     
+}
+
+.Select-form{
+    
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.rowSelect{
+    margin-top: 20px;
+    color: white;
+}
+.Medium-col{
+     
+   height: 2px;
+   
+}
+.Col-From{
+ 
+    margin-top:30px;
+}
+.Col-To{
+    margin-top:30px;
+}
