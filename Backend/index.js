@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 const url = "mongodb://localhost/RapidOZ";
 
-mongoose.connect('mongodb+srv://aziz123:aziz123@cluster0.hguh3.mongodb.net/RapidOZ?retryWrites=true&w=majority',
+mongoose.connect(url,
         {
             useNewUrlParser:true,
             useUnifiedTopology:true
@@ -29,13 +29,14 @@ app.use((req, res, next) => {
   });
 
 app.use(contact)
-app.use(Reservation)
+//app.use(Reservation)
 
+app.get('/test',(req, res) =>{
+    Villes.find({},(err, villes)=>{
+        res.json(villes)
+    })
+} )
 
-
-app.use('/test', function(req,res, next){
-  
-});
 
 app.listen(3001, err => {
     if (err) {
