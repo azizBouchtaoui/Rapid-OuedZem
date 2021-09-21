@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-
+import { Villes } from '../../Services';
 
 
   class Testimonial  extends Component {
     constructor(props){
         super(props);
         this.state = {
-            options : [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-      ],
+            fromOptions : [],
            selectedOption :null
         };
-        
-
     } 
-         
+    componentDidMount(){
+      
+      Villes()
+          .then(response =>{
+            console.log("helooo"+response)
+            const  options = []
+            response.map((option,i )=>{
+              return options.push({value: option.name,  label: option.label, id: option._id})
+            })
+            console.log(options)
+            this.setState({ fromOptions: options})
+            console.log("data has been received!!");
+
+          })
+          .catch((err )=>{
+            console.log(err)
+          });
+    }        
       render(){
             return (
           <div className="container"> 
@@ -33,7 +44,7 @@ import Select from 'react-select';
                classNamePrefix="select"
                defaultValue={this.state.selectedOption}
                onChange={this.setState.selectedOption}  
-               options={this.state.options}
+               options={this.state.fromOptions}
             /> 
          </div>
      )

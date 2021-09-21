@@ -8,6 +8,9 @@ export function contactUS(body) {
     return callPost(baseUrl+'/rapidOZ/ContactUs', body);
 }
 
+export function Villes(){
+    return callGet(baseUrl+'/Villes')
+}
 
 const callGet = (url) => {
     return fetch(url).then(handleres);
@@ -43,6 +46,7 @@ const callDelete = (url) => {
 const handleres = (res) => {
  
     if (res.ok) {
+        console.log("is OK")
         return res.json();
     }
     else {
