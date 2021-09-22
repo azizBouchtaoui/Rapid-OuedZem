@@ -11,7 +11,13 @@ import moment from 'moment'
         this.state = {
            DatePickerShow: 0,
             fromOptions : [],
-           selectedOption :'option1'
+           selectedOption :'option1',
+            
+            range: undefined,
+        
+       
+            maxWidth: 400,
+    
         };
     } 
    
@@ -47,7 +53,7 @@ import moment from 'moment'
     });
   }
       render(){
-         this.selectedOption = 'option1'
+      
             return (
               <div className="container_reservation">
 
@@ -64,28 +70,6 @@ import moment from 'moment'
                     <div className="Select-form">
                     <Form >
                     <Container>
-                      <Row>
-                        <Col>
-                        <Form.Group  className="Form-CheckBox" >
-                               <div className="radio">
-                                <label>
-                                  <input type="radio" value="option1" 
-                                                checked={this.state.selectedOption === 'option1'} 
-                                                onChange={this.handleOptionChange} />
-                                  Allez Simple
-                                </label>
-                              
-                                <label>
-                                  <input type="radio" value="option2" 
-                                                checked={this.state.selectedOption === 'option2'} 
-                                                onChange={this.handleOptionChange} />
-                                  Allez Routeur
-                                </label>
-                              </div>
-                           </Form.Group> 
-                        
-                        </Col> 
-                      </Row>
                     <Row  className="rowSelect" >
                       <Col  className="Col-From">
                       <Form.Group  className="Col-From"  controlId="from">
@@ -114,33 +98,66 @@ import moment from 'moment'
                         </Col>
                     </Row>
                     <Row>
+                        <Col>
+                        <Form.Group  className="Form-CheckBox" >
+                               <div className="radio">
+                                <label className="radio-label">Allez Simple
+                                  <input className="CheckBox-radio1" 
+                                  type="radio" value="option1" 
+                                                checked={this.state.selectedOption === 'option1'} 
+                                                onChange={this.handleOptionChange} />
+                                  
+                                </label>
+                              
+                                <label className="radio-label">Allez Routeur
+                                  <input className="CheckBox-radio2"
+                                  type="radio" value="option2" 
+                                                checked={this.state.selectedOption === 'option2'} 
+                                                onChange={this.handleOptionChange} />
+                                  
+                                </label>
+                              </div>
+                           </Form.Group> 
+                        
+                        </Col> 
+                      </Row>
+                   
+                    <Row>
                       <Col>
                       <div>
                       {
                   this.state.selectedOption==='option1' ? 
-                    (<div className="div1">
+                    (<div >
                       <Form.Group className="departure-Date">
-                      <Form.Label className="Label-DatePicker">Date de départ</Form.Label>
+                      <Form.Label className="Label-DatePicker">Selectionnez la Date de départ</Form.Label>
                          <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
                       <DatePicker
                       
-                       
+                      placeholder="cliquez pour sélectionnez"
                         minDate={new Date()}                   
                         value={this.state.date } 
                         onChange={value => this.setState({ date: value })} />
                     </div>
                       </Form.Group>
                       </div>) 
-                    : (<div className="div2">
-                      <Form.Group className="return-Date"> 
-                      <Form.Label className="Label-DatePicker" >Date de retour</Form.Label>
-                      <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
-                      <DatePicker
-                           
-                        minDate={this.state.date}                      
-                        value={this.state.EndDate} 
-                        onChange={value => this.setState({ EndDate: value })} />
-                       </div>
+                    : (<div >
+                      <Form.Group className="departure-Date"> 
+                      <Form.Label className="Label-DatePicker" >Selectionnez la Date de départ et de routeur </Form.Label>
+                      <div
+                        className="rainbow-align-content_center rainbow-m-vertical_large rainbow-p-horizontal_small rainbow-m_auto"
+                        style={{maxWidth: '400'}}
+                    >
+                        <DatePicker
+                            id="datePicker-15"
+                            placeholder="cliquez pour sélectionnez"
+                            selectionType="range"
+                            formatStyle="large"
+                            variant="single"
+                            minDate={new Date()}   
+                            value={this.state.range}
+                            onChange={value => this.setState({ range: value })}
+                        />
+                    </div>
                        </Form.Group>
                        </div>)
                    }
