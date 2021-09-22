@@ -67,22 +67,21 @@ import moment from 'moment'
                       <Row>
                         <Col>
                         <Form.Group  className="Form-CheckBox" >
-                        <div className="radio">
-      <label>
-        <input type="radio" value="option1" 
-                      checked={this.state.selectedOption === 'option1'} 
-                      onChange={this.handleOptionChange} />
-        Option 1
-      </label>
-    </div>
-    <div className="radio">
-      <label>
-        <input type="radio" value="option2" 
-                      checked={this.state.selectedOption === 'option2'} 
-                      onChange={this.handleOptionChange} />
-        Option 2
-      </label>
-    </div>
+                               <div className="radio">
+                                <label>
+                                  <input type="radio" value="option1" 
+                                                checked={this.state.selectedOption === 'option1'} 
+                                                onChange={this.handleOptionChange} />
+                                  Allez Simple
+                                </label>
+                              
+                                <label>
+                                  <input type="radio" value="option2" 
+                                                checked={this.state.selectedOption === 'option2'} 
+                                                onChange={this.handleOptionChange} />
+                                  Allez Routeur
+                                </label>
+                              </div>
                            </Form.Group> 
                         
                         </Col> 
