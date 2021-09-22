@@ -9,9 +9,9 @@ import moment from 'moment'
     constructor(props){
         super(props);
         this.state = {
-            
+           DatePickerShow: 0,
             fromOptions : [],
-           selectedOption :null
+           selectedOption :'option1'
         };
     } 
    
@@ -35,8 +35,19 @@ import moment from 'moment'
 
       const EndDate= moment(dt).format('YYYY-MM-DD')
       this.setState({ EndDate: EndDate })
-  }       
+  }    
+  radioHandler = (status) => {
+    this.setState({ status });
+  };
+ 
+  
+  handleOptionChange = (changeEvent)=> {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
       render(){
+         this.selectedOption = 'option1'
             return (
               <div className="container_reservation">
 
@@ -53,6 +64,29 @@ import moment from 'moment'
                     <div className="Select-form">
                     <Form >
                     <Container>
+                      <Row>
+                        <Col>
+                        <Form.Group  className="Form-CheckBox" >
+                        <div className="radio">
+      <label>
+        <input type="radio" value="option1" 
+                      checked={this.state.selectedOption === 'option1'} 
+                      onChange={this.handleOptionChange} />
+        Option 1
+      </label>
+    </div>
+    <div className="radio">
+      <label>
+        <input type="radio" value="option2" 
+                      checked={this.state.selectedOption === 'option2'} 
+                      onChange={this.handleOptionChange} />
+        Option 2
+      </label>
+    </div>
+                           </Form.Group> 
+                        
+                        </Col> 
+                      </Row>
                     <Row  className="rowSelect" >
                       <Col  className="Col-From">
                       <Form.Group  className="Col-From"  controlId="from">
@@ -67,35 +101,55 @@ import moment from 'moment'
                       <Col md="auto">   
                         </Col>
                       <Col  className="Col-To">
+
                       <Form.Group  className="Col-To" controlId="to">
                             <Form.Label>Destination</Form.Label>
                                                      
                             <Select className="select__control"  
-                              defaultValue={this.state.selectedOption}
+                              defaultValue={this.state.selectedOption} 
                               onChange={this.setState.selectedOption}  
-                              options={this.state.fromOptions} /> 
+                              options={this.state.fromOptions}
+                               /> 
                         </Form.Group>
+                    
                         </Col>
                     </Row>
                     <Row>
                       <Col>
-                      <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
+                      <div>
+                      {
+                  this.state.selectedOption==='option1' ? 
+                    (<div className="div1">
+                      <Form.Group className="departure-Date">
+                      <Form.Label className="Label-DatePicker">Date de départ</Form.Label>
+                         <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
                       <DatePicker
-                        onChange={this.handleDateChange}
+                      
+                       
                         minDate={new Date()}                   
-                        value={this.state.date} 
+                        value={this.state.date } 
                         onChange={value => this.setState({ date: value })} />
                     </div>
-                      </Col>
-                      <Col>
+                      </Form.Group>
+                      </div>) 
+                    : (<div className="div2">
+                      <Form.Group className="return-Date"> 
+                      <Form.Label className="Label-DatePicker" >Date de retour</Form.Label>
                       <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
                       <DatePicker
-                        onChange={this.handleDateChange}
+                           
                         minDate={this.state.date}                      
                         value={this.state.EndDate} 
                         onChange={value => this.setState({ EndDate: value })} />
                        </div>
+                       </Form.Group>
+                       </div>)
+                   }
+                      </div>
                       </Col>
+                     
+                      
+                     
                     </Row>
                     </Container>
                   </Form>

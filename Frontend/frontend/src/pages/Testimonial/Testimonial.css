@@ -74,11 +74,22 @@
     padding-left: 0rem;
 }
 .rainbow-p-vertical_large {
-    padding-top: 1.5rem;
+    padding-top: 0.2rem;
     padding-bottom: 1.5rem;
 }
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+}
+.departure-Date{
+    margin-top:30px;
+    color: white;
+}
+.return-Date{
+    margin-top:30px;
+    color: white;
+}
+.Label-DatePicker{
+    margin-left: 5px;
 }
