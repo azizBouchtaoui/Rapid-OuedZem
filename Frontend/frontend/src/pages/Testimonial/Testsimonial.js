@@ -3,14 +3,18 @@ import Select from 'react-select';
 import { Villes } from '../../Services';
 import './Testimonial.css'
 import { Button, Form, Col, Row, Table,Container } from 'react-bootstrap'
+import { Picklist, PicklistOption, DatePicker } from 'react-rainbow-components';
+import moment from 'moment'
   class Testimonial  extends Component {
     constructor(props){
         super(props);
         this.state = {
+            
             fromOptions : [],
            selectedOption :null
         };
     } 
+   
     componentDidMount(){
       
       Villes()
@@ -24,7 +28,14 @@ import { Button, Form, Col, Row, Table,Container } from 'react-bootstrap'
           .catch((err )=>{
             console.log(err)
           });
-    }        
+    }
+    handleDateChange = dt => {
+      const date = moment(dt).format('YYYY-MM-DD')
+      this.setState({ date: date })
+
+      const EndDate= moment(dt).format('YYYY-MM-DD')
+      this.setState({ EndDate: EndDate })
+  }       
       render(){
             return (
               <div className="container_reservation">
@@ -65,6 +76,26 @@ import { Button, Form, Col, Row, Table,Container } from 'react-bootstrap'
                               options={this.state.fromOptions} /> 
                         </Form.Group>
                         </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                      <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
+                      <DatePicker
+                        onChange={this.handleDateChange}
+                        minDate={new Date()}                   
+                        value={this.state.date} 
+                        onChange={value => this.setState({ date: value })} />
+                    </div>
+                      </Col>
+                      <Col>
+                      <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
+                      <DatePicker
+                        onChange={this.handleDateChange}
+                        minDate={this.state.date}                      
+                        value={this.state.EndDate} 
+                        onChange={value => this.setState({ EndDate: value })} />
+                       </div>
+                      </Col>
                     </Row>
                     </Container>
                   </Form>
