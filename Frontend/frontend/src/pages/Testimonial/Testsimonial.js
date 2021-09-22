@@ -56,7 +56,7 @@ import moment from 'moment'
       
             return (
               <div className="container_reservation">
-              <video src="/Videos/video-6.mp4" autoPlay loop muted />
+              <video src="/Videos/video-3.mp4" autoPlay loop muted />
                 
               <div className="Section--center"> 
               <div className="row--center" >
