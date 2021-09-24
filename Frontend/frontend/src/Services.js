@@ -11,10 +11,16 @@ export function contactUS(body) {
 export function Villes(){
     return callGet(baseUrl+'/Villes')
 }
-
+export  function Time(){
+    return callGet(baseUrl+'/Time')
+    
+}
 const callGet = (url) => {
     return fetch(url).then(handleres);
 }
+
+
+
 
 
 const callPost = (url, body) => {

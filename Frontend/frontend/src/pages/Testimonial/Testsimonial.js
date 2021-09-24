@@ -176,6 +176,13 @@ class Testimonial extends Component {
                             )}
                           </div>
                         </Col>
+                        <Col>
+                            <Select  
+                            
+                            />
+
+                            
+                        </Col>
                       </Row>
                       
                    
@@ -203,3 +210,4 @@ class Testimonial extends Component {
   }
 }
 export default Testimonial;
+  
