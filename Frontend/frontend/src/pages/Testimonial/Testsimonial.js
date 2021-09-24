@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Select from "react-select";
-import { Villes } from "../../Services";
+import { Time, Villes } from "../../Services";
 import "./Testimonial.css";
 import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
 import { Picklist, PicklistOption, DatePicker } from "react-rainbow-components";
@@ -12,10 +12,10 @@ class Testimonial extends Component {
       DatePickerShow: 0,
       fromOptions: [],
       selectedOption: "option1",
-
       range: undefined,
-
       maxWidth: 400,
+      TimeOption: [],
+      selectedTimeOption:[],
     };
   }
 
@@ -35,6 +35,24 @@ class Testimonial extends Component {
       .catch((err) => {
         console.log(err);
       });
+    
+    Time()
+      .then((response)=>{
+        const optionsTime =[];
+        response.map((optionTime,i) =>{
+          return optionsTime.push({
+            value: optionTime.time,
+            label: optionTime.time,
+            id: optionTime._id
+          });
+        });
+        this.setState({TimeOption : optionsTime});
+       
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
+    
   }
   handleDateChange = (dt) => {
     const date = moment(dt).format("YYYY-MM-DD");
@@ -47,11 +65,13 @@ class Testimonial extends Component {
     this.setState({ status });
   };
 
+
   handleOptionChange = (changeEvent) => {
     this.setState({
       selectedOption: changeEvent.target.value,
     });
   };
+  
   render() {
     return (
       <div className="container_reservation">
@@ -73,8 +93,8 @@ class Testimonial extends Component {
                             <Form.Label>Lieu de depart</Form.Label>
 
                             <Select
-                              defaultValue={this.state.selectedOption}
-                              onChange={this.setState.selectedOption}
+                              defaultValue={this.state.selectedVilleFromOption}
+                              onChange={this.setState.selectedVilleFromOption}
                               options={this.state.fromOptions}
                             />
                           </Form.Group>
@@ -86,8 +106,8 @@ class Testimonial extends Component {
 
                             <Select
                               className="select__control"
-                              defaultValue={this.state.selectedOption}
-                              onChange={this.setState.selectedOption}
+                              defaultValue={this.state.selectedVilleToOption}
+                              onChange={this.setState.selectedVilleToOption}
                               options={this.state.fromOptions}
                             />
                           </Form.Group>
@@ -178,7 +198,10 @@ class Testimonial extends Component {
                         </Col>
                         <Col>
                             <Select  
-                            
+                                className="select__control"
+                               defaultValue={this.state.SelectedTimeOption}
+                               onChange={this.setState.SelecteTimeOption}
+                               options={this.state.TimeOption}
                             />
 
                             
