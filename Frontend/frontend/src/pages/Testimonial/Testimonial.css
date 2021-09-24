@@ -1,193 +1,227 @@
-.container_reservation{ 
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.404);
-
+.container_reservation {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.404);
 }
- .Section--center{
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    right: 50px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    height: 450px
- }
- .row--center{
-      
-     margin-left:30px;
-     margin-right:30px;
-      
- }
- .first-col{
-     width:30%;
-     float: left;
-     align-items: center;
-     color: black;
-     background-color: rgba(253, 253, 253, 0.315);
-    
- }
- .second-col{
-    width:50%;
-    float: right;
-    align-items: center;
-    
-   
- } 
- .ReservationForm{
-     position: relative;
-     background:black;
-     height: 500px;
-    border-radius: 30px;
-   
- }
- .Form-CheckBox{
-     color:white;
-     padding : 10px;
-     margin-right: 30px;
-     margin-top: 60px ;
- }
- .radio-label{
-      
-     margin-right: 45px;
- }
- .CheckBox-radio1{
-    position: block;
-    margin-left: 8px;
- }
- .CheckBox-radio2{
-    position: block;
-    margin-left: 8px;
- }
-
-
-.select__control{
-   
-    border-radius: 15px;
-     
+.Section--center {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 450px;
+}
+.row--center {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.first-col {
+  width: 30%;
+  float: left;
+  align-items: center;
+  color: black;
+  background-color: rgba(253, 253, 253, 0.315);
+}
+.second-col {
+  width: 50%;
+  float: right;
+  align-items: center;
+}
+.ReservationForm {
+  position: relative;
+  background: black;
+  height: 500px;
+  border-radius: 30px;
+}
+.Form-CheckBox {
+  color: white;
+  padding: 10px;
+  margin-right: 30px;
+  margin-top: 60px;
+}
+.radio-label {
+  margin-right: 45px;
+}
+.CheckBox-radio1 {
+  position: block;
+  margin-left: 8px;
+}
+.CheckBox-radio2 {
+  position: block;
+  margin-left: 8px;
 }
 
-.Select-form{
-    
-    margin-left: 5%;
-    margin-top: 20px;
+.select__control {
+  border-radius: 15px;
 }
-.rowSelect{
-    margin-top: 20px;
-    color: white;
+
+.Select-form {
+  margin-left: 5%;
+  margin-top: 20px;
 }
-.Medium-col{
-     
-   height: 2px;
-   
+.rowSelect {
+  margin-top: 20px;
+  color: white;
 }
-.Col-From{
- 
-    margin-top:30px;
+.Medium-col {
+  height: 2px;
 }
-.Col-To{
-    margin-top:30px;
+.Col-From {
+  margin-top: 30px;
+}
+.Col-To {
+  margin-top: 30px;
 }
 .rainbow-m-horizontal_xx-large {
-    margin-right: 0rem;
-    margin-left: 0rem;
-    
+  margin-right: 0rem;
+  margin-left: 0rem;
 }
 .rainbow-p-horizontal_xx-large {
-    padding-right: 0rem;
-    padding-left: 0rem;
+  padding-right: 0rem;
+  padding-left: 0rem;
 }
 .rainbow-p-vertical_large {
-    padding-top: 0.2rem;
-    padding-bottom: 1.5rem;
+  padding-top: 0rem;
+  padding-bottom: 1.5rem;
+}
+.rainbow-align-content_center{
+  padding-bottom: 1.5rem;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.departure-Date {
+  margin-top: 30px;
+  color: white;
+}
+.return-Date {
+  margin-top: 30px;
+  color: white;
+}
+.Label-DatePicker {
+  margin-left: 5px;
+}
+ 
+ .row-btnt{
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+ }
+ 
+.btnt{
+  width: 200px;
+  align-items: center;
+
+   
+}
+
+@media only screen and (max-width: 1008px) {
+  .CheckBox-radio1 {
+    margin-left: 14px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .departure-Date {
+    margin-top: 10px;
+    color: white;
+  }
+  .ReservationForm {
+    height: 500px;
+    font-size: 15px;
+  }
+  .Col-To{
+    margin-top:10px;
+  }
+  .Form-CheckBox{
+    margin-top:30px;
+  }
+  
+  
+  
+}
+
+@media only screen and (max-width: 714px) {
+  .first-col {
     width: 100%;
+  }
+  .Col-To{
+    margin-top:20px
+  }
+  .Form-CheckBox{
+    margin-top:20px;
+  }
+  .second-col {
+    width: 100%;
+  }
 }
-.departure-Date{
-    margin-top:30px;
-    color: white;
+@media only screen and (max-width: 436px) {
+  .ReservationForm {
+    height: 500px;
+    font-size: 12px;
+  }
+  .CheckBox-radio1 {
+    margin-left: 13px;
+  }
 }
-.return-Date{
-    margin-top:30px;
-    color: white;
-}
-.Label-DatePicker{
-    margin-left: 5px;
-}
-
-@media only screen and (max-width:1008px) {
-    .CheckBox-radio1{
-        margin-left: 14px
-    }
-}
-@media only screen and (max-width:767px){
-    .departure-Date{
-        margin-top:10px;
-        color: white;
-    }
-    .ReservationForm{
-        height: 570px;
-        font-size:15px
-
-    }
+@media only screen and (max-width: 398px) {
+  .ReservationForm {
+    height: 500px;
+    font-size: 10px;
+  }
+  .btnt{
+    font-size: 12px;
     
-}
-
-@media only screen and (max-width:714px){
-    .first-col{
-        width: 100%;
-    }
-    .second-col{
-        width: 100%;
-    }
     
+  }
 }
-@media only screen and (max-width:436px){
-    .ReservationForm{
-        height: 550px;
-        font-size:12px
-
-    }
-    .CheckBox-radio1{
-        margin-left: 13px
-    } 
+@media only screen and (max-width: 385px) {
+  .CheckBox-radio1 {
+    margin-left: 12px;
+  }
+  .radio-label {
+    margin-right: 0px;
+  }
 }
-@media only screen and (max-width:398px){
 
-     .ReservationForm{
-        height: 500px;
-        font-size:10px
-
-    }
-}
-@media only screen and (max-width:385px){
-    .CheckBox-radio1{
-        margin-left:12px;
-        
-    }
-    .radio-label{
-        margin-right: 0px;
-    }
+@media only screen and (max-width: 337px) {
+  .ReservationForm {
      
+    font-size: 9px;
+  }
+  .CheckBox-radio1 {
+    margin-left: 10px;
+  }
+  .radio-label {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 329px) {
+  .ReservationForm {
+    height: 500px;
+  }
+  .Col-To{
+    margin-top:10px;
+  }
+  .Form-CheckBox{
+    margin-top:0;
+  }
+  .radio-label {
+    margin-right: 20px;
+  }
+  .row-btnt{
+    padding:10px
+  }
+  .btnt{  
+    font-size: 9px;
+  }
 }
 
-@media only screen and (max-width:337px){
-    .CheckBox-radio1{
-        margin-left:10px;
-        
-    }
-    .radio-label{
-        margin-right: 10px;
-    }
-}
-@media only screen and (max-width:326px){
-    .ReservationForm{
-        height: 550px;
-    }
-    .radio-label{
-        margin-right: 20px;
-    }
+@media only  screen and (max-width:315px){
+  .btnt{
+    padding:7px;
+    font-size: 9px;
+  }
 }
