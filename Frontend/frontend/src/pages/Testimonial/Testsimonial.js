@@ -15,7 +15,7 @@ class Testimonial extends Component {
       range: undefined,
       maxWidth: 400,
       TimeOption: [],
-      selectedTimeOption:[],
+      selectedTimeOption: [],
     };
   }
 
@@ -35,25 +35,22 @@ class Testimonial extends Component {
       .catch((err) => {
         console.log(err);
       });
-    
+
     Time()
-      .then((response)=>{
-        const optionsTime =[];
-        response.map((optionTime,i) =>{
+      .then((response) => {
+        const optionsTime = [];
+        response.map((optionTime, i) => {
           return optionsTime.push({
             value: optionTime.time,
             label: optionTime.time,
-            id: optionTime._id
+            id: optionTime._id,
           });
         });
-        this.setState({TimeOption : optionsTime});
-       
+        this.setState({ TimeOption: optionsTime });
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
-      }); 
-
-    
+      });
   }
   handleDateChange = (dt) => {
     const date = moment(dt).format("YYYY-MM-DD");
@@ -66,13 +63,12 @@ class Testimonial extends Component {
     this.setState({ status });
   };
 
-
   handleOptionChange = (changeEvent) => {
     this.setState({
       selectedOption: changeEvent.target.value,
     });
   };
-  
+
   render() {
     return (
       <div className="container_reservation">
@@ -192,28 +188,22 @@ class Testimonial extends Component {
                                       }
                                     />
                                   </div>
-                                  
                                 </Form.Group>
                               </div>
                             )}
-                              <Col className="select__controles">
-                               <Select  
-                                   className="select__controle"
-                                  defaultValue={this.state.SelectedTimeOption}
-                                  onChange={this.setState.SelecteTimeOption}
-                                  options={this.state.TimeOption}
-                               />
-
-                           </Col>
+                            <Col className="select__controles">
+                              <Select
+                                className="select__controle"
+                                defaultValue={this.state.SelectedTimeOption}
+                                onChange={this.setState.SelecteTimeOption}
+                                options={this.state.TimeOption}
+                              />
+                            </Col>
                           </div>
                         </Col>
-
                       </Row>
-                      
-                   
-                     
-                     <Row className="row-btnt">
 
+                      <Row className="row-btnt">
                         <button
                           className="btnt"
                           buttonStyle="btn--outline"
@@ -221,8 +211,7 @@ class Testimonial extends Component {
                         >
                           Reservation <i className="fab fa-wpexplorer" />
                         </button>
-                        
-                        </Row>
+                      </Row>
                     </Container>
                   </Form>
                 </div>
@@ -235,4 +224,3 @@ class Testimonial extends Component {
   }
 }
 export default Testimonial;
-  

@@ -86,7 +86,7 @@
   padding-bottom: 0.2rem;
 }
 .rainbow-align-content_center{
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.2rem;
 }
 table {
   border-collapse: collapse;
@@ -137,6 +137,20 @@ table {
     margin-left: 14px;
   }
 }
+@media only screen and (max-width: 770px) {
+  .form-label{
+    font-size:15px;
+  }
+  
+  
+  
+  
+ 
+  .btnt{
+  
+    font-size: 15px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .departure-Date {
     margin-top: 10px;
@@ -152,7 +166,10 @@ table {
   .Form-CheckBox{
     margin-top:30px;
   }
+  .btnt{
   
+    font-size: 15px;
+  }
   
   
 }
@@ -169,6 +186,10 @@ table {
   }
   .second-col {
     width: 100%;
+  }
+  .btnt{
+    
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 436px) {
