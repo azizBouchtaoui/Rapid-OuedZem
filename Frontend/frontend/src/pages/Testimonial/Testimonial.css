@@ -85,7 +85,7 @@
   padding-top: 0rem;
   padding-bottom: 0.2rem;
 }
-.rainbow-align-content_center{
+.rainbow-align-content_center {
   padding-bottom: 0.2rem;
 }
 table {
@@ -96,7 +96,6 @@ table {
 .departure-Date {
   margin-top: 30px;
   color: white;
-   
 }
 .return-Date {
   margin-top: 30px;
@@ -105,32 +104,25 @@ table {
 .Label-DatePicker {
   margin-left: 5px;
 }
-.select__controles{
+.select__controles {
   text-align: -webkit-center;
-  
- 
 }
-.select__controle{
- 
- width: 100px;
+.select__controle {
+  width: 100px;
   align-items: center;
   margin-bottom: 20px;
-  
-  
- 
 }
 
- .row-btnt{
+.row-btnt {
   align-items: center;
   align-content: center;
   justify-content: center;
- }
- 
-.btnt{
+}
+
+.btnt {
   width: 200px;
   align-items: center;
 }
-
 
 @media only screen and (max-width: 1008px) {
   .CheckBox-radio1 {
@@ -138,16 +130,11 @@ table {
   }
 }
 @media only screen and (max-width: 770px) {
-  .form-label{
-    font-size:15px;
+  .form-label {
+    font-size: 15px;
   }
-  
-  
-  
-  
- 
-  .btnt{
-  
+
+  .btnt {
     font-size: 15px;
   }
 }
@@ -160,42 +147,45 @@ table {
     height: 520px;
     font-size: 15px;
   }
-  .Col-To{
-    margin-top:10px;
+  .Col-To {
+    margin-top: 10px;
   }
-  .Form-CheckBox{
-    margin-top:30px;
+  .Form-CheckBox {
+    margin-top: 30px;
   }
-  .btnt{
-  
+  .btnt {
     font-size: 15px;
   }
-  
-  
 }
 
 @media only screen and (max-width: 714px) {
   .first-col {
     width: 100%;
   }
-  .Col-To{
-    margin-top:20px
+  .Col-To {
+    margin-top: 20px;
   }
-  .Form-CheckBox{
-    margin-top:20px;
+  .Form-CheckBox {
+    margin-top: 20px;
   }
   .second-col {
     width: 100%;
   }
-  .btnt{
-    
+  .btnt {
     font-size: 15px;
+  }
+}
+@media only screen and (max-width: 512px){
+  .ReservationForm {
+    height: 520px;
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 436px) {
   .ReservationForm {
-    height: 500px;
-    font-size: 12px;
+   
+   
+    font-size: 11px;
   }
   .CheckBox-radio1 {
     margin-left: 13px;
@@ -204,12 +194,13 @@ table {
 @media only screen and (max-width: 398px) {
   .ReservationForm {
     height: 500px;
+    font-size: 9px;
+  }
+  .btnt {
     font-size: 10px;
   }
-  .btnt{
-    font-size: 12px;
-    
-    
+  .Label-DatePicker{
+    font-size: 11px;
   }
 }
 @media only screen and (max-width: 385px) {
@@ -220,10 +211,17 @@ table {
     margin-right: 0px;
   }
 }
-
+@media only screen and (max-width: 340px){
+  .ReservationForm {
+    width: 300px;
+    margin-left: -60px;
+    margin-right: -10px;
+   
+  }
+}
 @media only screen and (max-width: 337px) {
   .ReservationForm {
-     
+    
     font-size: 9px;
   }
   .CheckBox-radio1 {
@@ -237,26 +235,26 @@ table {
   .ReservationForm {
     height: 500px;
   }
-  .Col-To{
-    margin-top:10px;
+  .Col-To {
+    margin-top: 10px;
   }
-  .Form-CheckBox{
-    margin-top:0;
+  .Form-CheckBox {
+    margin-top: 0;
   }
   .radio-label {
     margin-right: 20px;
   }
-  .row-btnt{
-    padding:10px
+  .row-btnt {
+    padding: 10px;
   }
-  .btnt{  
+  .btnt {
     font-size: 9px;
   }
 }
 
-@media only  screen and (max-width:315px){
-  .btnt{
-    padding:7px;
+@media only screen and (max-width: 315px) {
+  .btnt {
+    padding: 7px;
     font-size: 9px;
   }
 }
