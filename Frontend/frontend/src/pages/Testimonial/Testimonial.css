@@ -83,7 +83,7 @@
 }
 .rainbow-p-vertical_large {
   padding-top: 0rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.2rem;
 }
 .rainbow-align-content_center{
   padding-bottom: 1.5rem;
@@ -96,6 +96,7 @@ table {
 .departure-Date {
   margin-top: 30px;
   color: white;
+   
 }
 .return-Date {
   margin-top: 30px;
@@ -104,7 +105,21 @@ table {
 .Label-DatePicker {
   margin-left: 5px;
 }
+.select__controles{
+  text-align: -webkit-center;
+  
  
+}
+.select__controle{
+ 
+ width: 100px;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  
+ 
+}
+
  .row-btnt{
   align-items: center;
   align-content: center;
@@ -114,9 +129,8 @@ table {
 .btnt{
   width: 200px;
   align-items: center;
-
-   
 }
+
 
 @media only screen and (max-width: 1008px) {
   .CheckBox-radio1 {
@@ -129,7 +143,7 @@ table {
     color: white;
   }
   .ReservationForm {
-    height: 500px;
+    height: 520px;
     font-size: 15px;
   }
   .Col-To{

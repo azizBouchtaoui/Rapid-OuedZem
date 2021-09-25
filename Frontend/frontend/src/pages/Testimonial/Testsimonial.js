@@ -51,7 +51,8 @@ class Testimonial extends Component {
       })
       .catch((err)=>{
         console.log(err);
-      });
+      }); 
+
     
   }
   handleDateChange = (dt) => {
@@ -191,21 +192,22 @@ class Testimonial extends Component {
                                       }
                                     />
                                   </div>
+                                  
                                 </Form.Group>
                               </div>
                             )}
+                              <Col className="select__controles">
+                               <Select  
+                                   className="select__controle"
+                                  defaultValue={this.state.SelectedTimeOption}
+                                  onChange={this.setState.SelecteTimeOption}
+                                  options={this.state.TimeOption}
+                               />
+
+                           </Col>
                           </div>
                         </Col>
-                        <Col>
-                            <Select  
-                                className="select__control"
-                               defaultValue={this.state.SelectedTimeOption}
-                               onChange={this.setState.SelecteTimeOption}
-                               options={this.state.TimeOption}
-                            />
 
-                            
-                        </Col>
                       </Row>
                       
                    
