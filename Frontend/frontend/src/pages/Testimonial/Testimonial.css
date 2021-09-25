@@ -213,9 +213,9 @@ table {
 }
 @media only screen and (max-width: 340px){
   .ReservationForm {
-    width: 300px;
+    width: 250px;
     margin-left: -60px;
-    margin-right: -10px;
+    
    
   }
 }
