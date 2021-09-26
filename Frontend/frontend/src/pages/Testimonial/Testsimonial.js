@@ -16,7 +16,10 @@ class Testimonial extends Component {
       maxWidth: 400,
       TimeOption: [],
       selectedTimeOption: [],
+      from:'',
+      to:''
     };
+    this.handleFromSelectedChange = this.handleFromSelectedChange.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +55,10 @@ class Testimonial extends Component {
         console.log(err);
       });
   }
+handleChange = type => OptionSelected=>{
+  
+}
+
   handleDateChange = (dt) => {
     const date = moment(dt).format("YYYY-MM-DD");
     this.setState({ date: date });
@@ -68,6 +75,23 @@ class Testimonial extends Component {
       selectedOption: changeEvent.target.value,
     });
   };
+
+  handleFromSelectedChange = (e) =>{
+    console.log("From Selected !!");
+    this.setState({from : e.target.value})
+  }
+/*
+handleSubmit = (Data) =>{
+  const state = this.state;
+  console.Log(state.json());
+}
+*/
+  
+  
+  
+handleTest = () =>{
+  console.log("")
+}
 
   render() {
     return (
@@ -86,7 +110,7 @@ class Testimonial extends Component {
             <div className="second-col">
               <div className="ReservationForm">
                 <div className="Select-form">
-                  <Form>
+                  <Form >
                     <Container>
                       <Row className="rowSelect">
                         <Col className="Col-From">
@@ -94,9 +118,11 @@ class Testimonial extends Component {
                             <Form.Label>Lieu de depart</Form.Label>
 
                             <Select
-                              defaultValue={this.state.selectedVilleFromOption}
-                              onChange={this.setState.selectedVilleFromOption}
+                              
                               options={this.state.fromOptions}
+                              value={this.state.from}
+                              onChange={this.handleFromSelectedChange}
+
                             />
                           </Form.Group>
                         </Col>
@@ -212,8 +238,9 @@ class Testimonial extends Component {
                           className="btnt"
                           buttonStyle="btn--outline"
                           buttonSize="btn--large"
+                         onclick={this.handleTest}
                         >
-                          Reservation <i className="fab fa-wpexplorer" />
+                          Recherche <i className="fab fa-wpexplorer" />
                         </button>
                       </Row>
                     </Container>
