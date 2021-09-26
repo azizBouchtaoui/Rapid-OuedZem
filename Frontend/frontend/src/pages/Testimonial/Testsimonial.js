@@ -67,7 +67,15 @@ handleChange = type => OptionSelected=>{
     this.setState({ EndDate: EndDate });
   };
   
-  
+  radioHandler = (status) => {
+    this.setState({ status });
+  };
+
+  handleOptionChange = (changeEvent) => {
+    this.setState({
+      selectedOption: changeEvent.target.value,
+    });
+  };
 
   handleChangeToCity = (event) =>{
     
@@ -75,15 +83,11 @@ handleChange = type => OptionSelected=>{
     console.log("From Selected !! "+ event.value);
   }
  
-handleChangeFromCity = (selectedOption) => {
-  this.setState({ selectedOption });
-  console.log(`Option selected:`, selectedOption);
+handleChangeFromCity = (event) => {
+  this.setState({ to : event });
+  console.log(`Option selected:`, event.value);
 };
-handleOptionChange = (changeEvent) => {
-  this.setState({
-    selectedOption: changeEvent.target.value,
-  });
-};
+ 
  
   render() {
     const { FromCity, ToCity } = this.state;
@@ -113,7 +117,7 @@ handleOptionChange = (changeEvent) => {
                             <Select
                               value={FromCity}
                               options={this.state.fromOptions}                              
-                              onChange={this.handleChangeToCity}
+                              onChange={this.handleChangeFromCity}
                              
                             />
                           </Form.Group>
@@ -126,7 +130,7 @@ handleOptionChange = (changeEvent) => {
                             <Select
                               value={ToCity}
                               options={this.state.fromOptions}       
-                              onChange={this.handleChangeFromCity}
+                              onChange={this.handleChangeToCity}
                              
                             />
                          
