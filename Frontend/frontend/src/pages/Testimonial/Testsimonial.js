@@ -78,6 +78,10 @@ class Testimonial extends Component {
           <div className="row--center">
             <div className="first-col">
               <h1 className="text-center">J'achète mon billet</h1>
+              <p>
+              Dans le cadre de la crise sanitaire imposée par la Covid-19, nous rappelons à nos clients qu’ils doivent disposer d’une attestation de déplacement officielle délivrées par les autorités pour leurs déplacements de et vers les villes sous restrictions.
+
+              </p>
             </div>
             <div className="second-col">
               <div className="ReservationForm">
