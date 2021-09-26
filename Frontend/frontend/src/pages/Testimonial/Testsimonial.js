@@ -19,7 +19,7 @@ class Testimonial extends Component {
       from:'',
       to:''
     };
-    this.handleFromSelectedChange = this.handleFromSelectedChange.bind(this);
+  
   }
 
   componentDidMount() {
@@ -66,35 +66,27 @@ handleChange = type => OptionSelected=>{
     const EndDate = moment(dt).format("YYYY-MM-DD");
     this.setState({ EndDate: EndDate });
   };
-  radioHandler = (status) => {
-    this.setState({ status });
-  };
-
-  handleOptionChange = (changeEvent) => {
-    this.setState({
-      selectedOption: changeEvent.target.value,
-    });
-  };
-
-  handleFromSelectedChange = (e) =>{
-    console.log("From Selected !!");
-    this.setState({from : e.target.value})
   
+  
+
+  handleChangeToCity = (event) =>{
+    
+    this.setState({from : event.value})
+    console.log("From Selected !! "+ event.value);
   }
-/*
-handleSubmit = (Data) =>{
-  const state = this.state;
-  console.Log(state.json());
-}
-*/
-  
-  
-  
  
- 
- 
+handleChangeFromCity = (selectedOption) => {
+  this.setState({ selectedOption });
+  console.log(`Option selected:`, selectedOption);
+};
+handleOptionChange = (changeEvent) => {
+  this.setState({
+    selectedOption: changeEvent.target.value,
+  });
+};
  
   render() {
+    const { FromCity, ToCity } = this.state;
     return (
       <div className="container_reservation">
         <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -119,11 +111,10 @@ handleSubmit = (Data) =>{
                             <Form.Label>Lieu de depart</Form.Label>
 
                             <Select
-                              
-                              options={this.state.fromOptions}
-                              value={this.state.from}
-                              onChange={this.handleFromSelectedChange}
-                              getOptionLabel={(option) => `${option.label}`}
+                              value={FromCity}
+                              options={this.state.fromOptions}                              
+                              onChange={this.handleChangeToCity}
+                             
                             />
                           </Form.Group>
                         </Col>
@@ -131,13 +122,19 @@ handleSubmit = (Data) =>{
                         <Col className="Col-To">
                           <Form.Group className="Col-To" controlId="to">
                             <Form.Label>Destination</Form.Label>
-                            <select style={{width:"200px;"}} onChange={this.handleFromSelectedChange}> {this.state.fromOptions.map((x)=>
-                              <option 
-                              key={x.key}
-                               value={x.value}>
-                                 {x.value}
-                                 </option>
-                            )} </select>
+                        
+                            <Select
+                              value={ToCity}
+                              options={this.state.fromOptions}       
+                              onChange={this.handleChangeFromCity}
+                             
+                            />
+                         
+                         
+                         
+                         
+                         
+                         
                           </Form.Group>
                         </Col>
                       </Row>
