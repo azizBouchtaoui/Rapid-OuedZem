@@ -79,6 +79,7 @@ handleChange = type => OptionSelected=>{
   handleFromSelectedChange = (e) =>{
     console.log("From Selected !!");
     this.setState({from : e.target.value})
+  
   }
 /*
 handleSubmit = (Data) =>{
@@ -89,10 +90,10 @@ handleSubmit = (Data) =>{
   
   
   
-handleTest = () =>{
-  console.log("")
-}
-
+ 
+ 
+ 
+ 
   render() {
     return (
       <div className="container_reservation">
@@ -122,7 +123,7 @@ handleTest = () =>{
                               options={this.state.fromOptions}
                               value={this.state.from}
                               onChange={this.handleFromSelectedChange}
-
+                              getOptionLabel={(option) => `${option.label}`}
                             />
                           </Form.Group>
                         </Col>
@@ -130,13 +131,13 @@ handleTest = () =>{
                         <Col className="Col-To">
                           <Form.Group className="Col-To" controlId="to">
                             <Form.Label>Destination</Form.Label>
-
-                            <Select
-                              className="select__control"
-                              defaultValue={this.state.selectedVilleToOption}
-                              onChange={this.setState.selectedVilleToOption}
-                              options={this.state.fromOptions}
-                            />
+                            <select style={{width:"200px;"}} onChange={this.handleFromSelectedChange}> {this.state.fromOptions.map((x)=>
+                              <option 
+                              key={x.key}
+                               value={x.value}>
+                                 {x.value}
+                                 </option>
+                            )} </select>
                           </Form.Group>
                         </Col>
                       </Row>
