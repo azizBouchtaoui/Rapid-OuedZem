@@ -75,7 +75,7 @@ class Testimonial extends Component {
     this.setState({
       selectedOption: changeEvent.target.value,
     });
-    console.log("Select "+ this.state.selectedOption);
+    
   };
 
   async handleChangeFromCity(event)  {
@@ -94,8 +94,16 @@ class Testimonial extends Component {
     console.log("From Selected !! " + this.state.To+" and "+event.value);
   };
 
+  handleSubmit = event  =>{
+  
+  console.log("Data : { Lieu de Depart : "+this.state.From+
+    " Destination "+ this.state.To+" L'option : "+this.state.selectedOption+" La Date : ");
+    event.preventDefault()
+    event.stopPropagation()
+
+  }
   render() {
-    
+    const {from,to} = this.state;
     return (
       <div className="container_reservation">
         <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -115,7 +123,7 @@ class Testimonial extends Component {
             <div className="second-col">
               <div className="ReservationForm">
                 <div className="Select-form">
-                  <Form>
+                  <Form onSubmit={(e) => this.handleSubmit(e)}>
                     <Container>
                       <Row className="rowSelect">
                         <Col className="Col-From">
@@ -123,7 +131,7 @@ class Testimonial extends Component {
                             <Form.Label>Lieu de depart</Form.Label>
 
                             <Select
-                              value={this.state.From}
+                              value={this.state.from}
                               options={this.state.fromOptions}
                               onChange={ this.handleChangeFromCity}
                             />
@@ -135,7 +143,7 @@ class Testimonial extends Component {
                             <Form.Label>Destination</Form.Label>
 
                             <Select
-                              value={this.state.To}
+                              value={this.state.to}
                               options={this.state.fromOptions}
                               onChange={this.handleChangeToCity}
                             />
@@ -236,7 +244,7 @@ class Testimonial extends Component {
                       </Row>
 
                       <Row className="row-btnt">
-                        <button className="btnt">
+                        <button className="btnt" onClick={()=>this.Data}>
                           Recherche <i className="fab fa-wpexplorer" />
                         </button>
                       </Row>
