@@ -16,13 +16,12 @@ class Testimonial extends Component {
       maxWidth: 400,
       TimeOption: [],
       selectedTimeOption: [],
-      From: '',
+      From: "",
       To: "",
-      StartDate:''
+      StartDate: "",
+      EndDate:'',
+      Hour:''
     };
- 
- 
-  
   }
 
   componentDidMount() {
@@ -58,14 +57,13 @@ class Testimonial extends Component {
         console.log(err);
       });
   }
-  
-
-  handleDateChange = (dt) => {
-    const date = moment(dt).format("YYYY-MM-DD");
-    this.setState({ date: date });
-
-    const EndDate = moment(dt).format("YYYY-MM-DD");
-    this.setState({ EndDate: EndDate });
+handleDateChangeStart = (event)=>{
+  const date = moment(event).format("YYYY-MM-DD");
+  this.setState({ StartDate: date });
+}
+handleDateChangeEnd =  (event)  => {  
+  const date = moment(event).format("YYYY-MM-DD");
+  this.setState({ EndDate: date });
   };
 
   radioHandler = (status) => {
@@ -76,22 +74,25 @@ class Testimonial extends Component {
     this.setState({
       selectedOption: changeEvent.target.value,
     });
-    
   };
 
-
-
-
-  handleSubmit = event  =>{
-  
-  console.log("Data : { Lieu de Depart : "+this.state.From+
-    " Destination "+ this.state.To+" L'option : "+this.state.selectedOption+" La Date : "+this.state.StartDate);
-    event.preventDefault()
-    event.stopPropagation()
-
-  }
+  handleSubmit = (event) => {
+    console.log(
+      "Data : { Lieu de Depart : " +
+        this.state.From +
+        " Destination " +
+        this.state.To +
+        " L'option : " +
+        this.state.selectedOption +
+        " La Date : " +
+        this.state.StartDate + 
+        " Temp : "+ this.state.Hour
+    );
+    event.preventDefault();
+    event.stopPropagation();
+  };
   render() {
-    const {from,to} = this.state;
+    const { from, to,hour } = this.state;
     return (
       <div className="container_reservation">
         <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -190,9 +191,7 @@ class Testimonial extends Component {
                                       placeholder="cliquez pour sélectionnez"
                                       minDate={new Date()}
                                       value={this.state.StartDate}
-                                      onChange={(value) =>
-                                        this.setState({ StartDate: value })
-                                      }
+                                      onChange={this.handleDateChangeStart }
                                     />
                                   </div>
                                 </Form.Group>
@@ -224,19 +223,24 @@ class Testimonial extends Component {
                               </div>
                             )}
                             <Col className="select__controles">
+
                               <Select
                                 className="select__controle"
-                                defaultValue={this.state.SelectedTimeOption}
-                                onChange={this.setState.SelecteTimeOption}
+                                 
+                                value={this.state.hour}
+                             
+                             
                                 options={this.state.TimeOption}
-                              />
+                                onChange={(target)=>
+                                  this.setState({Hour:target.value})}
+                             />
                             </Col>
                           </div>
                         </Col>
                       </Row>
 
                       <Row className="row-btnt">
-                        <button className="btnt" onClick={()=>this.Data}>
+                        <button className="btnt" onClick={() => this.Data}>
                           Recherche <i className="fab fa-wpexplorer" />
                         </button>
                       </Row>
