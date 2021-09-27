@@ -18,9 +18,10 @@ class Testimonial extends Component {
       selectedTimeOption: [],
       From: '',
       To: "",
+      StartDate:''
     };
-    this.handleChangeFromCity = this.handleChangeFromCity.bind(this)
-    this.handleChangeToCity = this.handleChangeToCity.bind(this)
+ 
+ 
   
   }
 
@@ -57,7 +58,7 @@ class Testimonial extends Component {
         console.log(err);
       });
   }
-  handleChange = (type) => (OptionSelected) => {};
+  
 
   handleDateChange = (dt) => {
     const date = moment(dt).format("YYYY-MM-DD");
@@ -78,26 +79,13 @@ class Testimonial extends Component {
     
   };
 
-  async handleChangeFromCity(event)  {
-    console.log("From Selected !! " + this.state.From+" and "+event.value);
-   await  this.setState({ 
-      From: event.value,
-    });
-    console.log("From Selected !! " + this.state.From+" and "+event.value);
-  };
 
-  async handleChangeToCity(event) {
-    
-    await  this.setState({ 
-       To: event.value,
-     });
-    console.log("From Selected !! " + this.state.To+" and "+event.value);
-  };
+
 
   handleSubmit = event  =>{
   
   console.log("Data : { Lieu de Depart : "+this.state.From+
-    " Destination "+ this.state.To+" L'option : "+this.state.selectedOption+" La Date : ");
+    " Destination "+ this.state.To+" L'option : "+this.state.selectedOption+" La Date : "+this.state.StartDate);
     event.preventDefault()
     event.stopPropagation()
 
@@ -133,7 +121,9 @@ class Testimonial extends Component {
                             <Select
                               value={this.state.from}
                               options={this.state.fromOptions}
-                              onChange={ this.handleChangeFromCity}
+                              onChange={(target) =>
+                                this.setState({ From: target.value })
+                              }
                             />
                           </Form.Group>
                         </Col>
@@ -145,7 +135,9 @@ class Testimonial extends Component {
                             <Select
                               value={this.state.to}
                               options={this.state.fromOptions}
-                              onChange={this.handleChangeToCity}
+                              onChange={(target) =>
+                                this.setState({ To: target.value })
+                              }
                             />
                           </Form.Group>
                         </Col>
@@ -197,9 +189,9 @@ class Testimonial extends Component {
                                     <DatePicker
                                       placeholder="cliquez pour sélectionnez"
                                       minDate={new Date()}
-                                      value={this.state.date}
+                                      value={this.state.StartDate}
                                       onChange={(value) =>
-                                        this.setState({ date: value })
+                                        this.setState({ StartDate: value })
                                       }
                                     />
                                   </div>
