@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
   <nav className={ ` ${show && 'navbar navbar-expand-lg navbar-mainbg'} `}>
     
-      <Link className="navbar-brand navbar-logo" to="MainSection" exact>
+      <Link className="navbar-brand navbar-logo" to="MainSection"  >
         Rapid OUEDZEM
       </Link>
     
@@ -101,7 +101,7 @@ const Navbar = () => {
             </div>
             
             <li className="nav-item active">
-              <Link className="nav-link" to="MainSection" exact>
+              <Link className="nav-link" to="MainSection" >
                 <i 
                 className="fas fa-tachometer-alt">
                 </i>Home
@@ -122,14 +122,14 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="About"  exact>
+              <Link className="nav-link" to="About"   >
                 <i 
                 className="far fa-copy">
                 </i>Contact Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="About" exact>
+              <Link className="nav-link" to="About"  >
                 <i 
                 className="far fa-address-book">
                 </i>About

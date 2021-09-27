@@ -16,9 +16,11 @@ class Testimonial extends Component {
       maxWidth: 400,
       TimeOption: [],
       selectedTimeOption: [],
-      from:'',
-      to:''
+      From: '',
+      To: "",
     };
+    this.handleChangeFromCity = this.handleChangeFromCity.bind(this)
+    this.handleChangeToCity = this.handleChangeToCity.bind(this)
   
   }
 
@@ -55,9 +57,7 @@ class Testimonial extends Component {
         console.log(err);
       });
   }
-handleChange = type => OptionSelected=>{
-  
-}
+  handleChange = (type) => (OptionSelected) => {};
 
   handleDateChange = (dt) => {
     const date = moment(dt).format("YYYY-MM-DD");
@@ -66,7 +66,7 @@ handleChange = type => OptionSelected=>{
     const EndDate = moment(dt).format("YYYY-MM-DD");
     this.setState({ EndDate: EndDate });
   };
-  
+
   radioHandler = (status) => {
     this.setState({ status });
   };
@@ -75,22 +75,27 @@ handleChange = type => OptionSelected=>{
     this.setState({
       selectedOption: changeEvent.target.value,
     });
+    console.log("Select "+ this.state.selectedOption);
   };
 
-  handleChangeToCity = (event) =>{
+  async handleChangeFromCity(event)  {
+    console.log("From Selected !! " + this.state.From+" and "+event.value);
+   await  this.setState({ 
+      From: event.value,
+    });
+    console.log("From Selected !! " + this.state.From+" and "+event.value);
+  };
+
+  async handleChangeToCity(event) {
     
-    this.setState({from : event.value})
-    console.log("From Selected !! "+ event.value);
-  }
- 
-handleChangeFromCity = (event) => {
-  this.setState({ to : event });
-  console.log(`Option selected:`, event.value);
-};
- 
- 
+    await  this.setState({ 
+       To: event.value,
+     });
+    console.log("From Selected !! " + this.state.To+" and "+event.value);
+  };
+
   render() {
-    const { FromCity, ToCity } = this.state;
+    
     return (
       <div className="container_reservation">
         <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -100,14 +105,17 @@ handleChangeFromCity = (event) => {
             <div className="first-col">
               <h1 className="text-center">J'achète mon billet</h1>
               <p>
-              Dans le cadre de la crise sanitaire imposée par la Covid-19, nous rappelons à nos clients qu’ils doivent disposer d’une attestation de déplacement officielle délivrées par les autorités pour leurs déplacements de et vers les villes sous restrictions.
-
+                Dans le cadre de la crise sanitaire imposée par la Covid-19,
+                nous rappelons à nos clients qu’ils doivent disposer d’une
+                attestation de déplacement officielle délivrées par les
+                autorités pour leurs déplacements de et vers les villes sous
+                restrictions.
               </p>
             </div>
             <div className="second-col">
               <div className="ReservationForm">
                 <div className="Select-form">
-                  <Form >
+                  <Form>
                     <Container>
                       <Row className="rowSelect">
                         <Col className="Col-From">
@@ -115,10 +123,9 @@ handleChangeFromCity = (event) => {
                             <Form.Label>Lieu de depart</Form.Label>
 
                             <Select
-                              value={FromCity}
-                              options={this.state.fromOptions}                              
-                              onChange={this.handleChangeFromCity}
-                             
+                              value={this.state.From}
+                              options={this.state.fromOptions}
+                              onChange={ this.handleChangeFromCity}
                             />
                           </Form.Group>
                         </Col>
@@ -126,19 +133,12 @@ handleChangeFromCity = (event) => {
                         <Col className="Col-To">
                           <Form.Group className="Col-To" controlId="to">
                             <Form.Label>Destination</Form.Label>
-                        
+
                             <Select
-                              value={ToCity}
-                              options={this.state.fromOptions}       
+                              value={this.state.To}
+                              options={this.state.fromOptions}
                               onChange={this.handleChangeToCity}
-                             
                             />
-                         
-                         
-                         
-                         
-                         
-                         
                           </Form.Group>
                         </Col>
                       </Row>
@@ -236,12 +236,7 @@ handleChangeFromCity = (event) => {
                       </Row>
 
                       <Row className="row-btnt">
-                        <button
-                          className="btnt"
-                          buttonStyle="btn--outline"
-                          buttonSize="btn--large"
-                         onclick={this.handleTest}
-                        >
+                        <button className="btnt">
                           Recherche <i className="fab fa-wpexplorer" />
                         </button>
                       </Row>
