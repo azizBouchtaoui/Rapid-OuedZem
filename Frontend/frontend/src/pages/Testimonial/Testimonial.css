@@ -2,7 +2,9 @@
   height: 100vh;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.404);
+  margin-bottom:10px;
 }
+ 
 .Section--center {
   position: absolute;
   top: 50%;

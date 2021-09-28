@@ -5,6 +5,7 @@ import "./Testimonial.css";
 import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
 import { Picklist, PicklistOption, DatePicker } from "react-rainbow-components";
 import moment from "moment";
+import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche"
 class Testimonial extends Component {
   constructor(props) {
     super(props);
@@ -94,6 +95,7 @@ handleDateChangeEnd =  (event)  => {
   render() {
     const { from, to,hour } = this.state;
     return (
+      <>
       <div className="container_reservation">
         <video src="/Videos/video-3.mp4" autoPlay loop muted />
 
@@ -251,7 +253,10 @@ handleDateChangeEnd =  (event)  => {
             </div>
           </div>
         </div>
+
       </div>
+        <ResultatDeRecherche/>
+      </>
     );
   }
 }
