@@ -275,6 +275,7 @@ handleDateChangeEnd =  (event)  => {
         </div>
 
       </div>
+      <ResultatDeRecherche/>
       </>
     );
   }

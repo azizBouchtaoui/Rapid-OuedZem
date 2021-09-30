@@ -194,6 +194,19 @@ table {
   .btnt {
     font-size: 15px;
   }
+  .container_reservation{
+    margin-bottom: 200px;
+   align-items: center;
+  }
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
+}
+  
 }
 @media only screen and (max-width: 512px){
   .ReservationForm {
@@ -218,10 +231,9 @@ table {
 @media only screen and (max-width: 407px){
   .ReservationForm {
     width: 300px;
-    margin-left: -30px;
-    
    
   }
+ 
 }
 @media only screen and (max-width: 398px) {
   .ReservationForm {
@@ -235,6 +247,18 @@ table {
   .Label-DatePicker{
     font-size: 11px;
   }
+  .container_reservation {
+    margin-bottom: 250px;
+    align-items: center;
+  }
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
+}
 }
 @media only screen and (max-width: 385px) {
   .CheckBox-radio1 {
@@ -243,14 +267,40 @@ table {
   .radio-label {
     margin-right: 0px;
   }
+  .Section--center {
+    position: absolute;
+      
 }
-@media only screen and (max-width: 340px){
+.Section--center {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 60px;
+  transform: translateY(-50%);
+  height: 450px;
+  
+
+}
+}
+@media only screen and (max-width: 344px){
+ 
   .ReservationForm {
-    width: 250px;
-    margin-left: -60px;
-    
+    width: 250px;    
+  
+}
+.container_reservation {
+  margin-bottom: 300px;
+  align-items: center;
+}
+.Section--center {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 60px;
+  transform: translateY(-50%);
+  height: 450px;
    
-  }
+}
 }
 @media only screen and (max-width: 337px) {
   .ReservationForm {
@@ -289,5 +339,20 @@ table {
   .btnt {
     padding: 7px;
     font-size: 9px;
+  }
+  .container_reservation {
+    margin-bottom: 350px;
+    align-items: center;
+  }
+  
+}
+@media only screen and (max-width: 290px) {
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
   }
 }
