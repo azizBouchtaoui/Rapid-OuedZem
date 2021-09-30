@@ -344,15 +344,27 @@ table {
     margin-bottom: 350px;
     align-items: center;
   }
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
+  }
   
 }
 @media only screen and (max-width: 290px) {
   .Section--center {
     position: absolute;
     top: 50%;
-    left: 60px;
+    left: -10px;
     right: 60px;
     transform: translateY(-50%);
     height: 450px;
+  }
+  .container_reservation {
+    margin-bottom: 500px;
+    align-items: center;
   }
 }
