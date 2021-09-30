@@ -119,17 +119,19 @@ table {
 }
 .select__controles {
   text-align: -webkit-center;
+  align-content: center;
+  justify-content: center;
+  
 }
 .select__controle {
-  width: 100px;
+ 
   align-items: center;
   margin-bottom: 20px;
    
 }
 .Numric-control{
-  width: 100%;
-   
-
+  width: 120px;
+ 
 }
 .row-btnt {
   align-items: center;
@@ -200,6 +202,7 @@ table {
   }
 }
 @media only screen and (max-width: 436px) {
+ 
   .ReservationForm {
    
    
@@ -208,6 +211,9 @@ table {
   .CheckBox-radio1 {
     margin-left: 13px;
   }
+  .row-btnt{
+    margin-top:-10px
+  }
 }
 @media only screen and (max-width: 398px) {
   .ReservationForm {
@@ -215,7 +221,8 @@ table {
     font-size: 9px;
   }
   .btnt {
-    font-size: 10px;
+    margin-top: 5px;
+    font-size: 9px;
   }
   .Label-DatePicker{
     font-size: 11px;

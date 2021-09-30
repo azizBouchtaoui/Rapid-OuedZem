@@ -4,7 +4,7 @@ import { Time, Villes } from "../../Services";
 import "./Testimonial.css";
 import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
 import { Picklist, PicklistOption, DatePicker } from "react-rainbow-components";
-import NumericInput from 'react-numeric-input';
+import InputSpinner from 'react-bootstrap-input-spinner'  
 import moment from "moment";
 import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche"
 class Testimonial extends Component {
@@ -22,7 +22,8 @@ class Testimonial extends Component {
       To: "",
       StartDate: "",
       EndDate:'',
-      Hour:''
+      Hour:'',
+      Places:1,
     };
   }
 
@@ -77,7 +78,7 @@ handleDateChangeEnd =  (event)  => {
       selectedOption: changeEvent.target.value,
     });
   };
-
+ 
   handleSubmit = (event) => {
     console.log(
       "Data : { Lieu de Depart : " +
@@ -88,13 +89,13 @@ handleDateChangeEnd =  (event)  => {
         this.state.selectedOption +
         " La Date : " +
         this.state.StartDate + 
-        " Temp : "+ this.state.Hour
+        " Temp : "+ this.state.Hour+ " and Numper Of Place : "+this.state.Places
     );
     event.preventDefault();
     event.stopPropagation();
   };
   render() {
-    const { from, to,hour } = this.state;
+ 
     return (
       <>
       <div className="container_reservation">
@@ -225,10 +226,10 @@ handleDateChangeEnd =  (event)  => {
                                 </Form.Group>
                               </div>
                             )}
-                            <Row  className="select__controles">
+                            <Row  xs="auto"  className="select__controles">
 
                           
-                            <Col>
+                            <Col   >
 
                               <Select
                                 className="select__controle"
@@ -241,50 +242,19 @@ handleDateChangeEnd =  (event)  => {
                                   this.setState({Hour:target.value})}
                              />
                              </Col>
-                             <Col     className="Numric-control" >
+                             <Col sm="3"  className="Numric-control" >
                           
-                               <NumericInput 
-                                className="Numiric-Input"
-                                value="1" 
-                                min={ 0 } 
-                                max={ 50 } 
-                                step={ 1 } 
-                                precision={ 0 } 
-                                size={ 5 } 
-                                mobile
-                                required
-                                title="The title attr" 
-                                inputmode="numeric" 
-                                style={{
-                                  wrap: {
-                                      background: '#E2E2E2',
-                                      boxShadow: '0 0 1px 1px #fff inset, 1px 1px 5px -1px #000',
-                                      padding: '2px 2.26ex 2px 2px',
-                                      borderRadius: '6px 3px 3px 6px',
-                                      fontSize: 22
-                                  },
-                                  input: {
-                                      borderRadius: '4px 2px 2px 4px',
-                                      color: '#988869',
-                                      padding: '0.1px 1x',
-                                      border: '1px solid #ccc',
-                                      marginRight: 4,
-                                      display: 'block',
-                                      fontWeight: 90,
-                                      textShadow: '1px 1px 1px rgba(0, 0, 0, 0.1)'
-                                  },
-                                  'input:focus' : {
-                                      border: '1px inset #69C',
-                                      outline: 'none'
-                                  },
-                                  arrowUp: {
-                                      borderBottomColor: 'rgba(66, 54, 0, 0.63)'
-                                  },
-                                  arrowDown: {
-                                      borderTopColor: 'rgba(66, 54, 0, 0.63)'
-                                  }
-                              }}
-                              />
+                             <InputSpinner   
+                                type={'real'}
+                                precision={2}
+                                max={50}
+                                min={0}
+                                step={1}
+                                value={this.state.Places}
+                                onChange={num=>this.setState({Places:num})}
+                                variant={'dark'}
+                                size="sm"
+                            />
                                </Col>
                                 </Row>
                           </div>
@@ -305,7 +275,6 @@ handleDateChangeEnd =  (event)  => {
         </div>
 
       </div>
-        <ResultatDeRecherche/>
       </>
     );
   }
