@@ -215,6 +215,14 @@ table {
     margin-top:-10px
   }
 }
+@media only screen and (max-width: 407px){
+  .ReservationForm {
+    width: 300px;
+    margin-left: -30px;
+    
+   
+  }
+}
 @media only screen and (max-width: 398px) {
   .ReservationForm {
     height: 500px;
