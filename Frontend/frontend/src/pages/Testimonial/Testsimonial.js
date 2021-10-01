@@ -96,6 +96,7 @@ class Testimonial extends Component {
     );
     event.preventDefault();
     event.stopPropagation();
+     
   };
   render() {
     const customStyles = {
@@ -104,6 +105,7 @@ class Testimonial extends Component {
         borderBottom: '1px dotted pink',
         color: state.isSelected ?  '#5c655a': '#636964' ,
         padding: 10,
+        borderRadius: 20,
       }),
       
       singleValue: (provided, state) => {

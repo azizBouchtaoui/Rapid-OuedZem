@@ -5,10 +5,10 @@ const contact = require('./routers/ContactUs');
 const Reservation = require('./routers/Reservation');
 const Villes = require("./model/Villes")
 const mongoose = require('mongoose');
+const config = require('./config.json');
+ 
 
-const url = "mongodb://localhost/RapidOZ";
-
-mongoose.connect(url,
+mongoose.connect(config.urlMongoose,
         {
             useNewUrlParser:true,
             useUnifiedTopology:true

@@ -1,4 +1,5 @@
 {
+    "urlMongoose" : "mongodb://localhost/RapidOZ",
     "emailClient": {
     "host": "smtp.gmail.com",
     "email": "azizbouchtaoui1996@gmail.com",
