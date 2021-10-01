@@ -117,12 +117,7 @@ table {
 .Label-DatePicker {
   margin-left: 5px;
 }
-.select__controles {
-  text-align: -webkit-center;
-  align-content: center;
-  justify-content: center;
-  
-}
+ 
 .select__controle {
  width: 110px;
   align-items: center;
@@ -176,9 +171,19 @@ table {
   .btnt {
     font-size: 15px;
   }
+  .Numric-control {
+    width: 115px;
+   
+      
+   }
+   .select__controle {
+    width: 95px;
+    
+      
+   }
 }
 
-@media only screen and (max-width: 714px) {
+@media only screen and (max-width: 715px) {
   .first-col {
     width: 100%;
   }
