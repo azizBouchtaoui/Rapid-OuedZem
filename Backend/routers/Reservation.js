@@ -18,6 +18,6 @@ router.get('/Time', (req,res)=>{
 } )
 
 router.get('/VoyagesDisponible',(res,req)=>{
-
+console.log()
 });
 module.exports = router
