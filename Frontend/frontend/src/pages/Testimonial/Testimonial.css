@@ -124,7 +124,7 @@ table {
   
 }
 .select__controle {
- 
+ width: 110px;
   align-items: center;
   margin-bottom: 20px;
    
@@ -213,6 +213,11 @@ table {
     height: 520px;
     font-size: 12px;
   }
+  .select__controle {
+    width: 70px;
+    
+      
+   }
 }
 @media only screen and (max-width: 436px) {
  
@@ -301,6 +306,12 @@ table {
   height: 450px;
    
 }
+.select__controle {
+  width: 63px;
+   align-items: center;
+   margin-bottom: 20px;
+    
+ }
 }
 @media only screen and (max-width: 337px) {
   .ReservationForm {
