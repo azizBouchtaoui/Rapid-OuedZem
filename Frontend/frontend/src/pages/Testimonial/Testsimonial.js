@@ -25,7 +25,7 @@ class Testimonial extends Component {
       Hour: "",
       Places: 1,
     };
-    const AllData= this.state;
+     
   }
 
   componentDidMount() {
@@ -81,25 +81,32 @@ class Testimonial extends Component {
   };
 
   handleSubmit = (event) => {
+    const from = this.state.From;
+    const to = this.state.To;
+    const option = this.state.selectedOption;
+    const dateStart = this.state.StartDate;
+    const hour = this.state.Hour;
+    const places = this.state.Places;
+
     console.log(
       "Data : { Lieu de Depart : " +
-        this.state.From +
+      from +
         " Destination " +
-        this.state.To +
-        " L'option : " +
-        this.state.selectedOption +
-        " La Date : " +
-        this.state.StartDate +
-        " Temp : " +
-        this.state.Hour +
-        " and Numper Of Place : " +
-        this.state.Places
+        to+
+        " L'option : " + option +
+        " La Date : " + dateStart +
+        " Temp : " + hour+
+        " and Numper Of Place : " +places
     );    
-
+this.AllData( from,to,option,dateStart,hour,places);
+   
     event.preventDefault();
     event.stopPropagation();
      
   };
+  AllData=()=>{
+      
+  }
   render() {
     const customStyles = {
       option: (provided, state) => ({
