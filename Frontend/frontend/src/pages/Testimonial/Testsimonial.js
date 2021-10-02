@@ -25,6 +25,7 @@ class Testimonial extends Component {
       Hour: "",
       Places: 1,
     };
+    const AllData= this.state;
   }
 
   componentDidMount() {
@@ -93,7 +94,8 @@ class Testimonial extends Component {
         this.state.Hour +
         " and Numper Of Place : " +
         this.state.Places
-    );
+    );    
+
     event.preventDefault();
     event.stopPropagation();
      
@@ -115,7 +117,10 @@ class Testimonial extends Component {
         return { ...provided, opacity, transition };
       }
     }
+
+
     return (
+     
       <>
         <div className="container_reservation">
           <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -324,7 +329,7 @@ class Testimonial extends Component {
             </div>
           </div>
         </div>
-        <ResultatDeRecherche />
+        <ResultatDeRecherche props={this.state} />
       </>
     );
   }
