@@ -11,7 +11,7 @@ class  ResultatDeRecherche  extends Component{
          return(
             <div className="ResultContainer">
                 
-            <Container>
+            <Container className="ContainerResult">
             
                 <Row>
                     <Col>Ma gare de départ 
@@ -28,8 +28,9 @@ class  ResultatDeRecherche  extends Component{
                     
                     </div>
                     </Col>
-                    <Col>second
+                    <Col   className="ProgressBar">
                     <ProgressBar
+                        
                     percent={80}
                     filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
                 >
