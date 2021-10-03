@@ -11,9 +11,9 @@ class  ResultatDeRecherche  extends Component{
          return(
             <div className="ResultContainer">
                 
-            <Container className="ContainerResult">
+            <Container >
             
-                <Row>
+                <Row className="ContainerResult">
                     <Col>Ma gare de départ 
                     <div>
                         {this.props.from} 
