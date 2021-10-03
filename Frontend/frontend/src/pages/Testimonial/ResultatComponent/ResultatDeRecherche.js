@@ -1,6 +1,7 @@
 import React ,{ Component } from "react";
 import './ResultatDeRecherche.css'
 import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
+import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 class  ResultatDeRecherche  extends Component{
      
@@ -11,6 +12,7 @@ class  ResultatDeRecherche  extends Component{
             <div className="ResultContainer">
                 
             <Container>
+            
                 <Row>
                     <Col>Ma gare de départ 
                     <div>
@@ -27,7 +29,30 @@ class  ResultatDeRecherche  extends Component{
                     </div>
                     </Col>
                     <Col>second
+                    <ProgressBar
+                    percent={80}
+                    filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+                >
+                    <Step transition="scale">
+                    {({ accomplished }) => (
+                        <img
+                        style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                        width="30"
+                        src="/Images/bus1.png"
+                        />
+                    )}
+                    </Step>
                    
+                    <Step transition="scale">
+                    {({ accomplished }) => (
+                        <img
+                        style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                        width="30"
+                        src="/Images/bus3.png"
+                        />
+                    )}
+                    </Step>
+                </ProgressBar>
                     </Col>
                     <Col>Ma gare d'arrivée 
                     <p>
