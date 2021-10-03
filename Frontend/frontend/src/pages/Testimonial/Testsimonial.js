@@ -24,8 +24,8 @@ class Testimonial extends Component {
       EndDate: "",
       Hour: "",
       Places: 1,
-    };
-     
+      
+    }; 
   }
 
   componentDidMount() {
@@ -81,53 +81,16 @@ class Testimonial extends Component {
   };
 
   handleSubmit = (event) => {
-    const from = this.state.From;
-    const to = this.state.To;
-    const option = this.state.selectedOption;
-    const dateStart = this.state.StartDate;
-    const hour = this.state.Hour;
-    const places = this.state.Places;
-
-    console.log(
-      "Data : { Lieu de Depart : " +
-      from +
-        " Destination " +
-        to+
-        " L'option : " + option +
-        " La Date : " + dateStart +
-        " Temp : " + hour+
-        " and Numper Of Place : " +places
-    );    
-    
+   
     event.preventDefault();
     event.stopPropagation();
-    this.AllData( from,to,option,dateStart,hour,places);
      
+    
   };
-  AllData=(from,to,option,dateStart,hour,places )=>{
-    console.log(
-      "Data : { Lieu de Depart : " +
-      from +
-        " Destination " +
-        to+
-        " L'option : " + option +
-        " La Date : " + dateStart +
-        " Temp : " + hour+
-        " and Numper Of Place : " +places
-    );
-      const test= [{
-        from:from,
-        to: to,
-        option:option,
-        dateStart:dateStart,
-        hour:hour,
-        places:places
-      }]
-       test.map((data,key )=>{
-         console.log(data);
-       })
-  }
+  
   render() {
+   
+    
     const customStyles = {
       option: (provided, state) => ({
         ...provided,
@@ -356,7 +319,13 @@ class Testimonial extends Component {
             </div>
           </div>
         </div>
-        <ResultatDeRecherche props={this.AllData} />
+        <ResultatDeRecherche from={this.state.From}        
+                              to = {this.state.To}
+                              option = {this.state.selectedOption}
+                              dateStart = {this.state.StartDate}
+                              hour = {this.state.Hour}
+                              places ={ this.state.Places}
+        />
       </>
     );
   }
