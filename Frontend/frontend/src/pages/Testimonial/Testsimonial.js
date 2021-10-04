@@ -24,7 +24,7 @@ class Testimonial extends Component {
       EndDate: "",
       Hour: "",
       Places: 1,
-      
+      isSelect: false
     }; 
   }
 
