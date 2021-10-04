@@ -36,7 +36,7 @@ class  ResultatDeRecherche  extends Component{
             
                 <Row className="ContainerResult">
                     <Col> 
-                        <div   style={{fontFamily: "'Courier New', monospace"}}>
+                        <div   style={{fontFamily: "'Courier New', monospace",color:'#161473'}}>
                         Ma gare de départ </div>
                     <p style={{fontFamily: "Tahoma, sans-serif", fontSize:"20px", color: 'rgb(39, 0, 112)'}}>
                         {this.props.from} 
