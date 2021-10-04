@@ -14,19 +14,20 @@ class  ResultatDeRecherche  extends Component{
             <Container >
             
                 <Row className="ContainerResult">
-                    <Col>Ma gare de départ 
-                    <div>
+                    <Col> 
+                        <div   style={{fontFamily: "'Courier New', monospace"}}>
+                        Ma gare de départ </div>
+                    <p style={{fontFamily: "Tahoma, sans-serif", fontSize:"20px", color: 'rgb(39, 0, 112)'}}>
                         {this.props.from} 
-                         
-
-                    </div>
-                    <div>
-                        {this.props.dateStart}
-                    </div>
-                    <div>
-                    {this.props.hour}
+                    </p>
+                    <div className="TimeContainerResult">
+                    <b>{this.props.hour}</b>
                     
                     </div>
+                    <div className="TimeContainerResult">
+                        {this.props.dateStart}
+                    </div>
+                    
                     </Col>
                     <Col   className="ProgressBar">
                     <ProgressBar
@@ -55,18 +56,30 @@ class  ResultatDeRecherche  extends Component{
                     </Step>
                 </ProgressBar>
                     </Col>
-                    <Col>Ma gare d'arrivée 
-                    <p>
+                    <Col>
+                    <div   style={{fontFamily: "'Courier New', monospace"}}>
+                    Ma gare d'arrivée
+                     </div>
+                    
+                   
+                    <p style={{fontFamily: "Tahoma, sans-serif", fontSize:"20px",color: 'rgb(39, 0, 112)'}}>
                     {this.props.to}
                     </p>
                     
                     </Col>
                 </Row>
-                <Row>
+                <Row className="SecondContainerResult">
                     <Col>
-                        <p>
+                        <div className="Places">
                             {this.props.places}
-                        </p>
+                        </div>
+                    </Col>
+                    <Col  >
+                    <button className="buttonReserver">
+                    Réserver <i class="far fa-check-circle"></i>
+
+
+                          </button>
                     </Col>
                 </Row>
             </Container>
