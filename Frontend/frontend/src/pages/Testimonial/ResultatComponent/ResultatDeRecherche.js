@@ -78,7 +78,7 @@ class  ResultatDeRecherche  extends Component{
                 </ProgressBar>
                     </Col>
                     <Col>
-                    <div   style={{fontFamily: "'Courier New', monospace"}}>
+                    <div   style={{fontFamily: "'Courier New', monospace",color:'#161473'}}>
                     Ma gare d'arrivée
                      </div>
                     
