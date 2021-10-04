@@ -7,7 +7,28 @@ class  ResultatDeRecherche  extends Component{
      
       
     render(){
+          let temp= parseFloat((parseFloat(this.props.hour).toFixed(2)))
+       
+      let result 
+      let x
+      temp =temp+3
+          if(temp>=12 && this.props.hour.slice(6,8) === "am" ){
+
+              result= temp-12
+              if(result>=0 && result <1){
+                  result=12
+                x = parseFloat(result).toFixed(2)+" pm"
+              }else{
+                x = parseFloat(result).toFixed(2)+" pm"
+              }
+             
+          }else{
+            result= temp  
+            x = parseFloat(result).toFixed(2)+" am"
+          }
           
+            
+           console.log(x)
          return(
             <div className="ResultContainer">
                 
@@ -65,7 +86,10 @@ class  ResultatDeRecherche  extends Component{
                     <p style={{fontFamily: "Tahoma, sans-serif", fontSize:"20px",color: 'rgb(39, 0, 112)'}}>
                     {this.props.to}
                     </p>
+                    <div className="TimeContainerResult">
+                    <b>{temp}</b>
                     
+                    </div>
                     </Col>
                 </Row>
                 <Row className="SecondContainerResult">
@@ -73,6 +97,8 @@ class  ResultatDeRecherche  extends Component{
                         <div className="Places">
                             {this.props.places}
                         </div>
+                    </Col>
+                    <Col>
                     </Col>
                     <Col  >
                     <button className="buttonReserver">
