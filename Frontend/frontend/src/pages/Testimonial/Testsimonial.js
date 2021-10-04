@@ -62,11 +62,11 @@ class Testimonial extends Component {
       });
   }
   handleDateChangeStart = (event) => {
-    const date = moment(event).format("DD-MM-YYYY");
+    const date = moment(event).format("YYYY-MM-DD");
     this.setState({ StartDate: date });
   };
   handleDateChangeEnd = (event) => {
-    const date = moment(event).format("DD-MM-YYYY");
+    const date = moment(event).format("YYYY-MM-DD");
     this.setState({ EndDate: date });
   };
 

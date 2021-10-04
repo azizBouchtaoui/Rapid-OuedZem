@@ -3,32 +3,32 @@ import './ResultatDeRecherche.css'
 import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
+import moment from "moment";
 class  ResultatDeRecherche  extends Component{
      
       
     render(){
           let temp= parseFloat((parseFloat(this.props.hour).toFixed(2)))
-       
       let result 
-      let x
+      
       temp =temp+3
           if(temp>=12 && this.props.hour.slice(6,8) === "am" ){
 
               result= temp-12
               if(result>=0 && result <1){
-                  result=12
-                x = parseFloat(result).toFixed(2)+" pm"
+                  result= temp 
+                  result = parseFloat(result).toFixed(2)+" pm"
               }else{
-                x = parseFloat(result).toFixed(2)+" pm"
+                result = parseFloat(result).toFixed(2)+" pm"
               }
              
           }else{
             result= temp  
-            x = parseFloat(result).toFixed(2)+" am"
+            result = parseFloat(result).toFixed(2)+" am"
           }
           
+          const date = moment(this.props.dateStart).format("DD-MM-YYYY");
             
-           console.log(x)
          return(
             <div className="ResultContainer">
                 
@@ -46,7 +46,7 @@ class  ResultatDeRecherche  extends Component{
                     
                     </div>
                     <div className="TimeContainerResult">
-                        {this.props.dateStart}
+                        {date}
                     </div>
                     
                     </Col>
@@ -87,7 +87,7 @@ class  ResultatDeRecherche  extends Component{
                     {this.props.to}
                     </p>
                     <div className="TimeContainerResult">
-                    <b>{temp}</b>
+                    <b>{result}</b>
                     
                     </div>
                     </Col>
