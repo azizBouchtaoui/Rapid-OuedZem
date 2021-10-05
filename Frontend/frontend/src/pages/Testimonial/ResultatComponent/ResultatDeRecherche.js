@@ -62,6 +62,7 @@ class  ResultatDeRecherche  extends Component{
                         style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
                         width="30"
                         src="/Images/bus1.png"
+                        alt="Depart"
                         />
                     )}
                     </Step>
@@ -71,7 +72,7 @@ class  ResultatDeRecherche  extends Component{
                         <img
                         style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
                         width="30"
-                        src="/Images/bus3.png"
+                        src="/Images/bus3.png"  alt="Arrive"
                         />
                     )}
                     </Step>
