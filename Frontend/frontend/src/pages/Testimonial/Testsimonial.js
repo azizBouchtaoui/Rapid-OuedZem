@@ -2,12 +2,12 @@ import React, { Component ,useEffect, useRef } from "react";
 import Select from "react-select";
 import { Time, Villes } from "../../Services";
 import "./Testimonial.css";
-import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
-import { Picklist, PicklistOption, DatePicker } from "react-rainbow-components";
+import {   Form, Col, Row, Container } from "react-bootstrap";
+import {   DatePicker } from "react-rainbow-components";
 import InputSpinner from "react-bootstrap-input-spinner";
 import moment from "moment";
 import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche";
-import { Link ,animateScroll} from 'react-scroll';
+import {  animateScroll} from 'react-scroll';
 import { ToastContainer, toast,Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 class Testimonial extends Component {

@@ -1,6 +1,6 @@
 import React ,{ Component } from "react";
 import './ResultatDeRecherche.css'
-import { Button, Form, Col, Row, Table, Container } from "react-bootstrap";
+import {  Col, Row,   Container } from "react-bootstrap";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import moment from "moment";
