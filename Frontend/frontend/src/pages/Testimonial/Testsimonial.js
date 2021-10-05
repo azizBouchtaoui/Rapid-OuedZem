@@ -109,7 +109,7 @@ class Testimonial extends Component {
    if(  this.state.From !== "" 
         && this.state.To !== "" 
         &&  this.state.StartDate !==  "" 
-        && this.state.EndDate !== "" 
+       
         && this.state.Hour !== "" 
         && this.state.Places !== 0 ){
 
@@ -337,7 +337,7 @@ class Testimonial extends Component {
                         </Row>
 
                         <Row className="row-btnt">
-                        <button className="btnt" onClick={() => this.Data, this.scrollToBottom}>
+                        <button className="btnt" onClick={ this.scrollToBottom}>
                             Recherche <i className="fab fa-wpexplorer" />
                           </button>
                        

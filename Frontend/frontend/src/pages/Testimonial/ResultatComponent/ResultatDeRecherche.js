@@ -103,7 +103,7 @@ class  ResultatDeRecherche  extends Component{
                     </Col>
                     <Col  >
                     <button className="buttonReserver">
-                    Réserver <i class="far fa-check-circle"></i>
+                    Réserver <i className="far fa-check-circle"></i>
 
 
                           </button>
