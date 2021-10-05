@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component ,useEffect, useRef } from "react";
 import Select from "react-select";
 import { Time, Villes } from "../../Services";
 import "./Testimonial.css";
@@ -7,6 +7,7 @@ import { Picklist, PicklistOption, DatePicker } from "react-rainbow-components";
 import InputSpinner from "react-bootstrap-input-spinner";
 import moment from "moment";
 import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche";
+import { Link ,animateScroll} from 'react-scroll';
 class Testimonial extends Component {
   constructor(props) {
     super(props);
@@ -26,9 +27,17 @@ class Testimonial extends Component {
       Places: 1,
       isSelect: false
     }; 
+ 
   }
-
+ 
+  scrollToBottom() {
+    animateScroll.scrollToBottom({
+      containerId: "options-holder"
+    });
+}
+ 
   componentDidMount() {
+    
     Villes()
       .then((response) => {
         const options = [];
@@ -90,10 +99,9 @@ class Testimonial extends Component {
     //if(this.state.fromOptions...)
     this.setState({isSelect:true})
   };
-  
+ 
   render() {
    
-    
     const customStyles = {
       option: (provided, state) => ({
         ...provided,
@@ -310,9 +318,10 @@ class Testimonial extends Component {
                         </Row>
 
                         <Row className="row-btnt">
-                          <button className="btnt" onClick={() => this.Data}>
+                        <button className="btnt" onClick={() => this.Data, this.scrollToBottom}>
                             Recherche <i className="fab fa-wpexplorer" />
                           </button>
+                       
                         </Row>
                       </Container>
                     </Form>
@@ -324,7 +333,8 @@ class Testimonial extends Component {
         </div>
         {(this.state.isSelect )?  ( 
 
-        <ResultatDeRecherche from={this.state.From}        
+        <ResultatDeRecherche  
+                              from={this.state.From}        
                               to = {this.state.To}
                               option = {this.state.selectedOption}
                               dateStart = {this.state.StartDate}
