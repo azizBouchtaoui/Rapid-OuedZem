@@ -85,6 +85,9 @@ class Testimonial extends Component {
     event.preventDefault();
     event.stopPropagation();
      
+    
+    
+    //if(this.state.fromOptions...)
     this.setState({isSelect:true})
   };
   
