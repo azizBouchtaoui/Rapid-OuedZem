@@ -1,11 +1,9 @@
  
-import SelectOption from './SelectOption/SelectOption';
+ 
 import React, { useState } from 'react';
-import Select from 'react-select';
+ 
 import Testimonial from '../Testimonial/Testsimonial';
-import ResultatDeRecherche from '../Testimonial/ResultatComponent/ResultatDeRecherche';
-
-
+ 
  
 const Reservation = () =>{
  
