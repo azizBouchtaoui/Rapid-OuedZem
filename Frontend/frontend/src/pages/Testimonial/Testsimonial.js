@@ -362,7 +362,7 @@ class Testimonial extends Component {
         />)   : (<div >
                 <ToastContainer
                 position="bottom-center"
-                autoClose={5000}
+                autoClose={1000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

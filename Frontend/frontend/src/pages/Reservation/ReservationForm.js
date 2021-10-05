@@ -14,7 +14,7 @@ const Reservation = () =>{
         return (
           <div className="container"> 
           <Testimonial/>
-          <ResultatDeRecherche/>
+         
     </div>
     );
 
