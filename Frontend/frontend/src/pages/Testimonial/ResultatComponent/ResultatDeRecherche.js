@@ -108,6 +108,7 @@ class  ResultatDeRecherche  extends Component{
                           </button>
                     </Col>
                 </Row>
+  
             </Container>
         
         </div>

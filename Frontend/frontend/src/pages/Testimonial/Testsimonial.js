@@ -8,6 +8,8 @@ import InputSpinner from "react-bootstrap-input-spinner";
 import moment from "moment";
 import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche";
 import { Link ,animateScroll} from 'react-scroll';
+import { ToastContainer, toast,Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class Testimonial extends Component {
   constructor(props) {
     super(props);
@@ -93,11 +95,28 @@ class Testimonial extends Component {
    
     event.preventDefault();
     event.stopPropagation();
-     
+    toast.warn("Veuillez remplir tous les champs s'il vous-plait !!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
     
     
-    //if(this.state.fromOptions...)
-    this.setState({isSelect:true})
+   if(  this.state.From!= "" 
+        && this.state.To != "" 
+        &&  this.state.StartDate!=  "" 
+        && this.state.EndDate != "" 
+        && this.state.Hour!= "" 
+        && this.state.Places!= 0 ){
+
+     this.setState({isSelect:true})
+    }else{
+     this.setState({isSelect:false})
+  }
   };
  
   render() {
@@ -333,14 +352,28 @@ class Testimonial extends Component {
         </div>
         {(this.state.isSelect )?  ( 
 
-        <ResultatDeRecherche  
+        <ResultatDeRecherche    
                               from={this.state.From}        
                               to = {this.state.To}
                               option = {this.state.selectedOption}
                               dateStart = {this.state.StartDate}
                               hour = {this.state.Hour}
                               places ={ this.state.Places}
-        />)   : (<div></div>)
+        />)   : (<div >
+                <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                transition={Zoom}
+                limit={1}
+                />
+                </div>)
         }
       </>
     );
