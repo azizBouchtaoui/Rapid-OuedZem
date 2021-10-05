@@ -106,12 +106,12 @@ class Testimonial extends Component {
       });
     
     
-   if(  this.state.From!= "" 
-        && this.state.To != "" 
-        &&  this.state.StartDate!=  "" 
-        && this.state.EndDate != "" 
-        && this.state.Hour!= "" 
-        && this.state.Places!= 0 ){
+   if(  this.state.From !== "" 
+        && this.state.To !== "" 
+        &&  this.state.StartDate !==  "" 
+        && this.state.EndDate !== "" 
+        && this.state.Hour !== "" 
+        && this.state.Places !== 0 ){
 
      this.setState({isSelect:true})
     }else{
