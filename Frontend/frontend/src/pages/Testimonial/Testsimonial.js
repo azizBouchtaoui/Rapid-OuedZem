@@ -85,7 +85,7 @@ class Testimonial extends Component {
     event.preventDefault();
     event.stopPropagation();
      
-    
+    this.setState({isSelect:true})
   };
   
   render() {
@@ -319,13 +319,16 @@ class Testimonial extends Component {
             </div>
           </div>
         </div>
+        {(this.state.isSelect )?  ( 
+
         <ResultatDeRecherche from={this.state.From}        
                               to = {this.state.To}
                               option = {this.state.selectedOption}
                               dateStart = {this.state.StartDate}
                               hour = {this.state.Hour}
                               places ={ this.state.Places}
-        />
+        />)   : (<div></div>)
+        }
       </>
     );
   }
