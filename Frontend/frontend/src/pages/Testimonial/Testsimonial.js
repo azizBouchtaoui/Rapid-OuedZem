@@ -1,15 +1,15 @@
-import React, { Component  } from "react";
+import React, { Component } from "react";
 import Select from "react-select";
 import { Time, Villes } from "../../Services";
 import "./Testimonial.css";
-import {   Form, Col, Row, Container } from "react-bootstrap";
-import {   DatePicker } from "react-rainbow-components";
+import { Form, Col, Row, Container } from "react-bootstrap";
+import { DatePicker } from "react-rainbow-components";
 import InputSpinner from "react-bootstrap-input-spinner";
 import moment from "moment";
 import ResultatDeRecherche from "./ResultatComponent/ResultatDeRecherche";
-import {  animateScroll} from 'react-scroll';
-import { ToastContainer, toast,Zoom } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { animateScroll } from "react-scroll";
+import { ToastContainer, toast, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class Testimonial extends Component {
   constructor(props) {
     super(props);
@@ -27,19 +27,17 @@ class Testimonial extends Component {
       EndDate: "",
       Hour: "",
       Places: 1,
-      isSelect: false
-    }; 
- 
+      isSelect: false,
+    };
   }
- 
+
   scrollToBottom() {
     animateScroll.scrollToBottom({
-      containerId: "options-holder"
+      containerId: "options-holder",
     });
-}
- 
+  }
+
   componentDidMount() {
-    
     Villes()
       .then((response) => {
         const options = [];
@@ -92,7 +90,6 @@ class Testimonial extends Component {
   };
 
   handleSubmit = (event) => {
-   
     event.preventDefault();
     event.stopPropagation();
     toast.warn("Veuillez remplir tous les champs s'il vous-plait !!", {
@@ -103,44 +100,40 @@ class Testimonial extends Component {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
-    
-    
-   if(  this.state.From !== "" 
-        && this.state.To !== "" 
-        &&  this.state.StartDate !==  "" 
-       
-        && this.state.Hour !== "" 
-        && this.state.Places !== 0 ){
+    });
 
-     this.setState({isSelect:true})
-    }else{
-     this.setState({isSelect:false})
-  }
+    if (
+      this.state.From !== "" &&
+      this.state.To !== "" &&
+      this.state.StartDate !== "" &&
+      this.state.Hour !== "" &&
+      this.state.Places !== 0
+    ) {
+      this.setState({ isSelect: true });
+    } else {
+      this.setState({ isSelect: false });
+    }
   };
- 
+
   render() {
-   
     const customStyles = {
       option: (provided, state) => ({
         ...provided,
-        borderBottom: '1px dotted pink',
-        color: state.isSelected ?  '#5c655a': '#636964' ,
+        borderBottom: "1px dotted pink",
+        color: state.isSelected ? "#5c655a" : "#636964",
         padding: 10,
         borderRadius: 20,
       }),
-      
+
       singleValue: (provided, state) => {
         const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
-    
-        return { ...provided, opacity, transition };
-      }
-    }
+        const transition = "opacity 300ms";
 
+        return { ...provided, opacity, transition };
+      },
+    };
 
     return (
-     
       <>
         <div className="container_reservation">
           <video src="/Videos/video-3.mp4" autoPlay loop muted />
@@ -168,17 +161,17 @@ class Testimonial extends Component {
                               <Form.Label>Lieu de depart</Form.Label>
 
                               <Select
-                              styles={customStyles}
-                              theme={(theme) => ({
-                                ...theme,
-                                borderRadius: 20,
-                                colors: {
-                                  ...theme.colors,
-                                  primary25: '#E0FFFF',
-                                  primary: '#ADD8E6',
-                                },
-                              })}
-                              width='200px'
+                                styles={customStyles}
+                                theme={(theme) => ({
+                                  ...theme,
+                                  borderRadius: 20,
+                                  colors: {
+                                    ...theme.colors,
+                                    primary25: "#E0FFFF",
+                                    primary: "#ADD8E6",
+                                  },
+                                })}
+                                width="200px"
                                 value={this.state.from}
                                 options={this.state.fromOptions}
                                 onChange={(target) =>
@@ -199,11 +192,11 @@ class Testimonial extends Component {
                                   borderRadius: 20,
                                   colors: {
                                     ...theme.colors,
-                                    primary25: '#E0FFFF',
-                                    primary: '#ADD8E6',
+                                    primary25: "#E0FFFF",
+                                    primary: "#ADD8E6",
                                   },
                                 })}
-                                width='200px'
+                                width="200px"
                                 value={this.state.to}
                                 options={this.state.fromOptions}
                                 onChange={(target) =>
@@ -293,22 +286,20 @@ class Testimonial extends Component {
                                   </Form.Group>
                                 </div>
                               )}
-                              <Row   className="select__controles">
+                              <Row className="select__controles">
                                 <Col>
                                   <Select
-                                  styles={customStyles}
-                                  theme={(theme) => ({
-                                    ...theme,
-                                    borderRadius: 20,
-                                    colors: {
-                                      ...theme.colors,
-                                      primary25: '#E0FFFF',
-                                      primary: '#ADD8E6',
-                                    },
-                                  })}
-                                  
+                                    styles={customStyles}
+                                    theme={(theme) => ({
+                                      ...theme,
+                                      borderRadius: 20,
+                                      colors: {
+                                        ...theme.colors,
+                                        primary25: "#E0FFFF",
+                                        primary: "#ADD8E6",
+                                      },
+                                    })}
                                     className="select__controle"
-                                  
                                     value={this.state.hour}
                                     options={this.state.TimeOption}
                                     onChange={(target) =>
@@ -337,10 +328,12 @@ class Testimonial extends Component {
                         </Row>
 
                         <Row className="row-btnt">
-                        <button className="btnt" onClick={ this.scrollToBottom}>
+                          <button
+                            className="btnt"
+                            onClick={this.scrollToBottom}
+                          >
                             Recherche <i className="fab fa-wpexplorer" />
                           </button>
-                       
                         </Row>
                       </Container>
                     </Form>
@@ -350,31 +343,32 @@ class Testimonial extends Component {
             </div>
           </div>
         </div>
-        {(this.state.isSelect )?  ( 
-
-        <ResultatDeRecherche    
-                              from={this.state.From}        
-                              to = {this.state.To}
-                              option = {this.state.selectedOption}
-                              dateStart = {this.state.StartDate}
-                              hour = {this.state.Hour}
-                              places ={ this.state.Places}
-        />)   : (<div >
-                <ToastContainer
-                position="bottom-center"
-                autoClose={1000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                transition={Zoom}
-                limit={1}
-                />
-                </div>)
-        }
+        {this.state.isSelect ? (
+          <ResultatDeRecherche
+            from={this.state.From}
+            to={this.state.To}
+            option={this.state.selectedOption}
+            dateStart={this.state.StartDate}
+            hour={this.state.Hour}
+            places={this.state.Places}
+          />
+        ) : (
+          <div>
+            <ToastContainer
+              position="bottom-center"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              transition={Zoom}
+              limit={1}
+            />
+          </div>
+        )}
       </>
     );
   }
