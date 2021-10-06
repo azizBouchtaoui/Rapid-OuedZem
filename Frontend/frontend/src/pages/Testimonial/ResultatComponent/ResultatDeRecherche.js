@@ -35,7 +35,7 @@ class  ResultatDeRecherche  extends Component{
             <Container >
             
                 <Row className="ContainerResult">
-                    <Col> 
+                    <Col className="ColumnOfContainerResult"> 
                         <div   style={{fontFamily: "'Courier New', monospace",color:'#161473'}}>
                         Ma gare de départ </div>
                     <p style={{fontFamily: "Tahoma, sans-serif", fontSize:"20px", color: 'rgb(39, 0, 112)'}}>
@@ -78,7 +78,7 @@ class  ResultatDeRecherche  extends Component{
                     </Step>
                 </ProgressBar>
                     </Col>
-                    <Col>
+                    <Col className="ColumnOfContainerResult">
                     <div   style={{fontFamily: "'Courier New', monospace",color:'#161473'}}>
                     Ma gare d'arrivée
                      </div>
@@ -99,8 +99,7 @@ class  ResultatDeRecherche  extends Component{
                             {this.props.places}
                         </div>
                     </Col>
-                    <Col>
-                    </Col>
+                     
                     <Col  >
                     <button className="buttonReserver">
                     Réserver <i className="far fa-check-circle"></i>
