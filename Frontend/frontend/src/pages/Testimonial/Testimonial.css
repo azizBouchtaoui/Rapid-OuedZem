@@ -2,9 +2,9 @@
   height: 100vh;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.404);
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
- 
+
 .Section--center {
   position: absolute;
   top: 50%;
@@ -19,18 +19,16 @@
   margin-right: 30px;
 }
 .first-col {
-   width:40%;
+  width: 40%;
   float: left;
   align-items: center;
   color: black;
-  
 }
-.first-col > h1{
-  
+.first-col > h1 {
   background-color: rgba(253, 253, 253, 0.315);
 }
-.first-col > p{
-  width:110%;
+.first-col > p {
+  width: 110%;
   text-indent: 50px;
   text-align: justify;
   letter-spacing: 1px;
@@ -117,16 +115,14 @@ table {
 .Label-DatePicker {
   margin-left: 5px;
 }
- 
+
 .select__controle {
- width: 110px;
+  width: 110px;
   align-items: center;
   margin-bottom: 20px;
-   
 }
-.Numric-control{
+.Numric-control {
   width: 120px;
- 
 }
 .row-btnt {
   align-items: center;
@@ -173,14 +169,10 @@ table {
   }
   .Numric-control {
     width: 115px;
-   
-      
-   }
-   .select__controle {
+  }
+  .select__controle {
     width: 95px;
-    
-      
-   }
+  }
 }
 
 @media only screen and (max-width: 715px) {
@@ -199,9 +191,9 @@ table {
   .btnt {
     font-size: 15px;
   }
-  .container_reservation{
+  .container_reservation {
     margin-bottom: 200px;
-   align-items: center;
+    align-items: center;
   }
   .Section--center {
     position: absolute;
@@ -210,40 +202,32 @@ table {
     right: 60px;
     transform: translateY(-50%);
     height: 450px;
+  }
 }
-  
-}
-@media only screen and (max-width: 512px){
+@media only screen and (max-width: 512px) {
   .ReservationForm {
     height: 520px;
     font-size: 12px;
   }
   .select__controle {
     width: 70px;
-    
-      
-   }
+  }
 }
 @media only screen and (max-width: 436px) {
- 
   .ReservationForm {
-   
-   
     font-size: 11px;
   }
   .CheckBox-radio1 {
     margin-left: 13px;
   }
-  .row-btnt{
-    margin-top:-10px
+  .row-btnt {
+    margin-top: -10px;
   }
 }
-@media only screen and (max-width: 407px){
+@media only screen and (max-width: 407px) {
   .ReservationForm {
     width: 300px;
-   
   }
- 
 }
 @media only screen and (max-width: 398px) {
   .ReservationForm {
@@ -254,7 +238,7 @@ table {
     margin-top: 5px;
     font-size: 9px;
   }
-  .Label-DatePicker{
+  .Label-DatePicker {
     font-size: 11px;
   }
   .container_reservation {
@@ -268,7 +252,7 @@ table {
     right: 60px;
     transform: translateY(-50%);
     height: 450px;
-}
+  }
 }
 @media only screen and (max-width: 385px) {
   .CheckBox-radio1 {
@@ -279,48 +263,40 @@ table {
   }
   .Section--center {
     position: absolute;
-      
+  }
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
+  }
 }
-.Section--center {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  right: 60px;
-  transform: translateY(-50%);
-  height: 450px;
-  
-
-}
-}
-@media only screen and (max-width: 344px){
- 
+@media only screen and (max-width: 344px) {
   .ReservationForm {
-    width: 250px;    
-  
-}
-.container_reservation {
-  margin-bottom: 300px;
-  align-items: center;
-}
-.Section--center {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  right: 60px;
-  transform: translateY(-50%);
-  height: 450px;
-   
-}
-.select__controle {
-  width: 63px;
-   align-items: center;
-   margin-bottom: 20px;
-    
- }
+    width: 250px;
+  }
+  .container_reservation {
+    margin-bottom: 300px;
+    align-items: center;
+  }
+  .Section--center {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 60px;
+    transform: translateY(-50%);
+    height: 450px;
+  }
+  .select__controle {
+    width: 63px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
 @media only screen and (max-width: 337px) {
   .ReservationForm {
-    
     font-size: 9px;
   }
   .CheckBox-radio1 {
@@ -368,7 +344,6 @@ table {
     transform: translateY(-50%);
     height: 450px;
   }
-  
 }
 @media only screen and (max-width: 290px) {
   .Section--center {
