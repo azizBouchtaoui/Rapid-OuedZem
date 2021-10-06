@@ -68,7 +68,14 @@
     }
     
 }
+@media only screen and (max-width: 1024px){
+    .ResultContainer{
+        height: 25vh;
+    }
+    
+}
 @media only screen and (max-width: 950px){
+   
     .Places{
          
         margin-left: 80px;
@@ -80,6 +87,9 @@
     
 }
 @media only screen and (max-width: 800px){
+    .ResultContainer{
+        height: 42vh;
+    }
     .Places{
         margin-left: 55px;
     }
@@ -88,6 +98,19 @@
          margin-right: 35px;
     }
 }
+@media only screen and (max-width: 768px){
+    .ResultContainer{
+        height: 30vh;
+    }
+  
+}
+@media only screen and (max-width: 540px){
+    .ResultContainer{
+        height: 42vh;
+    }
+  
+}
+
 @media only screen and (max-width: 520px){
     .ResultContainer{
         height: 45vh;
@@ -136,7 +159,9 @@
 
 }
 @media only screen and (max-width: 424px){
-    
+    .ResultContainer{
+        height: 61vh;
+    }
     .buttonReserver{
         margin-right: 10px;
     
@@ -159,7 +184,9 @@
 
 }
 @media only screen and (max-width: 380px){
-    
+    .ResultContainer{
+        height: 66vh;
+    }
     .buttonReserver{
         margin-right: -5px;
     
@@ -170,6 +197,9 @@
 }
 
 @media only screen and (max-width: 365px){
+    .ResultContainer{
+        height: 68vh;
+    }
     .buttonReserver{
         margin-right: -10px;
     
@@ -201,7 +231,7 @@
 }
 @media only screen and (max-width: 330px){
     .ResultContainer{
-        height: 57vh;
+        height: 85vh;
     }
     .buttonReserver{
          
@@ -209,11 +239,31 @@
    }
 
 }
-@media only screen and (max-width: 310px){
+@media only screen and (max-width: 315px){
     
     .buttonReserver{
          
        margin-right: -10px;
+   }
+
+}
+@media only screen and (max-width: 300px){
+   
+    .buttonReserver{
+        width: 120px;
+        font-size: 12px;
+        margin-right: -10px;
+   }
+
+}
+@media only screen and (max-width: 280px){
+    .ResultContainer{
+        height: 72vh;
+    }
+    .buttonReserver{
+         
+        font-size: 10px;
+        margin-right: -5x;
    }
 
 }
