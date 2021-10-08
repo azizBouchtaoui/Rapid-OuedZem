@@ -1,102 +1,96 @@
- .ContactNousHeader{
-   color:white;
-   margin-left: 90px;
- }
- .IconContactUs{
-   width: 40px;
-   position: absolute;
-   margin-left: 45px;
-   transform: rotate(50deg);
-   color: #fff;
- }
- .controleHeaderPopup{
+.ContactNousHeader {
+  color: white;
+  margin-left: 90px;
+}
+.IconContactUs {
+  width: 40px;
+  position: absolute;
+  margin-left: 45px;
+  transform: rotate(50deg);
+  color: #fff;
+}
+.controleHeaderPopup {
   text-align-last: justify;
   text-align: justify;
- }
+}
 .popup-box {
-   position: fixed;
-   background: #00000087;
-   width: 100%;
-   height: 100vh;
-   top: 0;
-   left: 0;
- }
-  
- .box {
-   position: relative;
-   width: 70%;
-   margin: 0 auto;
-   height: auto;
-   max-height: 70vh;
-   margin-top: calc(100vh - 85vh - 20px);
-   background: #111;
-   border-radius: 10px;
-   border: 1px solid rgba(255, 255, 255, 0.651);;
-   overflow: auto;
- }
-  .box-2{
-     background: #111;
-      padding:10px;
-      background-color: #111;
-      border-radius: 10px;
-       
-  }
- 
- .close-icon {
-   content: 'x';
-   cursor: pointer;
-   position: fixed;
-   right: calc(15% - 30px);
-   top: calc(100vh - 85vh - 33px);
-   background: #ededed;
-   width: 25px;
-   height: 25px;
-   border-radius: 50%;
-   line-height: 20px;
-   text-align: center;
-   border: 1px solid #999;
-   font-size: 20px;
- }
- .contactForm{
-    background: #111;
-    color: #fff;
-    align-items: center;
-    margin-left: -0px;
-    
- }
- .contactForm{
-   align-content:center;
-   align-items: center;
- }
-
- .formInput{
-   background:white;
-   margin: 15px;
-   border: 1px solid rgba(255, 255, 255, 0.651);
-
- }
- 
- .submit-btn { 
-   background-color: rgba(0, 0, 0, 0);
-   color: #fff;
-   border: 1px solid #fff !important;
-   padding: 7px 26px;
-   border-radius: 2px;
-   font-size: 20px;
-   border: none;
-   cursor: pointer;
-   margin: 5px;
-   
- }
- .submit-btn:hover {
-   background-color: white;
-   color: #242424 !important;
-   
+  position: fixed;
+  background: #00000087;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
-.shadow-lg{
-   align-items: center;
-   
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.651);
+  overflow: auto;
 }
-.row{
+.box-2 {
+  background: #111;
+  padding: 10px;
+  background-color: #111;
+  border-radius: 10px;
+}
+
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+.contactForm {
+  background: #111;
+  color: #fff;
+  align-items: center;
+  margin-left: -0px;
+}
+.contactForm {
+  align-content: center;
+  align-items: center;
+}
+
+.formInput {
+  background: white;
+  margin: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.651);
+}
+
+.submit-btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  border: 1px solid #fff !important;
+  padding: 7px 26px;
+  border-radius: 2px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+.submit-btn:hover {
+  background-color: white;
+  color: #242424 !important;
+}
+.shadow-lg {
+  align-items: center;
+}
+.row {
   padding-right: 15px;
 }
