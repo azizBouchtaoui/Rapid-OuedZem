@@ -30,14 +30,14 @@ router.post("/rapidOZ/ContactUs", async (req, res) => {
       secure: false, // use SSL
       port: 25, // port for secure SMTP
       auth: {
-        user: "equitationmaroc@gmail.com",
-        pass: "equitationmaroc123456",
+        user: "email",
+        pass: "password",
       },
     });
 
     const mailOptions = {
-      from: "equitationmaroc@gmail.com",
-      to: "rapideoz101@gmail.com",
+      from: "//equitationmaroc@gmail.com",
+      to: "//rapideoz101@gmail.com",
       subject: body.subject,
       html: html,
     };
