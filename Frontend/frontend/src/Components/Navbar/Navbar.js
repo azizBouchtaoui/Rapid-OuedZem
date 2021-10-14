@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./Navbar.css";
 import $ from "jquery";
-import { HashLink } from 'react-router-hash-link';
-
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
@@ -68,9 +67,7 @@ const Navbar = () => {
 
   return (
     <nav className={` ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
-
-    <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo" >
-     
+      <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo">
         Rapid OUEDZEM
       </HashLink>
 
@@ -99,22 +96,17 @@ const Navbar = () => {
           </div>
 
           <li className="nav-item active">
-            <HashLink className="nav-link" 
-            smooth
-              to="/#MainSection">
+            <HashLink className="nav-link" smooth to="/#MainSection">
               <i className="fas fa-tachometer-alt"></i>Home
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink  smooth to="/#Services" 
-              className="nav-link"
-         
-            >
+            <HashLink smooth to="/#Services" className="nav-link">
               <i className="far fa-clone"></i>Services
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink   smooth to="/testimonial"  className="nav-link" exact>
+            <HashLink smooth to="/testimonial" className="nav-link" exact>
               <i className="far fa-chart-bar"></i>Testimonial
             </HashLink>
           </li>

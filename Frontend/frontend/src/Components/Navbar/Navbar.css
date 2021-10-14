@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #fff; /* fallback for old browsers */
 }
 * {
@@ -9,17 +9,16 @@ body {
   padding: 0;
 }
 
-.navbar{
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   transition-timing-function: ease-in;
-  transition:0.5s;
+  transition: 0.5s;
   z-index: 1;
-  
 }
- 
+
 i {
   margin-right: 10px;
 }
@@ -28,12 +27,12 @@ i {
   color: #fff;
   cursor: pointer;
 }
-.navbar-logo:hover{
-  color:white;
+.navbar-logo:hover {
+  color: white;
 }
 .navbar-mainbg {
   background-color: #000000;
-  padding: 0px; 
+  padding: 0px;
 }
 #navbarSupportedContent {
   overflow: hidden;
@@ -66,12 +65,12 @@ i {
   transition: all 0.7s;
 }
 #navbarSupportedContent a:not(:only-child):after {
-  content: '\f105';
+  content: "\f105";
   position: absolute;
   right: 20px;
   top: 10px;
   font-size: 14px;
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
@@ -81,7 +80,7 @@ i {
 #navbarSupportedContent .active > a:not(:only-child):after {
   transform: rotate(90deg);
 }
-.nav-link{
+.nav-link {
   cursor: pointer;
 }
 .hori-selector {
@@ -102,7 +101,7 @@ i {
   position: absolute;
   width: 25px;
   height: 25px;
- 
+
   bottom: 10px;
 }
 .hori-selector .right {
@@ -113,21 +112,20 @@ i {
 }
 
 .hori-selector .left:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 28px  20px 0 0 white;
+  box-shadow: 28px 20px 0 0 white;
 }
-.hori-selector .right:before{
-  content: '';
+.hori-selector .right:before {
+  content: "";
   position: absolute;
   width: 50px;
   height: 50px;
-  border-radius: 50%; 
-  box-shadow: -28px  20px 0 0 white;
-  
+  border-radius: 50%;
+  box-shadow: -28px 20px 0 0 white;
 }
 .hori-selector .right:before {
   bottom: 0;
