@@ -64,6 +64,37 @@ const Navbar = () => {
       }, 500);
     });
   }, []);
+ 
+ 
+ 
+   var scrollPos = $(document).scrollTop();
+   
+    const handleNavigationSelected = useCallback(
+      $('#navbarSupportedContent HashLink').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("to"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('#navbarSupportedContent ul li HashLink').removeClass("active");
+            currLink.addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+        }
+    } ),
+    [handleNavigationSelected]
+    );
+      
+ 
+
+
+  useEffect(() => {
+   
+    window.addEventListener("scroll", handleNavigationSelected);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigationSelected);
+    };
+  }, [handleNavigationSelected]);
 
   return (
     <nav className={` ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
