@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
 import $ from "jquery";
-import { Link } from "react-scroll";
 import { HashLink } from 'react-router-hash-link';
 
 
