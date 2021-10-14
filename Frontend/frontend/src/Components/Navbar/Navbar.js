@@ -81,7 +81,7 @@ const Navbar = () => {
             currLink.removeClass("active");
         }
     } ),
-    [handleNavigationSelected]
+    []
     );
       
  
