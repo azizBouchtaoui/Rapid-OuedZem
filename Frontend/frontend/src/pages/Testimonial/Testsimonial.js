@@ -103,7 +103,6 @@ class Testimonial extends Component {
     });
 
     if (
-      
       this.state.From !== "" &&
       this.state.To !== "" &&
       this.state.StartDate !== "" &&

@@ -3,6 +3,9 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import $ from "jquery";
 import { Link } from "react-scroll";
+import { HashLink } from 'react-router-hash-link';
+
+
 const Navbar = () => {
   const [show, setShow] = useState(true);
   const [y, setY] = useState(window.scrollY);
@@ -67,9 +70,11 @@ const Navbar = () => {
 
   return (
     <nav className={` ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
-      <Link className="navbar-brand navbar-logo" to="MainSection">
+
+    <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo" >
+     
         Rapid OUEDZEM
-      </Link>
+      </HashLink>
 
       <button
         className="navbar-toggler"
@@ -96,34 +101,34 @@ const Navbar = () => {
           </div>
 
           <li className="nav-item active">
-            <Link className="nav-link" to="MainSection">
+            <HashLink className="nav-link" 
+            smooth
+              to="/#MainSection">
               <i className="fas fa-tachometer-alt"></i>Home
-            </Link>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <Link
+            <HashLink  smooth to="/#Services" 
               className="nav-link"
-              to="Services"
-              smooth={true}
-              duration={100}
+         
             >
               <i className="far fa-clone"></i>Services
-            </Link>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/testimonial" exact>
+            <HashLink   smooth to="/testimonial"  className="nav-link" exact>
               <i className="far fa-chart-bar"></i>Testimonial
-            </NavLink>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="About">
+            <HashLink smooth className="nav-link" to="/#About">
               <i className="far fa-copy"></i>Contact Us
-            </Link>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="About">
+            <HashLink smooth className="nav-link" to="/#About">
               <i className="far fa-address-book"></i>About
-            </Link>
+            </HashLink>
           </li>
         </ul>
       </div>
