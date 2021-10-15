@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import $ from "jquery";
 import { HashLink } from "react-router-hash-link";
-import { useInView } from 'react-intersection-observer';
 
 const Navbar = () => {
   /*
