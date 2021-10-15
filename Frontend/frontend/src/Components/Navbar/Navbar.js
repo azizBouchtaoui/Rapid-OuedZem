@@ -13,6 +13,7 @@ const Navbar = () => {
   })
  */
 
+
   const [show, setShow] = useState(true);
   const [y, setY] = useState(window.scrollY);
   const handleNavigation = useCallback(
@@ -27,15 +28,15 @@ const Navbar = () => {
     },
     [y]
   );
-
   useEffect(() => {
     setY(window.scrollY);
     window.addEventListener("scroll", handleNavigation);
-
+    
     return () => {
       window.removeEventListener("scroll", handleNavigation);
     };
   }, [handleNavigation]);
+  
 
   function animation() {
     var tabsNewAnim = $("#navbarSupportedContent");
@@ -92,22 +93,26 @@ useEffect(()=>{
 const activeTab = () => {
   console.log(position)
   var returnValue =1
-  if((position*1000)>=0 && (position*1000)<= 300){
+  if((position*1000)>=0 && (position*1000)<= 305){
       returnValue=1;
+      animation();
   }
-  else if((position*1000)>303 && (position*1000)<= 763){
+  else if((position*1000)>305 && (position*1000)<= 770){
     returnValue= 2;
-  } else if((position*1000)>770 && (position*1000)<= 990){
+    animation();
+  } else if((position*1000)>770 && (position*1000)<= 996){
     returnValue= 3;
+    animation();
   }else if((position*1000)>996 && (position*1000)<= 1000){
     returnValue= 4;
+    animation();
   }
   return returnValue;
   }
 
 
   return (
-    <nav className={` ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
+    <nav className={` ${ show && "navbar navbar-expand-lg navbar-mainbg"} `}>
       <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo">
         Rapid OUEDZEM
       </HashLink>
