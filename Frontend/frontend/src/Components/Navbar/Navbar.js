@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import $ from "jquery";
 import { HashLink } from "react-router-hash-link";
+import { useInView } from 'react-intersection-observer';
+
 const Navbar = () => {
   /*
   const myRef = useRef()
@@ -75,6 +77,7 @@ const Navbar = () => {
   }, []);
  
 
+  /*
 
   
   const [position, setPosition] = useState();
@@ -111,7 +114,6 @@ function onScroll(event){
 
 
 
-/*
 function animationWithScroll() {
   var tabsNewAnim = $("#navbarSupportedContent");
   var activeItemNewAnim = tabsNewAnim.find(".active");
@@ -175,7 +177,34 @@ function animationWithScroll() {
 
 */
 
- 
+
+const [position, setPosition] = useState();
+const listenScroll = ()=>{
+  const window= document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = window /height
+  setPosition(scrolled)
+}
+
+useEffect(()=>{
+    window.addEventListener('scroll',listenScroll)
+})
+const activeTab = () => {
+  console.log(position)
+  var returnValue =1
+  if((position*1000)>=0 && (position*1000)<= 300){
+      returnValue=1;
+  }
+  else if((position*1000)>303 && (position*1000)<= 763){
+    returnValue= 2;
+  } else if((position*1000)>770 && (position*1000)<= 990){
+    returnValue= 3;
+  }else if((position*1000)>996 && (position*1000)<= 1000){
+    returnValue= 4;
+  }
+  return returnValue;
+  }
+
 
   return (
     <nav className={` ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
@@ -207,27 +236,28 @@ function animationWithScroll() {
             <div className="right"></div>
           </div>
 
-          <li className="nav-item active" id="a">
-            <HashLink  className="nav-link" smooth to="/#MainSection">
+          <li className={activeTab() === 1 ? "nav-item active" : "nav-item"} >
+            <HashLink  className="nav-link" smooth to="/#MainSection"     
+        >
               <i className="fas fa-tachometer-alt"></i>Home
             </HashLink>
           </li>
-          <li className="nav-item" id="b" >
+          <li className={activeTab() === 2 ? "nav-item active" : "nav-item"}   >
             <HashLink smooth to="/#Services" className="nav-link">
               <i className="far fa-clone"></i>Services
             </HashLink>
           </li>
-          <li className="nav-item" id="c">
+          <li className={activeTab() === 3 ? "nav-item active" : "nav-item"} >
             <HashLink smooth to="/testimonial" className="nav-link" exact>
               <i className="far fa-chart-bar"></i>Testimonial
             </HashLink>
           </li>
-          <li className="nav-item"id="d" >
+          <li className={activeTab() === 4 ? "nav-item active" : "nav-item"} >
             <HashLink smooth className="nav-link" to="/#About">
               <i className="far fa-copy"></i>Contact Us
             </HashLink>
           </li>
-          <li className="nav-item"id="e">
+          <li className={activeTab() === 5 ? "nav-item active" : "nav-item"}>
             <HashLink  smooth className="nav-link" to="/#About">
               <i className="far fa-address-book"></i>About
             </HashLink>
