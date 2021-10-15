@@ -91,7 +91,7 @@ useEffect(()=>{
     window.addEventListener('scroll',listenScroll)
 })
 const activeTab = () => {
-  console.log(position)
+ 
   var returnValue =1
   if((position*1000)>=0 && (position*1000)<= 305){
       returnValue=1;
