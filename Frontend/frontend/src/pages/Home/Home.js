@@ -10,7 +10,7 @@ import './Home.css';
  const Home = () => {
      return (
          < >
-        <MainSection/>
+        <MainSection   />
         <Cards/>
         <Services/>
         <Footer/>
