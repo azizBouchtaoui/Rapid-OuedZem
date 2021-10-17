@@ -84,11 +84,15 @@ const listenScroll = ()=>{
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = window /height
   setPosition(scrolled)
+
+  
 }
 
 useEffect(()=>{
     window.addEventListener('scroll',listenScroll)
 })
+
+
 /*
 
 const activeTab = () => {
