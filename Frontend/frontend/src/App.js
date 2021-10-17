@@ -10,7 +10,7 @@ import Reservation from "./pages/Reservation/ReservationForm";
 
 import Home from "./pages/Home/Home";
 
-import Testimonial from "./pages/Testimonial/Testsimonial";
+ 
 
 const App = () => {
   return (
@@ -24,9 +24,7 @@ const App = () => {
           <Route path="/Reservation" exact>
             <Reservation />
           </Route>
-          <Route path="/Testimonial" exact>
-            <Testimonial />
-          </Route>
+          
 
           <Redirect to="/" />
         </Switch>

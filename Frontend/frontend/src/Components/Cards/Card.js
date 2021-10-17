@@ -1,7 +1,7 @@
 import React from "react";
 import CardItem from "./CardItem/CardItem";
 import "./Card.css";
-const Cards = () => {
+const Destinations = () => {
   return (
     <div className="cards" id="Destinations">
       <h1> Découvrez ces destinations !</h1>
@@ -58,4 +58,4 @@ const Cards = () => {
     </div>
   );
 };
-export default Cards;
+export default Destinations;

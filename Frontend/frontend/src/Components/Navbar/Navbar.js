@@ -146,14 +146,14 @@ const activeTab = () => {
               <i className="fas fa-tachometer-alt"></i>Home
             </HashLink>
           </li>
-          <li className={activeTab() === 2 ? "nav-item active" : "nav-item"}   >
-            <HashLink smooth to="/#Services" className="nav-link">
-              <i className="far fa-clone"></i>Services
+          <li className={activeTab() === 2 ? "nav-item active" : "nav-item"} >
+            <HashLink smooth to="/#Destinations" className="nav-link" >
+              <i className="far fa-chart-bar"></i>Destinations
             </HashLink>
           </li>
-          <li className={activeTab() === 3 ? "nav-item active" : "nav-item"} >
-            <HashLink smooth to="/testimonial" className="nav-link" exact>
-              <i className="far fa-chart-bar"></i>Testimonial
+          <li className={activeTab() === 3 ? "nav-item active" : "nav-item"}   >
+            <HashLink smooth to="/#Services" className="nav-link">
+              <i className="far fa-clone"></i>Services
             </HashLink>
           </li>
           <li className={activeTab() === 4 ? "nav-item active" : "nav-item"} >
