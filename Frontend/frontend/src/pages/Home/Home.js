@@ -1,5 +1,5 @@
 
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import Cards from "../../Components/Cards/Card";
 import MainSection from "../../Components/MainSection/MainSection";
 import Footer from "../../Components/Footer/Footer"
@@ -9,31 +9,42 @@ import './Home.css';
 
  const Home = () => {
      
-    var  [inView, setInView] =  useState()
-    const [MainSection, setMainSection] = useState();
-    const [Destinations,setDestinations] =useState();
-    const [Service, setService] = useState();
-    const [Footer,setFooter] = useState();
+    var  [inView, setInView] =  useState("false")
+    var [MainSectionxx, setMainSection] = useState(false);
+    var [Destinationsxx,setDestinations] =useState(false);
+    var [Servicexx, setService] = useState(false);
+    var [Footerxx,setFooter] = useState(false);
     
-        function display(visible){
-            setInView(visible)
-            console.log('Inview:', inView)
-        }
-     return (
-          <>
-             <InView as="div" onChange={(inView, entry) => console.log('Inview:', inView)}>
-
-
-            <MainSection  />
-           </InView>
-           <InView as="div" onChange={(Destinations, entry) => console.log('Dest: ', Destinations)}>
-
-            <Cards/>
+    const ref = useRef();
+    function  Tot(){
         
-            </InView>
-            <Services/>
-            <Footer/>
 
+        console.log("MainSectionxx : "+MainSectionxx+" Destinationsxx : "+ Destinationsxx + " Servicexx : "+Servicexx + " Footerxx : "+Footerxx);
+    }
+     return (
+          < >
+             <InView as="div" onChange={() =>{setInView(1); console.log('Inview:', inView)}}>
+            <MainSection />
+
+
+            </InView>
+             <InView as="div" onChange={() =>{setInView(2); console.log('Inview:', inView)}}>
+           
+            <Cards/>
+         
+            </InView>
+
+             <InView as="div" onChange={() =>{setInView(3); console.log('Inview:', inView)}}>
+              
+            <Services />
+             
+             </InView>
+
+             <InView as="div" onChange={() =>{setInView(4); console.log('Inview:', inView)}}>
+          
+            <Footer  />
+        
+        </InView>
         </>
          
      )
