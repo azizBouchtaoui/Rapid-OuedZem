@@ -89,14 +89,17 @@ const listenScroll = ()=>{
 useEffect(()=>{
     window.addEventListener('scroll',listenScroll)
 })
+/*
+
 const activeTab = () => {
  
   var returnValue =1
-  if((position*1000)>=0 && (position*1000)<= 305){
+  console.log(position*1000)
+  if((position*1000)>=0 && (position*1000)<= 350){
       returnValue=1;
       animation();
   }
-  else if((position*1000)>305 && (position*1000)<= 770){
+  else if((position*1000)>355 && (position*1000)<= 770){
     returnValue= 2;
     animation();
   } else if((position*1000)>770 && (position*1000)<= 996){
@@ -108,7 +111,7 @@ const activeTab = () => {
   }
   return returnValue;
   }
-
+*/
 
   return (
     <nav className={` ${    "navbar navbar-expand-lg navbar-mainbg"} `}>
@@ -140,28 +143,28 @@ const activeTab = () => {
             <div className="right"></div>
           </div>
 
-          <li className={activeTab() === 1 ? "nav-item active" : "nav-item"} >
+          <li className=  "nav-item active"   >
             <HashLink  className="nav-link" smooth to="/#MainSection"     
         >
               <i className="fas fa-tachometer-alt"></i>Home
             </HashLink>
           </li>
-          <li className={activeTab() === 2 ? "nav-item active" : "nav-item"} >
+          <li className= "nav-item   "  >
             <HashLink smooth to="/#Destinations" className="nav-link" >
               <i className="far fa-chart-bar"></i>Destinations
             </HashLink>
           </li>
-          <li className={activeTab() === 3 ? "nav-item active" : "nav-item"}   >
+          <li className= "nav-item  "   >
             <HashLink smooth to="/#Services" className="nav-link">
               <i className="far fa-clone"></i>Services
             </HashLink>
           </li>
-          <li className={activeTab() === 4 ? "nav-item active" : "nav-item"} >
+          <li className= "nav-item  " >
             <HashLink smooth className="nav-link" to="/#About">
               <i className="far fa-copy"></i>Contact Us
             </HashLink>
           </li>
-          <li className={activeTab() === 5 ? "nav-item active" : "nav-item"}>
+          <li className= "nav-item  ">
             <HashLink  smooth className="nav-link" to="/#About">
               <i className="far fa-address-book"></i>About
             </HashLink>
