@@ -53,7 +53,7 @@ const Navbar = () => {
     $("#navbarSupportedContent").on("click", "li", function (e) {
       $("#navbarSupportedContent ul li").removeClass("active");
       $(this).addClass("active");
-      console.log(this)
+    //  console.log(this)
       var activeWidthNewAnimHeight = $(this).innerHeight();
       var activeWidthNewAnimWidth = $(this).innerWidth();
       var itemPosNewAnimTop = $(this).position();
@@ -111,7 +111,7 @@ const activeTab = () => {
 
 
   return (
-    <nav className={` ${ show && "navbar navbar-expand-lg navbar-mainbg"} `}>
+    <nav className={` ${    "navbar navbar-expand-lg navbar-mainbg"} `}>
       <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo">
         Rapid OUEDZEM
       </HashLink>
