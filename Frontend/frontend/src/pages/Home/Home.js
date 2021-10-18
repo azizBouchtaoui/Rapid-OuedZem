@@ -1,83 +1,58 @@
 
-import React, {useState, useRef,useEffect} from "react";
+import React, {useState,useEffect} from "react";
 import Cards from "../../Components/Cards/Card";
 import MainSection from "../../Components/MainSection/MainSection";
 import Footer from "../../Components/Footer/Footer"
 import Services from "../../Components/Services/Services"; 
-import { InView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 import './Home.css';
+import { ImDisplay } from "react-icons/im";
 
  const Home = () => {
      
-    var  [inView, setInView] =  useState( )
-
-
-    var [MainSectionxx, setMainSection] = useState(false);
-    var [Destinationsxx,setDestinations] =useState(false);
-    var [Servicexx, setService] = useState(false);
-    var [Footerxx,setFooter] = useState(false);
-    
-
-    const [height, setHeight] = useState(0)
-
-
-
-    const refa = useRef(null)
-    const refb = useRef(null)
-    const refc= useRef(null)
-    const refd= useRef(null)
-
-    useEffect(() => {
-       
-    })
-
-
      
-    function  Tit(){
-      if(MainSectionxx && !Destinationsxx && !Servicexx && !Footerxx){
-        console.log("Main")
-      }else if (MainSectionxx && Destinationsxx && !Servicexx && !Footerxx ){
-        console.log("Destination")
-      }else if(MainSectionxx && Destinationsxx && Servicexx && !Footerxx){
-        console.log("Service")
-      }else if(!MainSectionxx && !Destinationsxx && !Servicexx && Footerxx){
-        console.log("footer")
-      }
-
 
  
+     
+   
+ 
+   
+    var [section1Ref, section1InView] = useInView({ threshold: 0.5});
+    var [section2Ref, section2InView] = useInView({ threshold: 0.5 });
+    var [section3Ref, section3InView] = useInView({ threshold: 0.5 });
+
+     
+    const IsDisplay=()=> {
       
-    };
+      console.log(section1InView+" "+section2InView+" "+section3InView )
+        
+     }
+        
+      
     
-      useEffect(()=>{
-         
-          window.addEventListener('scroll',Tit)
-         
-      })
+    useEffect(() => {
+      window.addEventListener('scroll',IsDisplay)
+    })
      return (
           < >
-             <InView as="div"  ref={refa} onChange={(MainSectionxx) =>{setMainSection(MainSectionxx); }}>
-            <MainSection />
-
-
-            </InView>
-             <InView as="div" ref={refb} onChange={(Destinationsxx) =>{setDestinations(Destinationsxx); }}>
-           
-            <Cards/>
-         
-            </InView>
-
-             <InView as="div" ref={refc} onChange={(Servicexx) =>{setService(Servicexx);}}>
-              
-            <Services />
-             
-             </InView>
-
-             <InView as="div" ref={refd} onChange={(Footerxx) =>{setFooter(Footerxx);}}>
-          
-            <Footer  />
+          <section   ref={section1Ref}>
         
-        </InView>
+            <MainSection  />
+        </section>
+
+          <section   ref={section2Ref}>
+           <Cards  />
+        </section>
+         
+          <section   ref={section3Ref}>
+            
+              
+            <Services  />
+        </section>
+             
+           
+            <Footer  />
+       
         </>
          
      )
