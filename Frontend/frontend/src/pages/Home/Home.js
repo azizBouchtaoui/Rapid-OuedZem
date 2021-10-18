@@ -28,15 +28,24 @@ import './Home.css';
     const refd= useRef(null)
 
     useEffect(() => {
-      setHeight(refa.current.node.clientHeight)
-      console.log("hei : " +height)
+       
     })
 
 
      
     function  Tit(){
-        
-        console.log(refb.current.node.clientHeight)
+      if(MainSectionxx && !Destinationsxx && !Servicexx && !Footerxx){
+        console.log("Main")
+      }else if (MainSectionxx && Destinationsxx && !Servicexx && !Footerxx ){
+        console.log("Destination")
+      }else if(MainSectionxx && Destinationsxx && Servicexx && !Footerxx){
+        console.log("Service")
+      }else if(!MainSectionxx && !Destinationsxx && !Servicexx && Footerxx){
+        console.log("footer")
+      }
+
+
+ 
       
     };
     
@@ -47,24 +56,24 @@ import './Home.css';
       })
      return (
           < >
-             <InView as="div"  ref={refa} onChange={() =>{setInView(1); console.log('Inview:', inView)}}>
+             <InView as="div"  ref={refa} onChange={(MainSectionxx) =>{setMainSection(MainSectionxx); }}>
             <MainSection />
 
 
             </InView>
-             <InView as="div" ref={refb} onChange={() =>{setInView(2); console.log('Inview:', inView)}}>
+             <InView as="div" ref={refb} onChange={(Destinationsxx) =>{setDestinations(Destinationsxx); }}>
            
             <Cards/>
          
             </InView>
 
-             <InView as="div" ref={refc} onChange={() =>{setInView(3); console.log('Inview:', inView)}}>
+             <InView as="div" ref={refc} onChange={(Servicexx) =>{setService(Servicexx);}}>
               
             <Services />
              
              </InView>
 
-             <InView as="div" ref={refd} onChange={() =>{setInView(4); console.log('Inview:', inView)}}>
+             <InView as="div" ref={refd} onChange={(Footerxx) =>{setFooter(Footerxx);}}>
           
             <Footer  />
         
