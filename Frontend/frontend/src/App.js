@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,16 +13,23 @@ import Home from "./pages/Home/Home";
  
 
 const App = () => {
+  const [place, setPlace] = useState(1)
+ 
+ 
+
+
+
+
   return (
     <Router>
-      <Navbar />
+      <Navbar props={place}/>
       <main>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Home   />
           </Route>
           <Route path="/Reservation" exact>
-            <Reservation />
+            <Reservation   />
           </Route>
           
 

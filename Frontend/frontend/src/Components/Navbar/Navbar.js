@@ -3,7 +3,7 @@ import "./Navbar.css";
 import $ from "jquery";
 import { HashLink } from "react-router-hash-link";
 
-const Navbar = () => {
+const Navbar = (props) => {
   /*
   const myRef = useRef()
   useEffect(()=>{
@@ -12,7 +12,7 @@ const Navbar = () => {
   })
  */
 
-
+console.log(props)
   const [show, setShow] = useState(true);
   const [y, setY] = useState(window.scrollY);
   const handleNavigation = useCallback(

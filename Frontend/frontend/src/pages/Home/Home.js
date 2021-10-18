@@ -11,8 +11,7 @@ import { ImDisplay } from "react-icons/im";
  const Home = () => {
      
      
-
- 
+  
      
    
  
@@ -25,7 +24,7 @@ import { ImDisplay } from "react-icons/im";
     const IsDisplay=()=> {
       
       console.log(section1InView+" "+section2InView+" "+section3InView )
-        
+     
      }
         
       
@@ -33,15 +32,17 @@ import { ImDisplay } from "react-icons/im";
     useEffect(() => {
       window.addEventListener('scroll',IsDisplay)
     })
+
+     
      return (
           < >
           <section   ref={section1Ref}>
         
-            <MainSection  />
+            <MainSection   />
         </section>
 
           <section   ref={section2Ref}>
-           <Cards  />
+           <Cards   />
         </section>
          
           <section   ref={section3Ref}>
