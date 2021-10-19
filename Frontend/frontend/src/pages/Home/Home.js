@@ -6,24 +6,19 @@ import Footer from "../../Components/Footer/Footer"
 import Services from "../../Components/Services/Services"; 
 import { useInView } from 'react-intersection-observer';
 import './Home.css';
-import { ImDisplay } from "react-icons/im";
+import ThemeProvider from "../../Components/Navbar/test";
+import { SizeMe } from 'react-sizeme';
 
  const Home = () => {
-     
-     
   
-     
-   
- 
-   
-    var [section1Ref, section1InView] = useInView({ threshold: 0.5});
-    var [section2Ref, section2InView] = useInView({ threshold: 0.5 });
-    var [section3Ref, section3InView] = useInView({ threshold: 0.5 });
+    const [section1Ref, section1InView] = useInView({ threshold: 0.5});
+    const [section2Ref, section2InView] = useInView({ threshold: 0.5 });
+    const [section3Ref, section3InView] = useInView({ threshold: 0.5 });
 
      
     const IsDisplay=()=> {
       
-      console.log(section1InView+" "+section2InView+" "+section3InView )
+   //   console.log(section1InView+" "+section2InView+" "+section3InView )
      
      }
         
@@ -32,30 +27,34 @@ import { ImDisplay } from "react-icons/im";
     useEffect(() => {
       window.addEventListener('scroll',IsDisplay)
     })
-
+  
      
      return (
-          < >
-          <section   ref={section1Ref}>
-        
+      
+      
+<>
+ 
+   <section  id="MS" ref={section1Ref}>
+        <div className="ms"></div>
             <MainSection   />
-        </section>
-
-          <section   ref={section2Ref}>
-           <Cards   />
+        </section>  
+         
+          <section id="CRDS"  ref={section2Ref}>
+           <Cards  className="crds" />
         </section>
          
-          <section   ref={section3Ref}>
+          <section id="SRVS"   ref={section3Ref}>
             
               
-            <Services  />
-        </section>
+            <Services className="srvs" />
+        </section  >
              
-           
-            <Footer  />
-       
-        </>
-         
+           <section id="FTR">
+
+            <Footer  className="ftr" />
+           </section>
+ 
+         </>
      )
  }
  export default Home;

@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState,useContext, useRef } from "react";
 import "./Navbar.css";
 import $ from "jquery";
 import { HashLink } from "react-router-hash-link";
-
-const Navbar = (props) => {
+  
+const Navbar = ( ) => {
   /*
   const myRef = useRef()
   useEffect(()=>{
@@ -12,7 +12,7 @@ const Navbar = (props) => {
   })
  */
 
-console.log(props)
+ 
   const [show, setShow] = useState(true);
   const [y, setY] = useState(window.scrollY);
   const handleNavigation = useCallback(
@@ -76,7 +76,7 @@ console.log(props)
     });
   }, []);
  
-
+ 
 
 const [position, setPosition] = useState();
 const listenScroll = ()=>{
@@ -84,8 +84,13 @@ const listenScroll = ()=>{
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = window /height
   setPosition(scrolled)
+ /*
+console.log( "1 : "+$("#MS").find('ms').prevObject[0].childNodes[0].clientWidth)
+console.log("2 : "+ $("#CRDS").find('crds').prevObject[0].childNodes[0].clientWidth)
+console.log("3 : "+ $("#SRVS").find('srvs').prevObject[0].childNodes[0].clientWidth)
+console.log( "4 : "+$("#FTR").find('ftr').prevObject[0].childNodes[0].clientWidth)
 
-  
+ */ 
 }
 
 useEffect(()=>{
@@ -116,6 +121,10 @@ const activeTab = () => {
   return returnValue;
   }
 */
+
+
+
+
 
   return (
     <nav className={` ${    "navbar navbar-expand-lg navbar-mainbg"} `}>
