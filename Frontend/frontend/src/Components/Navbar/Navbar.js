@@ -2,7 +2,9 @@ import React, { useCallback, useEffect, useState,useContext, useRef } from "reac
 import "./Navbar.css";
 import $ from "jquery";
 import { HashLink } from "react-router-hash-link";
-  
+import {store, useGlobalState} from 'state-pool';
+ 
+import Home from "../../pages/Home/Home";
 const Navbar = ( ) => {
   /*
   const myRef = useRef()
@@ -76,22 +78,16 @@ const Navbar = ( ) => {
     });
   }, []);
  
- 
-
 const [position, setPosition] = useState();
 const listenScroll = ()=>{
   const window= document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = window /height
   setPosition(scrolled)
- /*
-console.log( "1 : "+$("#MS").find('ms').prevObject[0].childNodes[0].clientWidth)
-console.log("2 : "+ $("#CRDS").find('crds').prevObject[0].childNodes[0].clientWidth)
-console.log("3 : "+ $("#SRVS").find('srvs').prevObject[0].childNodes[0].clientWidth)
-console.log( "4 : "+$("#FTR").find('ftr').prevObject[0].childNodes[0].clientWidth)
-
- */ 
+  
+ 
 }
+
 
 useEffect(()=>{
     window.addEventListener('scroll',listenScroll)

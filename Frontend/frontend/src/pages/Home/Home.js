@@ -6,8 +6,8 @@ import Footer from "../../Components/Footer/Footer"
 import Services from "../../Components/Services/Services"; 
 import { useInView } from 'react-intersection-observer';
 import './Home.css';
-import ThemeProvider from "../../Components/Navbar/test";
-import { SizeMe } from 'react-sizeme';
+ 
+ 
 
  const Home = () => {
   
@@ -16,29 +16,20 @@ import { SizeMe } from 'react-sizeme';
     const [section3Ref, section3InView] = useInView({ threshold: 0.5 });
 
      
-    const IsDisplay=()=> {
-      
-   //   console.log(section1InView+" "+section2InView+" "+section3InView )
-     
-     }
-        
-      
-    
-    useEffect(() => {
-      window.addEventListener('scroll',IsDisplay)
-    })
-  
+    const LanguageContext = React.createContext('en')
+    const language = 'fr'
+
      
      return (
       
       
 <>
- 
+     
+   
    <section  id="MS" ref={section1Ref}>
-        <div className="ms"></div>
+        
             <MainSection   />
-        </section>  
-         
+        </section>   
           <section id="CRDS"  ref={section2Ref}>
            <Cards  className="crds" />
         </section>
