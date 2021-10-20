@@ -78,29 +78,65 @@ const Navbar = ( ) => {
     });
   }, []);
  
-const [position, setPosition] = useState();
+var [position, setPosition] = useState();
 const listenScroll = ()=>{
-  const window= document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = window /height
-  setPosition(scrolled)
   var mainSectionComp = $("#MainSection");
   var destinationsComp = $("#Destinations");
   var serviceComp = $("#Services");
   var footerComp = $("#About");
 
+
+
  
  
+ /*
  console.log("1 : " +mainSectionComp[0].clientHeight)
  console.log("2 : "+destinationsComp[0].clientHeight) 
  console.log("3 : " +serviceComp[0].clientHeight)
  console.log("4 : "+footerComp[0].clientHeight)
+ */
+//console.log("posiiton : " +position*1000)
+//console.log("11 : "+document.documentElement.scrollHeight )
+
+//console.log("22 : "+document.documentElement.clientHeight+". 33 : "+destinationsComp[0].clientHeight)
+
 }
+ 
 
 
+var returnValue =1
+ const  activeTab = useCallback (()=>   {
+
+  var destinationsComp = $("#Destinations");
+
+  var window= document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - destinationsComp[0].clientHeight;
+  var scrolled = window /height
+  setPosition(scrolled)
+
+ 
+    
+  if((scrolled*1000)>=0 && (scrolled*1000)<= 350){
+     // returnValue=1;
+     console.log("is Center ")
+  }
+  else if((position*1000)>355 && (position*1000)<= 770){
+    //returnValue= 2;
+  
+  } else if((position*1000)>770 && (position*1000)<= 996){
+    //returnValue= 3;
+   
+  }else if((position*1000)>996 && (position*1000)<= 1000){
+   // returnValue= 4;
+  
+  }
+   
+  
+  },[returnValue]);
 useEffect(()=>{
-    window.addEventListener('scroll',listenScroll)
-})
+    window.addEventListener('scroll',activeTab)
+}, [activeTab])
+ 
 
 
 /*
