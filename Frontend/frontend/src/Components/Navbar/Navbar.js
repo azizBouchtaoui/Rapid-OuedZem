@@ -78,61 +78,35 @@ const Navbar = ( ) => {
     });
   }, []);
  
-var [position, setPosition] = useState();
-const listenScroll = ()=>{
+
+
+var [returnValue, setReturnValue] = useState(1);
+ 
+ const  activeTab = useCallback (()=>   {
+
   var mainSectionComp = $("#MainSection");
   var destinationsComp = $("#Destinations");
   var serviceComp = $("#Services");
   var footerComp = $("#About");
 
-
-
- 
- 
- /*
- console.log("1 : " +mainSectionComp[0].clientHeight)
- console.log("2 : "+destinationsComp[0].clientHeight) 
- console.log("3 : " +serviceComp[0].clientHeight)
- console.log("4 : "+footerComp[0].clientHeight)
- */
-//console.log("posiiton : " +position*1000)
-//console.log("11 : "+document.documentElement.scrollHeight )
-
-//console.log("22 : "+document.documentElement.clientHeight+". 33 : "+destinationsComp[0].clientHeight)
-
-}
- 
-
-
-var returnValue =1
- const  activeTab = useCallback (()=>   {
-
-  var destinationsComp = $("#Destinations");
-
-  var window= document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - destinationsComp[0].clientHeight;
-  var scrolled = window /height
-  setPosition(scrolled)
-
- 
-    
-  if((scrolled*1000)>=0 && (scrolled*1000)<= 350){
-     // returnValue=1;
-     console.log("is Center ")
+  
+  if(document.documentElement.scrollTop >=0 &&  document.documentElement.scrollTop<=mainSectionComp[0].clientHeight){
+    setReturnValue(1);
+     animation()
   }
-  else if((position*1000)>355 && (position*1000)<= 770){
-    //returnValue= 2;
-  
-  } else if((position*1000)>770 && (position*1000)<= 996){
-    //returnValue= 3;
-   
-  }else if((position*1000)>996 && (position*1000)<= 1000){
-   // returnValue= 4;
-  
+  else if(   document.documentElement.scrollTop   > mainSectionComp[0].clientHeight && document.documentElement.scrollTop <= destinationsComp[0].clientHeight+mainSectionComp[0].clientHeight-200){
+    setReturnValue(2);
+    animation()
+  } else if(document.documentElement.scrollTop >   destinationsComp[0].clientHeight+mainSectionComp[0].clientHeight-200 && document.documentElement.scrollTop <= serviceComp[0].clientHeight+destinationsComp[0].clientHeight+mainSectionComp[0].clientHeight-135 ){
+    setReturnValue(3);
+    animation()
+  }else if(document.documentElement.scrollTop> serviceComp[0].clientHeight+destinationsComp[0].clientHeight+mainSectionComp[0].clientHeight-135 ){
+    setReturnValue(4);
+    animation()
   }
-   
+
   
-  },[returnValue]);
+  },[]);
 useEffect(()=>{
     window.addEventListener('scroll',activeTab)
 }, [activeTab])
@@ -197,23 +171,23 @@ const activeTab = () => {
             <div className="right"></div>
           </div>
 
-          <li className=  "nav-item active"   >
+          <li className= {(returnValue===1) ?  "nav-item active"  :  "nav-item" }  >
             <HashLink  className="nav-link" smooth to="/#MainSection"     
         >
               <i className="fas fa-tachometer-alt"></i>Home
             </HashLink>
           </li>
-          <li className= "nav-item   "  >
+          <li className= {(returnValue===2) ?  "nav-item active"  :  "nav-item" }  >
             <HashLink smooth to="/#Destinations" className="nav-link" >
               <i className="far fa-chart-bar"></i>Destinations
             </HashLink>
           </li>
-          <li className= "nav-item  "   >
+          <li className= {(returnValue===3) ?  "nav-item active"  :  "nav-item" }   >
             <HashLink smooth to="/#Services" className="nav-link">
               <i className="far fa-clone"></i>Services
             </HashLink>
           </li>
-          <li className= "nav-item  " >
+          <li className={(returnValue===4) ?  "nav-item active"  :  "nav-item" } >
             <HashLink smooth className="nav-link" to="/#About">
               <i className="far fa-copy"></i>Contact Us
             </HashLink>
