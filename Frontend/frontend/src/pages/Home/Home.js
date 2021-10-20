@@ -11,30 +11,22 @@ import './Home.css';
 
  const Home = () => {
   
-    const [section1Ref, section1InView] = useInView({ threshold: 0.5});
-    const [section2Ref, section2InView] = useInView({ threshold: 0.5 });
-    const [section3Ref, section3InView] = useInView({ threshold: 0.5 });
-
-     
-    const LanguageContext = React.createContext('en')
-    const language = 'fr'
-
-     
+  
      return (
       
       
 <>
      
    
-   <section  id="MS" ref={section1Ref}>
+   <section  id="MS"  >
         
             <MainSection   />
         </section>   
-          <section id="CRDS"  ref={section2Ref}>
+          <section id="CRDS"  >
            <Cards  className="crds" />
         </section>
          
-          <section id="SRVS"   ref={section3Ref}>
+          <section id="SRVS"   >
             
               
             <Services className="srvs" />

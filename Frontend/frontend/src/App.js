@@ -29,8 +29,6 @@ const App = () => {
           <Route path="/Reservation" exact>
             <Reservation   />
           </Route>
-          
-
           <Redirect to="/" />
         </Switch>
       </main>

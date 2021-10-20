@@ -84,8 +84,17 @@ const listenScroll = ()=>{
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = window /height
   setPosition(scrolled)
-  
+  var mainSectionComp = $("#MainSection");
+  var destinationsComp = $("#Destinations");
+  var serviceComp = $("#Services");
+  var footerComp = $("#About");
+
  
+ 
+ console.log("1 : " +mainSectionComp[0].clientHeight)
+ console.log("2 : "+destinationsComp[0].clientHeight) 
+ console.log("3 : " +serviceComp[0].clientHeight)
+ console.log("4 : "+footerComp[0].clientHeight)
 }
 
 
