@@ -113,12 +113,6 @@ useEffect(()=>{
 }, [activeTab])
  
 
-
-
-
-
-
-
   return (
     <nav className={` ${    "navbar navbar-expand-lg navbar-mainbg"} `}>
       <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo">
