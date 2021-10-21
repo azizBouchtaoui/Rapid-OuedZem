@@ -1,0 +1,84 @@
+body{
+    margin: 100;
+    background: #833ab4; 
+    background: -webkit-linear-gradient(
+      to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4
+    ); 
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    font-family: "Oxygen";
+    padding: 0 30px 30px 30px;
+}
+.test{
+    background: inherit;
+    padding: 20px 50px;
+    margin: 100px 20px;
+    box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 3px 1px -2px rgb(0 0 0 / 12%);
+    width: 50%;
+}
+
+.circle{
+    width:29px;
+    height: 29px;
+    line-height: 25px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+ .stepWrapper {
+    display:flex;
+     margin-bottom: 20px;
+
+ }
+ .stepBlock .circleWrapper{
+     padding : 0px 20px;
+     position: relative;
+
+ }
+ .selected .circle {
+     color:black;
+     background-color: white;
+     border-color: green;
+
+ }
+
+ .stepBlock:not(:last-child) > .circleWrapper::after{
+    content: "";
+    width: 100%;
+    height:2px;
+    position: absolute;
+    top:0px;
+    bottom: 0px;
+    background-color: green;
+    margin: auto;
+    z-index: -1;
+ }
+
+ .stepBlock:not(:last-child) > .circleWrapper::after{
+    height:3px;
+    opacity: 1;
+ }
+  .stepBlock:not(:last-child).selected > .circleWrapper::after , .stepBlock:not(:last-child) > .circleWrapper::after{
+    height:2px;
+    opacity: 0.3;
+
+}
+
+
+ .primaryButton{
+     padding: 10px 25px;
+     background-color:green;
+     border: none;
+     margin: 10px;
+     color: white;
+     border-radius: 4px;
+     cursor: pointer;
+ }

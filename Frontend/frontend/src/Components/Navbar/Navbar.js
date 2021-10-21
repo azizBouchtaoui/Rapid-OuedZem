@@ -78,7 +78,7 @@ const Navbar = ( ) => {
       }, 500);
     });
   }, []);
- 
+
 
 
 var [returnValue, setReturnValue] = useState(1);

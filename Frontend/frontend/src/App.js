@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Reservation from "./pages/Reservation/ReservationForm";
 
 import Home from "./pages/Home/Home";
+import Form from "./pages/Form/Form";
 
  
 
@@ -28,6 +29,9 @@ const App = () => {
           </Route>
           <Route path="/Reservation" exact>
             <Reservation   />
+          </Route> 
+          <Route path="/Form" exact>
+            <Form />
           </Route>
           <Redirect to="/" />
         </Switch>
