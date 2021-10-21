@@ -114,29 +114,6 @@ useEffect(()=>{
  
 
 
-/*
-
-const activeTab = () => {
- 
-  var returnValue =1
-  console.log(position*1000)
-  if((position*1000)>=0 && (position*1000)<= 350){
-      returnValue=1;
-      animation();
-  }
-  else if((position*1000)>355 && (position*1000)<= 770){
-    returnValue= 2;
-    animation();
-  } else if((position*1000)>770 && (position*1000)<= 996){
-    returnValue= 3;
-    animation();
-  }else if((position*1000)>996 && (position*1000)<= 1000){
-    returnValue= 4;
-    animation();
-  }
-  return returnValue;
-  }
-*/
 
 
 
