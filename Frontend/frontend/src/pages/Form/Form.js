@@ -32,8 +32,10 @@ import StepNavigation from './StepNavigation/stepNavigation';
                 </div>) : ('') }
                 <div className="bar_Bottons">
 
-                    {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButton" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
-                    {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButton" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
+                    {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButtonPrv" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
+                    {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButtonNext" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
+                    {(currentStep==4 ) ?(   <button className="primaryButtonSubmit"  > Submit</button>):('')} 
+                    
                 </div>
                 </div>
              

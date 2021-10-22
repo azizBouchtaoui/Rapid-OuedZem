@@ -82,16 +82,38 @@ body{
     width: 120px;
 }
 .bar_Bottons{
-    bottom: -55px;
+    
     
     position: relative;
 
 }
 
- .primaryButton{
+ .primaryButtonPrv{
      padding: 10px 25px;
-     
+     position: relative;
      background-color:green;
+     border: none;
+     margin: 10px;
+     color: white;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ .primaryButtonNext{
+     padding: 10px 25px;
+     background-color:green;
+     position: relative;
+     float: right;
+     border: none;
+     margin: 10px;
+     color: white;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+  .primaryButtonSubmit{
+     padding: 10px 25px;
+     background-color:green;
+     position: relative;
+     float: right;
      border: none;
      margin: 10px;
      color: white;
