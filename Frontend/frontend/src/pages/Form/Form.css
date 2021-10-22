@@ -81,7 +81,12 @@ body{
     opacity: 0.3;
     width: 120px;
 }
+.bar_Bottons{
+    bottom: -55px;
+    
+    position: relative;
 
+}
 
  .primaryButton{
      padding: 10px 25px;
