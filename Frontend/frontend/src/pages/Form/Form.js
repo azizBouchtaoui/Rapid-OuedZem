@@ -12,28 +12,31 @@ import StepNavigation from './StepNavigation/stepNavigation';
     return(
         <div className="test">
 
-        <div style={{ background: "inherit",padding:'20px 50px',margin:'10px 20px' }}>
+        <div style={{  }}>
         <div className='step-progress'>
              <StepNavigation labelArray={labelArray} 
              currentStep={currentStep}
              updateStep={updateStep}>
+
                  
                   </StepNavigation>
                 {(currentStep===1)? (
                 <div>
                     first
                 </div>): (currentStep === 2)? (<div>
-                    Second 
+                    Second  
                 </div>) : (currentStep === 3)? (<div>
                     Third 
                 </div>) :  (currentStep === 4)? (<div>
                     Forth 
                 </div>) : ('') }
-                
+                <div>
+
+                    {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButton" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
+                    {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButton" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
+                </div>
+                </div>
              
-            {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButton" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
-            {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButton" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
-        </div>
              
         </div>
         </div>

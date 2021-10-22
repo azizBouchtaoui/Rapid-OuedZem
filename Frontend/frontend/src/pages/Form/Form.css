@@ -9,14 +9,20 @@ body{
     ); 
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     font-family: "Oxygen";
-    padding: 0 30px 30px 30px;
+     
 }
 .test{
     background: inherit;
-    padding: 20px 50px;
+    
     margin: 100px 20px;
     box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 3px 1px -2px rgb(0 0 0 / 12%);
-    width: 50%;
+    width: 450px;
+    height: 200px;
+}
+
+
+.step-progress{
+   
 }
 
 .circle{
@@ -35,11 +41,13 @@ body{
 }
  .stepWrapper {
     display:flex;
-     margin-bottom: 20px;
+    margin-bottom: 20px;
+   
+    
 
  }
  .stepBlock .circleWrapper{
-     padding : 0px 20px;
+     padding : 5px 40px;
      position: relative;
 
  }
@@ -65,16 +73,19 @@ body{
  .stepBlock:not(:last-child) > .circleWrapper::after{
     height:3px;
     opacity: 1;
+   
+
  }
   .stepBlock:not(:last-child).selected > .circleWrapper::after , .stepBlock:not(:last-child) > .circleWrapper::after{
     height:2px;
     opacity: 0.3;
-
+    width: 120px;
 }
 
 
  .primaryButton{
      padding: 10px 25px;
+     
      background-color:green;
      border: none;
      margin: 10px;
