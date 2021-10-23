@@ -1,6 +1,6 @@
-body{
-    margin: 100;
-    background: #833ab4; 
+.Box{
+     margin-top: 200px;
+   
     background: -webkit-linear-gradient(
       to right,
       #fcb045,
@@ -9,15 +9,19 @@ body{
     ); 
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     font-family: "Oxygen";
-     
+    width: 500px;
+    height: 250px;
+    align-items: center;
+    position: fixed;
 }
-.test{
+.UnderBox{
     background: inherit;
-    
-    margin: 100px 20px;
+    position: fixed;
+    margin: 20px;
     box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 3px 1px -2px rgb(0 0 0 / 12%);
     width: 450px;
     height: 200px;
+    border-radius:10px;
 }
 
 
