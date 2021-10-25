@@ -1,9 +1,9 @@
 import React, { useState } from 'react';  
  import './Form.css'
 import StepNavigation from './StepNavigation/stepNavigation';
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker,{ utils } from "react-modern-calendar-datepicker";
-
+ 
+import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
+import DatePicker ,{ utils }from '@hassanmojab/react-modern-calendar-datepicker';
 
 
 const myCustomLocale = {
@@ -112,7 +112,7 @@ const myCustomLocale = {
     const handleSubmitForm = (event )=>{
       event.preventDefault();
       event.stopPropagation();
-      console.log( "month :"+selectedDay.month+" day: "+ selectedDay.day+" year : "+selectedDay.year )
+      console.log( "month :"+selectedDay.month+" day: "+ selectedDay.day+" year : "+selectedDay.year)
     }
     
     return(
@@ -135,7 +135,7 @@ const myCustomLocale = {
                      className=" DatePicker___input"
                        minimumDate={utils().getToday()}
                        value={selectedDay}
-                        
+                       onChange={value=>setSelectedDay(value)}
                        locale={myCustomLocale} // custom locale object
                         
                     />
