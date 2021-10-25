@@ -110,13 +110,13 @@ const myCustomLocale = {
     }
     const [selectedDay, setSelectedDay] = useState(utils().getToday());
     const handleSubmitForm = (event )=>{
-      console.log("date is :"+selectedDay)
+      event.preventDefault();
+      event.stopPropagation();
+      console.log( "month :"+selectedDay.month+" day: "+ selectedDay.day+" year : "+selectedDay.year )
     }
-    const handleChange =()=>{
-      
-    }
+    
     return(
-      <form onSubmit={event => this.handleSubmitForm(event)}>
+      <form onSubmit={(e) =>  handleSubmitForm(e)}>
         <div className="Box">
 
         <div className="UnderBox">
@@ -135,7 +135,7 @@ const myCustomLocale = {
                      className=" DatePicker___input"
                        minimumDate={utils().getToday()}
                        value={selectedDay}
-                       onChange={setSelectedDay}
+                        
                        locale={myCustomLocale} // custom locale object
                         
                     />
@@ -150,7 +150,7 @@ const myCustomLocale = {
 
                     {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButtonPrv" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
                     {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButtonNext" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
-                    {(currentStep==4 ) ?(   <button className="primaryButtonSubmit"  > Submit</button>):('')} 
+                    {(currentStep==4 ) ?(   <button className="primaryButtonSubmit" > Submit</button>):('')} 
                     
                 </div>
                  
