@@ -109,13 +109,19 @@ const myCustomLocale = {
         UpdateCurrentStep(step)
     }
     const [selectedDay, setSelectedDay] = useState(utils().getToday());
-
+    const handleSubmitForm = (event )=>{
+      console.log("date is :"+selectedDay)
+    }
+    const handleChange =()=>{
+      
+    }
     return(
+      <form onSubmit={event => this.handleSubmitForm(event)}>
         <div className="Box">
 
         <div className="UnderBox">
 
-        <div >
+    
         <div className='step-progress'>
              <StepNavigation labelArray={labelArray} 
              currentStep={currentStep}
@@ -147,12 +153,13 @@ const myCustomLocale = {
                     {(currentStep==4 ) ?(   <button className="primaryButtonSubmit"  > Submit</button>):('')} 
                     
                 </div>
-                </div>
+                 
              
              
         </div>
         </div>
-                    </div>
+                    </div>  
+                    </form>
         )
 }
 

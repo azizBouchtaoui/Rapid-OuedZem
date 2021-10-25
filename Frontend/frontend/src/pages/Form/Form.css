@@ -1,152 +1,127 @@
-.Box{
-     margin-top: 200px;
-   
-    background: -webkit-linear-gradient(
-      to right,
-      #fcb045,
-      #fd1d1d,
-      #833ab4
-    ); 
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-    font-family: "Oxygen";
-    width: 500px;
-    height: 250px;
-    align-items: center;
-    position: fixed;
+.Box {
+  margin-top: 200px;
+
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  font-family: "Oxygen";
+  width: 500px;
+  height: 250px;
+  align-items: center;
+  position: fixed;
 }
-.UnderBox{
-    background: inherit;
-    position: fixed;
-    margin: 20px;
-    box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 3px 1px -2px rgb(0 0 0 / 12%);
-    width: 450px;
-    height: 200px;
-    border-radius:10px;
+.UnderBox {
+  background: inherit;
+  position: fixed;
+  margin: 20px;
+  box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%),
+    0px 3px 1px -2px rgb(0 0 0 / 12%);
+  width: 450px;
+  height: 200px;
+  border-radius: 10px;
 }
 
-
-.step-progress{
-   
+.step-progress {
 }
 
-.circle{
-    width:29px;
-    height: 29px;
-    line-height: 25px;
-    text-align: center;
-    background-color: green;
-    color: white;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    cursor: pointer;
-    -moz-background-clip: padding-box;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
+.circle {
+  width: 29px;
+  height: 29px;
+  line-height: 25px;
+  text-align: center;
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
- .stepWrapper {
-    display:flex;
-    margin-bottom: 20px;
-   
-    
-
- }
- .stepBlock .circleWrapper{
-     padding : 5px 40px;
-     position: relative;
-
- }
- .selected .circle {
-     color:black;
-     background-color: white;
-     border-color: green;
-
- }
-
- .stepBlock:not(:last-child) > .circleWrapper::after{
-    content: "";
-    width: 100%;
-    height:2px;
-    position: absolute;
-    top:0px;
-    bottom: 0px;
-    background-color: green;
-    margin: auto;
-    z-index: -1;
- }
-
- .stepBlock:not(:last-child) > .circleWrapper::after{
-    height:3px;
-    opacity: 1;
-   
-
- }
-  .stepBlock:not(:last-child).selected > .circleWrapper::after , .stepBlock:not(:last-child) > .circleWrapper::after{
-    height:2px;
-    opacity: 0.3;
-    width: 120px;
+.stepWrapper {
+  display: flex;
+  margin-bottom: 20px;
 }
-.bar_Bottons{
-    
-    
-    position: relative;
-
+.stepBlock .circleWrapper {
+  padding: 5px 40px;
+  position: relative;
+}
+.selected .circle {
+  color: black;
+  background-color: white;
+  border-color: green;
 }
 
- .primaryButtonPrv{
-     padding: 10px 25px;
-     position: relative;
-     background-color:green;
-     border: none;
-     margin: 10px;
-     color: white;
-     border-radius: 4px;
-     cursor: pointer;
- }
- .primaryButtonNext{
-     padding: 10px 25px;
-     background-color:green;
-     position: relative;
-     float: right;
-     border: none;
-     margin: 10px;
-     color: white;
-     border-radius: 4px;
-     cursor: pointer;
- }
-  .primaryButtonSubmit{
-     padding: 10px 25px;
-     background-color:green;
-     position: relative;
-     float: right;
-     border: none;
-     margin: 10px;
-     color: white;
-     border-radius: 4px;
-     cursor: pointer;
- }
-
-
- .FirstStep{
-    text-align: center;
- }
-.DatePicker {
-  
-     
-      
-     
-     
+.stepBlock:not(:last-child) > .circleWrapper::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  background-color: green;
+  margin: auto;
+  z-index: -1;
 }
-.DatePicker > .DatePicker__input { 
-    font-family: 'Trebuchet MS', sans-serif !important;
-   
-    text-align: center !important;
-        padding :  1rem 1.5rem !important;
-        font-size: 1.5rem !important;
-        border:  1px solid #24a500  !important;
-        border-radius: 100px !important;
-        box-shadow:  0 1.5rem 2rem rgba(156, 136, 255, 0.2) !important;
-        color: #008000 !important;
-        outline: none !important;
-    
+
+.stepBlock:not(:last-child) > .circleWrapper::after {
+  height: 3px;
+  opacity: 1;
+}
+.stepBlock:not(:last-child).selected > .circleWrapper::after,
+.stepBlock:not(:last-child) > .circleWrapper::after {
+  height: 2px;
+  opacity: 0.3;
+  width: 120px;
+}
+.bar_Bottons {
+  position: relative;
+}
+
+.primaryButtonPrv {
+  padding: 10px 25px;
+  position: relative;
+  background-color: green;
+  border: none;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer; 
+}
+.primaryButtonNext {
+  padding: 10px 25px;
+  background-color: green;
+  position: relative;
+  float: right;
+  border: none;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.primaryButtonSubmit {
+  padding: 10px 25px;
+  background-color: green;
+  position: relative;
+  float: right;
+  border: none;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.FirstStep {
+  text-align: center;
 }
  
+.DatePicker > .DatePicker__input {
+  font-family: "Trebuchet MS", sans-serif !important;
+  text-align: center !important;
+  padding: 1rem 1.5rem !important;
+  font-size: 1.5rem !important;
+  border: 1px solid #24a500 !important;
+  border-radius: 100px !important;
+  box-shadow: 0 1.5rem 2rem rgba(156, 136, 255, 0.2) !important;
+  color: #008000 !important;
+  outline: none !important;
+}
