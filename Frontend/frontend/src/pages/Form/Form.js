@@ -2,8 +2,8 @@ import React, { useState } from 'react';
  import './Form.css'
 import StepNavigation from './StepNavigation/stepNavigation';
  
-import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
-import DatePicker ,{ utils }from '@hassanmojab/react-modern-calendar-datepicker';
+import './DatePicker.css';
+import DatePicker ,{ utils } from 'norama-react-modern-calendar-datepicker';
 
 
 const myCustomLocale = {
@@ -23,7 +23,7 @@ const myCustomLocale = {
     'Diciembre',
     ],
     
-    // week days by order
+    // week days by order 
     weekDays: [
       {
         name: 'Domingo', // used for accessibility 
@@ -150,7 +150,7 @@ const myCustomLocale = {
 
                     {(currentStep > 1 && currentStep < 5)?(  <button className="primaryButtonPrv" onClick={() => updateStep(currentStep-1)}> Previous Step</button>): ('')} 
                     {(currentStep>=1 && currentStep <4) ?(   <button className="primaryButtonNext" onClick={() => updateStep(currentStep+1)}> Next Step</button>):('')} 
-                    {(currentStep==4 ) ?(   <button className="primaryButtonSubmit" > Submit</button>):('')} 
+                    {(currentStep===4 ) ?(   <button className="primaryButtonSubmit" > Submit</button>):('')} 
                     
                 </div>
                  
