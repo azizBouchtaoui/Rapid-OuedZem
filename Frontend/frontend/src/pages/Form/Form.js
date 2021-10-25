@@ -9,18 +9,18 @@ import DatePicker,{ utils } from "react-modern-calendar-datepicker";
 const myCustomLocale = {
     // months list by order
     months: [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre',
     ],
     
     // week days by order
@@ -81,18 +81,15 @@ const myCustomLocale = {
     },
   
     // texts in the date picker
-    nextMonth: 'Next Month',
-    previousMonth: 'Previous Month',
-    openMonthSelector: 'Open Month Selector',
-    openYearSelector: 'Open Year Selector',
-    closeMonthSelector: 'Close Month Selector',
-    closeYearSelector: 'Close Year Selector',
-    defaultPlaceholder: 'Select...',
+    nextMonth: 'Próximo Mes',
+    previousMonth: 'Mes Anterior',
+    openMonthSelector: 'Selector de Mes Abierto',
+    openYearSelector: 'Selector de Año Abierto',
+    closeMonthSelector: 'Cerrar Selector de Mes',
+    closeYearSelector: 'Selector de Año Cerrado',
+    defaultPlaceholder: 'Seleccione...',
   
-    // for input range value
-    from: 'from',
-    to: 'to',
-  
+    
   
     // used for input value when multi dates are selected
     digitSeparator: ',',
@@ -111,14 +108,14 @@ const myCustomLocale = {
 
         UpdateCurrentStep(step)
     }
-    const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedDay, setSelectedDay] = useState(utils().getToday());
 
     return(
         <div className="Box">
 
         <div className="UnderBox">
 
-        <div style={{  }}>
+        <div >
         <div className='step-progress'>
              <StepNavigation labelArray={labelArray} 
              currentStep={currentStep}
@@ -127,13 +124,14 @@ const myCustomLocale = {
                  
                   </StepNavigation>
                 {(currentStep===1)? (
-                    <div>
-                     <DatePicker
+                    <div className="FirstStep">
+                     <DatePicker  
+                     className=" DatePicker___input"
                        minimumDate={utils().getToday()}
-                    value={selectedDay}
-                    onChange={setSelectedDay}
-                     
-                    locale="en" // add this
+                       value={selectedDay}
+                       onChange={setSelectedDay}
+                       locale={myCustomLocale} // custom locale object
+                        
                     />
                 </div>): (currentStep === 2)? (<div>
                     Second  

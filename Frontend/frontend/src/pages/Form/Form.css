@@ -124,3 +124,29 @@
      border-radius: 4px;
      cursor: pointer;
  }
+
+
+ .FirstStep{
+    text-align: center;
+ }
+.DatePicker {
+  
+     
+      
+     
+     
+}
+.DatePicker > .DatePicker__input { 
+    font-family: 'Trebuchet MS', sans-serif !important;
+   
+    text-align: center !important;
+        padding :  1rem 1.5rem !important;
+        font-size: 1.5rem !important;
+        border:  1px solid #24a500  !important;
+        border-radius: 100px !important;
+        box-shadow:  0 1.5rem 2rem rgba(156, 136, 255, 0.2) !important;
+        color: #008000 !important;
+        outline: none !important;
+    
+}
+ 
