@@ -74,18 +74,23 @@
   width: 120px;
 }
 .bar_Bottons {
-  position: relative;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  
+   
 }
 
 .primaryButtonPrv {
-  padding: 10px 25px;
   position: relative;
+  padding: 10px 25px;
   background-color: green;
   border: none;
   margin: 10px;
   color: white;
   border-radius: 4px;
   cursor: pointer; 
+  bottom: 0;
 }
 .primaryButtonNext {
   padding: 10px 25px;
@@ -97,6 +102,7 @@
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  bottom: 0;
 }
 .primaryButtonSubmit {
   padding: 10px 25px;
