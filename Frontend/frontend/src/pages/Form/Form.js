@@ -4,6 +4,8 @@ import StepNavigation from "./StepNavigation/stepNavigation";
 
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
+import Switch from "react-switch";
+
 
 const myCustomLocale = {
   // months list by order
@@ -98,9 +100,27 @@ const myCustomLocale = {
   isRtl: false,
 };
 
+
+
+
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+  const  handleChange= (checked) =>{
+    console.log(checked)
+    if(checked === "1"){
+      setChecked1(false)
+    }else if(checked ==="2"){
+      setChecked2(true)
+    }else if(checked === "3"){
+     setChecked3(true)
+    }
+  }
+
+  
   function updateStep(step) {
     UpdateCurrentStep(step);
   }
@@ -139,7 +159,17 @@ const Form = () => {
                 />
               </div>
             ) : currentStep === 2 ? (
-              <div>Second</div>
+              <div>
+                <div className="ScondSteplabel">
+                ¿Qué tan lejos te estás moviendo?
+                </div>
+                <label>
+                <span>Switch with default style</span>
+                <Switch onChange={handleChange("1")} checked={checked1} />
+                <Switch onChange={handleChange("2")} checked={checked2} />
+                <Switch onChange={handleChange("3")} checked={checked3} />
+              </label>
+              </div>
             ) : currentStep === 3 ? (
               <div>Third</div>
             ) : currentStep === 4 ? (
