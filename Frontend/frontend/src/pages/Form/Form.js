@@ -4,7 +4,7 @@ import StepNavigation from "./StepNavigation/stepNavigation";
 
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
-import Switch from "react-switch";
+import Switch from "./Button/Button";
 
 
 const myCustomLocale = {
@@ -154,6 +154,7 @@ function  handleChange3 (checked) {
         selectedDay.year
     );
   };
+  const [value, setValue] = React.useState(false);
 
   return (
     <form onSubmit={(e) => handleSubmitForm(e)}>
@@ -179,13 +180,26 @@ function  handleChange3 (checked) {
               <div>
                 <div className="ScondSteplabel">
                 ¿Qué tan lejos te estás moviendo?
-                </div>
+                 </div>
                 <label>
-                <span>Switch with default style</span>
-                <Switch onChange={handleChange} checked={checked1} />
-                <Switch onChange={handleChange2} width={100} height={40} checked={checked2} />
-                <Switch onChange={handleChange3} checked={checked3} />
-                </label>
+               
+                <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    
+                      height: "60px"
+                    }}
+                  >
+                    <Switch
+                      onColor="#fff"
+                      isOn={value}
+                      handleToggle={() => setValue(!value)}
+                    />
+                    </div>
+               </label>
+             
               </div>
             ) : currentStep === 3 ? (
               <div>Third</div>

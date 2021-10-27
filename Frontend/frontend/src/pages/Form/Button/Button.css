@@ -7,9 +7,10 @@
   
   .react-switch {
     cursor: pointer;
-    width: 100px;
-    height: 50px;
-    background: #fff;
+    border-radius:50px;
+    width: 110px;
+    height: 40px;
+    background: #afa8a8;
     position: relative;
     transition: background-color 0.2s;
   }
@@ -17,12 +18,13 @@
   .react-switch .react-switch-button {
     position: absolute;
     z-index: 1;
-    top: 2px;
+    top: 0px;
     left: 2px;
     width: 45px;
-    height: 45px;
+    height: 40px;
     transition: 0.2s;
-    background: #000;
+    border-radius: 50%;
+    background: rgb(151, 147, 147);
     box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
   }
   
@@ -39,6 +41,7 @@
     display: relative;
     z-index: 0;
     height: 100%;
+    
     font: 14pt "Segoe UI", Verdana, sans-serif;
   }
   

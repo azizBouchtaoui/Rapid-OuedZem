@@ -12,8 +12,8 @@ const Switch = ({ isOn, handleToggle, onColor }) => {
       />
       <div className="react-switch-button" />
       <div className="react-switch-labels">
-        <span>PT</span>
-        <span>EN</span>
+        <span>Local</span>
+       
       </div>
     </label>
   );
