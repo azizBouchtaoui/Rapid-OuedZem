@@ -109,15 +109,32 @@ const Form = () => {
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
-  const  handleChange= (checked) =>{
-    console.log(checked)
-    if(checked === "1"){
+  function  handleChange (checked) {
+    
+      
+      setChecked1(checked)
+      setChecked2(false)
+      setChecked3(false)
+
+  
+  }
+function  handleChange2 (checked) {
+    
+      
+      setChecked2(checked)
       setChecked1(false)
-    }else if(checked ==="2"){
-      setChecked2(true)
-    }else if(checked === "3"){
-     setChecked3(true)
-    }
+      setChecked3(false)
+
+  
+  }
+function  handleChange3 (checked) {
+    
+      
+      setChecked3(checked)
+      setChecked1(false)
+      setChecked2(false)
+
+  
   }
 
   
@@ -165,10 +182,10 @@ const Form = () => {
                 </div>
                 <label>
                 <span>Switch with default style</span>
-                <Switch onChange={handleChange("1")} checked={checked1} />
-                <Switch onChange={handleChange("2")} checked={checked2} />
-                <Switch onChange={handleChange("3")} checked={checked3} />
-              </label>
+                <Switch onChange={handleChange} checked={checked1} />
+                <Switch onChange={handleChange2} width={100} height={40} checked={checked2} />
+                <Switch onChange={handleChange3} checked={checked3} />
+                </label>
               </div>
             ) : currentStep === 3 ? (
               <div>Third</div>
