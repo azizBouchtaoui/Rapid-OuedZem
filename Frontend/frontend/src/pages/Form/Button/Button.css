@@ -13,14 +13,15 @@
     background: #afa8a8;
     position: relative;
     transition: background-color 0.2s;
+    border: 3px solid green;
   }
   
   .react-switch .react-switch-button {
     position: absolute;
     z-index: 1;
-    top: 0px;
+    top: -3px;
     left: 2px;
-    width: 45px;
+    width: 48px;
     height: 40px;
     transition: 0.2s;
     border-radius: 50%;
@@ -42,7 +43,8 @@
     z-index: 0;
     height: 100%;
     
-    font: 14pt "Segoe UI", Verdana, sans-serif;
+    font-family: "Trebuchet MS", sans-serif ;
+    font-size: 1.1rem !important;
   }
   
   .react-switch-labels span {
@@ -52,6 +54,7 @@
     justify-content: center;
     width: 50%;
     height: 100%;
+   
   }
   .react-switch-labels span:first-child {
     left: 0;
