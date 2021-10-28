@@ -125,14 +125,14 @@
 .FirstLabelDate{
   position: relative;
   font-family: "Trebuchet MS", sans-serif ;
-  width: 80px;
+  width: 60px;
   z-index: 200;
   top:13px;
   left: 90px;
   display: block;
   background: white;
-   
-  font-size: 15px;
+  color: #008000;
+  font-size: 14px;
   white-space: nowrap;
   border-top: 1px solid #24a500;
   border-radius: 20px;
@@ -180,6 +180,7 @@
   padding: 0 6px !important;
   border-radius: 30px;
   border-top: 1px solid #24a500 !important;
+  color: #008000;
 
 }
 .form-control{
@@ -232,6 +233,8 @@
     border-top: 1px solid #24a500;
     border-radius: 20px;
     text-align: center;
+    color: #008000;
+
 }
 
 .LocalisationSection{
@@ -244,7 +247,23 @@
   margin-right: 10%;
   margin-bottom: 20px;
 }
-
+.LabelDirections{
+  position: relative;
+  font-family: "Trebuchet MS", sans-serif ;
+  width:125px;
+  z-index: 1;
+  top:15px;
+  left: 25px;
+  display: block;
+  background: white;
+  padding: 0 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  border-top: 1px solid #24a500;
+  border-radius: 20px;
+  text-align: center;
+  color: #008000;
+}
 .FirstInput{
   font-family: "Trebuchet MS", sans-serif ;
   padding-left: 10px;
@@ -272,7 +291,7 @@
   left: 25px;
   display: block;
   background: white;
-   
+  color: #008000;
   font-size: 15px;
   white-space: nowrap;
   border-top: 1px solid #24a500;

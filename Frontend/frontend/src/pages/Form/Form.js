@@ -6,8 +6,9 @@ import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
  
 import PhoneInput from 'react-phone-input-2'
-
 import 'react-phone-input-2/lib/material.css'
+
+
 const myCustomLocale = {
   // months list by order
   months: [
@@ -191,19 +192,19 @@ const Form = () => {
               <div>
                     <div className="LocalisationSection">
 
+                  <label className="LabelDirections">Dirección Recogida
+                  </label>
                 <input className="FirstInput" type="text"  placeholder="Dirección Recogida" required>
                 </input>
-                  <label className="specialLableEmail">Dirección Recogida
-                  </label>
                   </div>
 
 
                   <div className="LocalisationSection">
+                    <label className="LabelDirections">Dirección Entrega
+                    </label>
 
                   <input className="FirstInput" type="text"  placeholder="Dirección Entrega" required>
                   </input>
-                    <label className="specialLableEmail">Dirección Entrega
-                    </label>
                     </div>
                 </div>
               
