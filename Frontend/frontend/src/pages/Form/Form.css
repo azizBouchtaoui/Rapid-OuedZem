@@ -1,11 +1,13 @@
 .Box {
   margin-top: 200px;
 
+
+
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   font-family: "Oxygen";
   width: 500px;
-  height: 250px;
+  height: 340px;
   align-items: center;
   position: fixed;
 }
@@ -16,12 +18,11 @@
   box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%),
     0px 3px 1px -2px rgb(0 0 0 / 12%);
   width: 450px;
-  height: 200px;
+  height: 300px;
   border-radius: 10px;
 }
 
-.step-progress {
-}
+
 
 .circle {
   width: 29px;
@@ -126,51 +127,12 @@
   padding: 1rem 1.5rem !important;
   font-size: 1.5rem !important;
   border: 1px solid #24a500 !important;
-  border-radius: 100px !important;
+  border-radius: 20px !important;
   box-shadow: 0 1.5rem 2rem rgba(156, 136, 255, 0.2) !important;
   color: #008000 !important;
   outline: none !important;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Dosis');
-
-:root {
-  /* generic */
-  --gutterSm: 0.4rem;
-  --gutterMd: 0.8rem;
-  --gutterLg: 1.6rem;
-  --gutterXl: 2.4rem;
-  --gutterXx: 7.2rem;
-  --colorPrimary400: #7e57c2;
-  --colorPrimary600: #5e35b1;
-  --colorPrimary800: #4527a0;
-  --fontFamily: "Dosis", sans-serif;
-  --fontSizeSm: 1.2rem;
-  --fontSizeMd: 1.6rem;
-  --fontSizeLg: 2.1rem;
-  --fontSizeXl: 2.8rem;
-  --fontSizeXx: 3.6rem;
-  --lineHeightSm: 1.1;
-  --lineHeightMd: 1.8;
-  --transitionDuration: 300ms;
-  --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
-  
-  /* floated labels */
-  --inputPaddingV: var(--gutterMd);
-  --inputPaddingH: var(--gutterLg);
-  --inputFontSize: var(--fontSizeLg);
-  --inputLineHeight: var(--lineHeightMd);
-  --labelScaleFactor: 0.8;
-  --labelDefaultPosY: 50%;
-  --labelTransformedPosY: calc(
-    (var(--labelDefaultPosY)) - 
-    (var(--inputPaddingV) * var(--labelScaleFactor)) - 
-    (var(--inputFontSize) * var(--inputLineHeight))
-  );
-  --inputTransitionDuration: var(--transitionDuration);
-  --inputTransitionTF: var(--transitionTF);
-}
 
  
 
@@ -193,27 +155,64 @@
   line-height: 1.8;
 }
 
- 
+.react-tel-input .special-label {
+  padding: 0 6px !important;
+  border-radius: 30px;
+  border-top: 1px solid #24a500 !important;
+
+}
+.form-control{
+  border-radius: 20px!important;
+  border: 1px solid #24a500 !important;
+
+}
  
 
 .Input-text {
-  display: block;
+ 
   margin: 0;
   padding: 0.8rem 1.6rem;
   color: inherit;
   width: 100%;
   font-family: inherit;
-  font-size: 2.1rem;
   font-weight: inherit;
   line-height: 1.8;
   border: none;
   border-radius: 0.4rem;
   transition: box-shadow  300ms;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+ 
+.EmailSection{
+ width: 100%;
+ margin-top: 1.1rem;
+  
+}
+.EmailInput{
+  font-family: "Trebuchet MS", sans-serif ;
+  padding-left: 15px;
+  padding-top: 5px;
+  border: 1px solid #24a500 !important;
+  border-radius: 20px;
+  color: #0f5132;
+  font-weight: inherit;
+  
+}
+.specialLableEmail{
+    position: relative;
+    font-family: "Trebuchet MS", sans-serif ;
+    width: 45px;
+    z-index: 1;
+    top:-60px;
+    left: 25px;
+    display: block;
+    background: white;
+    padding: 0 5px;
+    font-size: 13px;
+    white-space: nowrap;
+    border-top: 1px solid #24a500;
+    border-radius: 20px;
+    text-align: center;
 }
 
-.PhoneInputInput {
-  border: 1px solid #24a500 !important;
-  border-radius: 40px!important;
-  margin-left:3px;
-  padding-left: 5px;
-}

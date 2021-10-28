@@ -4,9 +4,10 @@ import StepNavigation from "./StepNavigation/stepNavigation";
 
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
-import PhoneInput from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
+ 
+import PhoneInput from 'react-phone-input-2'
 
+import 'react-phone-input-2/lib/material.css'
 const myCustomLocale = {
   // months list by order
   months: [
@@ -106,45 +107,27 @@ const myCustomLocale = {
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
-  const [checked1, setChecked1] = useState(true);
-  const [checked2, setChecked2] = useState(false);
-  const [checked3, setChecked3] = useState(false);
-  function  handleChange (checked) {
-    
-      
-      setChecked1(checked)
-      setChecked2(false)
-      setChecked3(false)
-
   
-  }
-function  handleChange2 (checked) {
-    
-      
-      setChecked2(checked)
-      setChecked1(false)
-      setChecked3(false)
-
-  
-  }
-function  handleChange3 (checked) {
-    
-      
-      setChecked3(checked)
-      setChecked1(false)
-      setChecked2(false)
-
-  
-  }
-
   
   function updateStep(step) {
     UpdateCurrentStep(step);
   }
+
+ function emailValidation(email){
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if(!email || regex.test(email) === false){
+        return false
+    }  
+  else{
+    return true
+  }  
+        
+}
   const [selectedDay, setSelectedDay] = useState(utils().getToday());
   const handleSubmitForm = (event) => {
     event.preventDefault();
     event.stopPropagation();
+   
     console.log(
       "month :" +
         selectedDay.month +
@@ -181,22 +164,31 @@ function  handleChange3 (checked) {
                 
                  
                     <div className="ScondSteplabel">
-                ¿Qué tan lejos te estás moviendo?
+                Nombre
                  </div> 
                  <div className="Input-text ">
 
                      <PhoneInput
+                     country='es'
+                     regions={'europe'}
                     international
                     countryCallingCodeEditable={false}
-                    defaultCountry="ES"
+                    placeholder={"kk"}
+                    enableSearch
                     value={value}
-                    onChange={setValue}/>
-     
-              
+                    onChange={setValue}
+                    
+              />
+              <div className="EmailSection">
+
+               <input className="EmailInput" type="email" id="email" placeholder="Email" required>
+               </input>
+                 <label className="specialLableEmail">Email</label>
                  </div>
+              </div>
                 
               </div>
-            ) : currentStep === 3 ? (
+            ) : currentStep === 3  ? (
               <div>Third</div>
             ) : currentStep === 4 ? (
               <div>Forth</div>
