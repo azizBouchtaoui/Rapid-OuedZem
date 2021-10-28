@@ -151,6 +151,7 @@ const Form = () => {
             ></StepNavigation>
             {currentStep === 1 ? (
               <div className="FirstStep">
+                <label className="FirstLabelDate">Fecha</label>
                 <DatePicker
                   className=" DatePicker___input"
                   minimumDate={utils().getToday()}
@@ -163,9 +164,7 @@ const Form = () => {
               <div  className="Second">
                 
                  
-                    <div className="ScondSteplabel">
-                Nombre
-                 </div> 
+                    
                  <div className="Input-text ">
 
                      <PhoneInput
@@ -173,7 +172,7 @@ const Form = () => {
                      regions={'europe'}
                     international
                     countryCallingCodeEditable={false}
-                    placeholder={"kk"}
+                    placeholder={"Nombre"}
                     enableSearch
                     value={value}
                     onChange={setValue}
@@ -181,9 +180,9 @@ const Form = () => {
               />
               <div className="EmailSection">
 
+                 <label className="specialLableEmail">Email</label>
                <input className="EmailInput" type="email" id="email" placeholder="Email" required>
                </input>
-                 <label className="specialLableEmail">Email</label>
                  </div>
               </div>
                 
@@ -209,7 +208,11 @@ const Form = () => {
                 </div>
               
             ) : currentStep === 4 ? (
-              <div>Forth</div>
+              <div className="ForthSection">
+                <label className="labelComments">comentarios</label>
+                <textarea className="textArea"   rows="4" cols="43"/>
+
+              </div>
             ) : (
               ""
             )}
