@@ -154,8 +154,12 @@
   font-size:1.6rem;
   line-height: 1.8;
 }
+.react-tel-input{
+  font-family: "Trebuchet MS", sans-serif !important;
 
+}
 .react-tel-input .special-label {
+  font-family: "Trebuchet MS", sans-serif !important;
   padding: 0 6px !important;
   border-radius: 30px;
   border-top: 1px solid #24a500 !important;
@@ -185,13 +189,14 @@
 }
  
 .EmailSection{
- width: 100%;
+ 
  margin-top: 1.1rem;
   
 }
 .EmailInput{
   font-family: "Trebuchet MS", sans-serif ;
-  padding-left: 15px;
+  padding-left: 5px;
+  padding-bottom: 5px;
   padding-top: 5px;
   border: 1px solid #24a500 !important;
   border-radius: 20px;
@@ -204,7 +209,7 @@
     font-family: "Trebuchet MS", sans-serif ;
     width: 45px;
     z-index: 1;
-    top:-60px;
+    top:-65px;
     left: 25px;
     display: block;
     background: white;

@@ -181,6 +181,7 @@ const Form = () => {
               />
               <div className="EmailSection">
 
+
                <input className="EmailInput" type="email" id="email" placeholder="Email" required>
                </input>
                  <label className="specialLableEmail">Email</label>
