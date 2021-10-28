@@ -4,8 +4,8 @@ import StepNavigation from "./StepNavigation/stepNavigation";
 
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
-import Switch from "./Button/Button";
-
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const myCustomLocale = {
   // months list by order
@@ -154,8 +154,8 @@ function  handleChange3 (checked) {
         selectedDay.year
     );
   };
-  const [value, setValue] = React.useState(false);
-
+ 
+  const [value, setValue] = useState()
   return (
     <form onSubmit={(e) => handleSubmitForm(e)}>
       <div className="Box">
@@ -177,29 +177,24 @@ function  handleChange3 (checked) {
                 />
               </div>
             ) : currentStep === 2 ? (
-              <div>
-                <div className="ScondSteplabel">
+              <div  className="Second">
+                
+                 
+                    <div className="ScondSteplabel">
                 ¿Qué tan lejos te estás moviendo?
+                 </div> 
+                 <div className="Input-text ">
+
+                     <PhoneInput
+                    international
+                    countryCallingCodeEditable={false}
+                    defaultCountry="ES"
+                    value={value}
+                    onChange={setValue}/>
+     
+              
                  </div>
-                <label>
-               
-                <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      
-                      height: "60px"
-                    }}
-                  >
-                    <Switch
-                      onColor="#fff"
-                      isOn={value}
-                      handleToggle={() => setValue(!value)}
-                    />
-                    </div>
-               </label>
-             
+                
               </div>
             ) : currentStep === 3 ? (
               <div>Third</div>

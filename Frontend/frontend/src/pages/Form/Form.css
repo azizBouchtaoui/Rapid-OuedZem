@@ -131,7 +131,89 @@
   color: #008000 !important;
   outline: none !important;
 }
-.ScondSteplabel{
+
+
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+:root {
+  /* generic */
+  --gutterSm: 0.4rem;
+  --gutterMd: 0.8rem;
+  --gutterLg: 1.6rem;
+  --gutterXl: 2.4rem;
+  --gutterXx: 7.2rem;
+  --colorPrimary400: #7e57c2;
+  --colorPrimary600: #5e35b1;
+  --colorPrimary800: #4527a0;
+  --fontFamily: "Dosis", sans-serif;
+  --fontSizeSm: 1.2rem;
+  --fontSizeMd: 1.6rem;
+  --fontSizeLg: 2.1rem;
+  --fontSizeXl: 2.8rem;
+  --fontSizeXx: 3.6rem;
+  --lineHeightSm: 1.1;
+  --lineHeightMd: 1.8;
+  --transitionDuration: 300ms;
+  --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+  /* floated labels */
+  --inputPaddingV: var(--gutterMd);
+  --inputPaddingH: var(--gutterLg);
+  --inputFontSize: var(--fontSizeLg);
+  --inputLineHeight: var(--lineHeightMd);
+  --labelScaleFactor: 0.8;
+  --labelDefaultPosY: 50%;
+  --labelTransformedPosY: calc(
+    (var(--labelDefaultPosY)) - 
+    (var(--inputPaddingV) * var(--labelScaleFactor)) - 
+    (var(--inputFontSize) * var(--inputLineHeight))
+  );
+  --inputTransitionDuration: var(--transitionDuration);
+  --inputTransitionTF: var(--transitionTF);
+}
+
+ 
+
+ .ScondSteplabel{
   font-family: "Trebuchet MS", sans-serif ;
   font-size: 1.1rem !important;
+ 
+  padding: 0;
+  color: #fff;
+ 
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: -0.1rem 0.1rem 0.2rem #4527a0;
+}
+
+.Second {
+  align-items: center;
+  justify-content: center;
+  font-size:1.6rem;
+  line-height: 1.8;
+}
+
+ 
+ 
+
+.Input-text {
+  display: block;
+  margin: 0;
+  padding: 0.8rem 1.6rem;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+  font-size: 2.1rem;
+  font-weight: inherit;
+  line-height: 1.8;
+  border: none;
+  border-radius: 0.4rem;
+  transition: box-shadow  300ms;
+}
+
+.PhoneInputInput {
+  border: 1px solid #24a500 !important;
+  border-radius: 40px!important;
+  margin-left:3px;
+  padding-left: 5px;
 }
