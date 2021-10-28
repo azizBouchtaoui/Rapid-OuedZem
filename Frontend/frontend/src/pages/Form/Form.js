@@ -181,7 +181,6 @@ const Form = () => {
               />
               <div className="EmailSection">
 
-
                <input className="EmailInput" type="email" id="email" placeholder="Email" required>
                </input>
                  <label className="specialLableEmail">Email</label>
@@ -190,7 +189,25 @@ const Form = () => {
                 
               </div>
             ) : currentStep === 3  ? (
-              <div>Third</div>
+              <div>
+                    <div className="LocalisationSection">
+
+                <input className="FirstInput" type="text"  placeholder="Dirección Recogida" required>
+                </input>
+                  <label className="specialLableEmail">Dirección Recogida
+                  </label>
+                  </div>
+
+
+                  <div className="LocalisationSection">
+
+                  <input className="FirstInput" type="text"  placeholder="Dirección Entrega" required>
+                  </input>
+                    <label className="specialLableEmail">Dirección Entrega
+                    </label>
+                    </div>
+                </div>
+              
             ) : currentStep === 4 ? (
               <div>Forth</div>
             ) : (
