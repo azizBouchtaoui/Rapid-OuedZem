@@ -130,17 +130,20 @@ const Form = () => {
     event.stopPropagation();
    
     console.log(
-      "month :" +
+      "Date: { month :" +
         selectedDay.month +
         " day: " +
         selectedDay.day +
         " year : " +
-        selectedDay.year
-    );
+        selectedDay.year+" } , Phone : "+phoneSelected+", Email : "+emailSelected.target.value+", de : "+collectedAdresselected.target.value +", a : "+deliveryAdresselected.target.value+", Comment : "+commentSelected.target.value
+    ); 
   };
  
-  const [dateSelected, setDateSelected] = useState()
+  const [phoneSelected,setPhoneSelected] = useState()
   const [emailSelected,setEmailSelected] = useState()
+  const [collectedAdresselected,setCollectedAdresselected] = useState()
+  const [deliveryAdresselected,setDeliveryAdresselected] = useState()
+  const [commentSelected, setCommentSelected] = useState()
   return (
     <form onSubmit={(e) => handleSubmitForm(e)}>
       <div className="Box">
@@ -160,6 +163,7 @@ const Form = () => {
                   value={selectedDay}
                   onChange={(value) => setSelectedDay(value)}
                   locale={myCustomLocale} // custom locale object
+                  
                 />
               </div>
             ) : currentStep === 2 ? (
@@ -176,15 +180,16 @@ const Form = () => {
                     countryCallingCodeEditable={false}
                     placeholder={"Nombre"}
                     enableSearch
-                    value={dateSelected}
-                    onChange={setDateSelected}
+                    value={phoneSelected}
+                    onChange={setPhoneSelected}
                     
               />
               <div className="EmailSection">
 
                  <label className="specialLableEmail">Email</label>
-               <input className="EmailInput" type="email" id="email" placeholder="Email" value={dateSelected}
-                    onChange={setDateSelected} required>
+               <input className="EmailInput" type="email" id="email" placeholder="Email" 
+                     
+                    onChange={setEmailSelected} required>
                </input>
                  </div>
               </div>
@@ -196,7 +201,10 @@ const Form = () => {
 
                   <label className="LabelDirections">Dirección Recogida
                   </label>
-                <input className="FirstInput" type="text"  placeholder="Dirección Recogida" required>
+                <input className="FirstInput" type="text"  placeholder="Dirección Recogida"
+                 required
+    
+                    onChange={setCollectedAdresselected}>
                 </input>
                   </div>
 
@@ -205,7 +213,11 @@ const Form = () => {
                     <label className="LabelDirections">Dirección Entrega
                     </label>
 
-                  <input className="FirstInput" type="text"  placeholder="Dirección Entrega" required>
+                  <input className="FirstInput" type="text" 
+                   placeholder="Dirección Entrega"
+                   required
+                  
+                    onChange={setDeliveryAdresselected}>
                   </input>
                     </div>
                 </div>
@@ -213,7 +225,9 @@ const Form = () => {
             ) : currentStep === 4 ? (
               <div className="ForthSection">
                 <label className="labelComments">comentarios</label>
-                <textarea className="textArea"   rows="4" cols="43"/>
+                <textarea className="textArea"   rows="4" cols="43"
+            
+                onChange={setCommentSelected}/>
 
               </div>
             ) : (
