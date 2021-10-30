@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./Form.css";
 import StepNavigation from "./StepNavigation/stepNavigation";
 
@@ -7,7 +7,9 @@ import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
  
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/material.css'
-
+import emailjs from 'emailjs-com';
+import{ init } from 'emailjs-com';
+init("user_mSZwbOX0gwnUgnf7qSMs2");
 
 const myCustomLocale = {
   // months list by order
@@ -115,12 +117,13 @@ const Form = () => {
   }
 
  function emailValidation(email){
+   console.log(email.target.value)
     const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if(!email || regex.test(email) === false){
-        return false
+    if( regex.test(email.target.value) === false){
+        console.log("invalid")
     }  
   else{
-    return true
+    console.log("valid")
   }  
         
 }
@@ -137,6 +140,10 @@ const Form = () => {
         " year : " +
         selectedDay.year+" } , Phone : "+phoneSelected+", Email : "+emailSelected.target.value+", de : "+collectedAdresselected.target.value +", a : "+deliveryAdresselected.target.value+", Comment : "+commentSelected.target.value
     ); 
+
+    
+    console.log(process.env.REACT_APP_SERVICE_ID +" , "+process.env.REACT_APP_TEMPLATE_ID +" , "+ process.env.REACT_APP_USER_ID)
+  // sendEmail();
   };
  
   const [phoneSelected,setPhoneSelected] = useState()
@@ -144,8 +151,24 @@ const Form = () => {
   const [collectedAdresselected,setCollectedAdresselected] = useState()
   const [deliveryAdresselected,setDeliveryAdresselected] = useState()
   const [commentSelected, setCommentSelected] = useState()
+
+
+
+  //EmailJS 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    
+
+    emailjs.sendForm('service_r0hbjo1', 'template_2jmtyma' , form.current, process.env.REACT_APP_USER_ID)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
-    <form onSubmit={(e) => handleSubmitForm(e)}>
+    <form ref={form}  onSubmit={(e) => handleSubmitForm(e)}>
       <div className="Box">
         <div className="UnderBox">
           <div className="step-progress">
@@ -189,7 +212,7 @@ const Form = () => {
                  <label className="specialLableEmail">Email</label>
                <input className="EmailInput" type="email" id="email" placeholder="Email" 
                      
-                    onChange={setEmailSelected} required>
+                    onChange={(value)=>emailValidation(value)} required>
                </input>
                  </div>
               </div>
