@@ -139,7 +139,8 @@ const Form = () => {
     );
   };
  
-  const [value, setValue] = useState()
+  const [dateSelected, setDateSelected] = useState()
+  const [emailSelected,setEmailSelected] = useState()
   return (
     <form onSubmit={(e) => handleSubmitForm(e)}>
       <div className="Box">
@@ -175,14 +176,15 @@ const Form = () => {
                     countryCallingCodeEditable={false}
                     placeholder={"Nombre"}
                     enableSearch
-                    value={value}
-                    onChange={setValue}
+                    value={dateSelected}
+                    onChange={setDateSelected}
                     
               />
               <div className="EmailSection">
 
                  <label className="specialLableEmail">Email</label>
-               <input className="EmailInput" type="email" id="email" placeholder="Email" required>
+               <input className="EmailInput" type="email" id="email" placeholder="Email" value={dateSelected}
+                    onChange={setDateSelected} required>
                </input>
                  </div>
               </div>
