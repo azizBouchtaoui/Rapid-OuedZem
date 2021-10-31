@@ -110,20 +110,26 @@ const myCustomLocale = {
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
-  
+  const [phoneSelected,setPhoneSelected] = useState()
+  const [emailSelected,setEmailSelected] = useState("")
+  const [collectedAdresselected,setCollectedAdresselected] = useState("")
+  const [deliveryAdresselected,setDeliveryAdresselected] = useState("")
+  const [commentSelected, setCommentSelected] = useState("")
+
+const [errorMessage,setErrorMessage] = useState("");
   
   function updateStep(step) {
     UpdateCurrentStep(step);
   }
 
- function emailValidation(email){
-   console.log(email.target.value)
+ function emailValidation(email){ 
     const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if( regex.test(email.target.value) === false){
-        console.log("invalid")
+    if( regex.test(email) === false){
+      return false 
     }  
   else{
-    console.log("valid")
+     
+    return true
   }  
         
 }
@@ -131,28 +137,34 @@ const Form = () => {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     event.stopPropagation();
-   
-    console.log(
-      "Date: { month :" +
-        selectedDay.month +
-        " day: " +
-        selectedDay.day +
-        " year : " +
-        selectedDay.year+" } , Phone : "+phoneSelected+", Email : "+emailSelected.target.value+", de : "+collectedAdresselected.target.value +", a : "+deliveryAdresselected.target.value+", Comment : "+commentSelected.target.value
-    ); 
+   console.log(phoneSelected)
+    if(  phoneSelected === undefined   )  { 
+      setErrorMessage("Por favor complete el campo para su número de teléfono.")
+    UpdateCurrentStep(2)
+  }
+    else if( emailSelected    === "" ){
+      setErrorMessage("Por favor complete el campo para su correo electrónico ")
+  UpdateCurrentStep(2)
+    }
+    else if(collectedAdresselected  === "" ){
+      setErrorMessage("Por favor complete el campo de Dirección recogida ")
+    UpdateCurrentStep(3)
+    }else if(deliveryAdresselected === ""){
+      setErrorMessage("Por favor complete el campo de Dirección entrega ")
+      UpdateCurrentStep(3)
+    }else {
+      console.log(
+        " Tu mensaje se ha enviado correctamente! "
+        ); 
+        sendEmail();
+
+    }
 
     
-    console.log(process.env.REACT_APP_SERVICE_ID +" , "+process.env.REACT_APP_TEMPLATE_ID +" , "+ process.env.REACT_APP_USER_ID)
-  // sendEmail();
+   //console.log(process.env.REACT_APP_SERVICE_ID +" , "+process.env.REACT_APP_TEMPLATE_ID +" , "+ process.env.REACT_APP_USER_ID)
   };
  
-  const [phoneSelected,setPhoneSelected] = useState()
-  const [emailSelected,setEmailSelected] = useState()
-  const [collectedAdresselected,setCollectedAdresselected] = useState()
-  const [deliveryAdresselected,setDeliveryAdresselected] = useState()
-  const [commentSelected, setCommentSelected] = useState()
-
-
+  
 
   //EmailJS 
   const form = useRef();
@@ -177,6 +189,8 @@ const Form = () => {
               currentStep={currentStep}
               updateStep={updateStep}
             ></StepNavigation>
+        <lable className="ErrorLabel">{errorMessage}</lable>
+
             {currentStep === 1 ? (
               <div className="FirstStep">
                 <label className="FirstLabelDate">Fecha</label>
@@ -210,9 +224,11 @@ const Form = () => {
               <div className="EmailSection">
 
                  <label className="specialLableEmail">Email</label>
-               <input className="EmailInput" type="email" id="email" placeholder="Email" 
-                     
-                    onChange={(value)=>emailValidation(value)} required>
+               <input className="EmailInput" 
+               type="email" id="email" 
+               placeholder="Email"       
+              onChange={setEmailSelected}
+              required>
                </input>
                  </div>
               </div>
@@ -256,6 +272,7 @@ const Form = () => {
             ) : (
               ""
             )}
+            
             <div className="bar_Bottons">
               {currentStep > 1 && currentStep < 5 ? (
                 <button
