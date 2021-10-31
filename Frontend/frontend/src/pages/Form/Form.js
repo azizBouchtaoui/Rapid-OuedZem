@@ -1,14 +1,14 @@
-import React, { useState,useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Form.css";
 import StepNavigation from "./StepNavigation/stepNavigation";
 
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
- 
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/material.css'
-import emailjs from 'emailjs-com';
-import{ init } from 'emailjs-com';
+
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/material.css";
+import emailjs from "emailjs-com";
+import { init } from "emailjs-com";
 init("user_mSZwbOX0gwnUgnf7qSMs2");
 
 const myCustomLocale = {
@@ -104,108 +104,113 @@ const myCustomLocale = {
   isRtl: false,
 };
 
-
-
-
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
-  const [phoneSelected,setPhoneSelected] = useState()
-  const [emailSelected,setEmailSelected] = useState("")
-  const [collectedAdresselected,setCollectedAdresselected] = useState("")
-  const [deliveryAdresselected,setDeliveryAdresselected] = useState("")
-  const [commentSelected, setCommentSelected] = useState("")
+  const [phoneSelected, setPhoneSelected] = useState();
+  const [emailSelected, setEmailSelected] = useState("");
+  const [collectedAdresselected, setCollectedAdresselected] = useState("");
+  const [deliveryAdresselected, setDeliveryAdresselected] = useState("");
+  const [commentSelected, setCommentSelected] = useState("");
 
-const [errorMessage,setErrorMessage] = useState("");
-  
+  const [errorMessage, setErrorMessage] = useState("");
+
   function updateStep(step) {
     UpdateCurrentStep(step);
   }
 
- function emailValidation(email){ 
-    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if( regex.test(email) === false){
-      console.log(false)
-      return false 
-    }  
-  else{
-           console.log(true)
+  function emailValidation(email) {
+    const regex =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (regex.test(email) === false) {
+      console.log(false);
+      return false;
+    } else {
+      console.log(true);
 
-    return true
-  }  
-        
-}
+      return true;
+    }
+  }
   const [selectedDay, setSelectedDay] = useState(utils().getToday());
   const handleSubmitForm = () => {
-  
-    
-   console.log(phoneSelected)
-   console.log(emailSelected)
-    if(  phoneSelected === undefined   )  { 
-      setErrorMessage("Por favor complete el campo para su número de teléfono.")
-      UpdateCurrentStep(2)
-      setTimeout(() => {  handlClear() }, 5000);
-
-  }
-    else if( emailSelected    === "" || !emailValidation(emailSelected)){
-      if(emailSelected === ""){
-        setErrorMessage("Por favor complete el campo para su correo electrónico ")
-        UpdateCurrentStep(2)
-        setTimeout(() => {  handlClear() }, 5000);
-      }else{
-        setErrorMessage("Por favor ingrese una dirección de correo electrónico válida.")
-        UpdateCurrentStep(2)
-        setTimeout(() => {  handlClear() }, 5000);
+    console.log(phoneSelected);
+    console.log(emailSelected);
+    if (phoneSelected === undefined) {
+      setErrorMessage(
+        "Por favor complete el campo para su número de teléfono."
+      );
+      UpdateCurrentStep(2);
+      setTimeout(() => {
+        handlClear();
+      }, 5000);
+    } else if (emailSelected === "" || !emailValidation(emailSelected)) {
+      if (emailSelected === "") {
+        setErrorMessage(
+          "Por favor complete el campo para su correo electrónico "
+        );
+        UpdateCurrentStep(2);
+        setTimeout(() => {
+          handlClear();
+        }, 5000);
+      } else {
+        setErrorMessage(
+          "Por favor ingrese una dirección de correo electrónico válida."
+        );
+        UpdateCurrentStep(2);
+        setTimeout(() => {
+          handlClear();
+        }, 5000);
       }
-
+    } else if (collectedAdresselected === "") {
+      setErrorMessage("Por favor complete el campo de Dirección recogida ");
+      UpdateCurrentStep(3);
+      setTimeout(() => {
+        handlClear();
+      }, 5000);
+    } else if (deliveryAdresselected === "") {
+      setErrorMessage("Por favor complete el campo de Dirección entrega ");
+      UpdateCurrentStep(3);
+      setTimeout(() => {
+        handlClear();
+      }, 5000);
+    } else {
+      console.log(" Tu mensaje se ha enviado correctamente! ");
+      sendEmail();
     }
-    else if(collectedAdresselected  === "" ){
-      setErrorMessage("Por favor complete el campo de Dirección recogida ")
-    UpdateCurrentStep(3)
-    setTimeout(() => {  handlClear() }, 5000);
-
-    }else if(deliveryAdresselected === ""){
-      setErrorMessage("Por favor complete el campo de Dirección entrega ")
-      UpdateCurrentStep(3)
-      setTimeout(() => {  handlClear() }, 5000);
-
-    }else {
-      console.log(
-        " Tu mensaje se ha enviado correctamente! "
-        ); 
-        sendEmail();
-
-    }
-
-    
   };
- 
-   
-const handleSubmit= event =>{
-  event.preventDefault();
-  event.stopPropagation();
-  handleSubmitForm()
-}
 
-const handlClear=()=>{
-  setErrorMessage("")
-}
- 
-  //EmailJS 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    handleSubmitForm();
+  };
+
+  const handlClear = () => {
+    setErrorMessage("");
+  };
+
+  //EmailJS
   const form = useRef();
 
   const sendEmail = (e) => {
-    
-
-    emailjs.sendForm('service_r0hbjo1', 'template_2jmtyma' , form.current, process.env.REACT_APP_USER_ID)
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_r0hbjo1",
+        "template_2jmtyma",
+        form.current,
+        process.env.REACT_APP_USER_ID
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+        }
+      );
   };
   return (
-    <form ref={form}  onSubmit={handleSubmit}>
+    <form ref={form} onSubmit={handleSubmit}>
       <div className="Box">
         <div className="UnderBox">
           <div className="step-progress">
@@ -215,8 +220,7 @@ const handlClear=()=>{
               updateStep={updateStep}
             ></StepNavigation>
             <div className="ErrorLabel">
-
-        <lable is="ErrorLabel"  >{errorMessage}</lable>
+              <lable is="ErrorLabel">{errorMessage}</lable>
             </div>
 
             {currentStep === 1 ? (
@@ -228,90 +232,85 @@ const handlClear=()=>{
                   value={selectedDay}
                   onChange={(value) => setSelectedDay(value)}
                   locale={myCustomLocale} // custom locale object
-                  
                 />
               </div>
             ) : currentStep === 2 ? (
-              <div  className="Second">
-                
-                 
-                    
-                 <div className="Input-text ">
-
-                     <PhoneInput
-                     country='es'
-                     regions={'europe'}
+              <div className="Second">
+                <div className="Input-text ">
+                  <PhoneInput
+                    country="es"
+                    regions={"europe"}
                     international
                     countryCallingCodeEditable={false}
                     placeholder={"Nombre"}
                     enableSearch
                     value={phoneSelected}
                     onChange={setPhoneSelected}
-                    
-              />
-              <div className="EmailSection">
-
-                 <label className="specialLableEmail">Email</label>
-               <input className="EmailInput" 
-               type="email" id="email" 
-               placeholder="Email"  
-               value={emailSelected}     
-              onChange={value=>setEmailSelected(value.target.value)}
-              required>
-               </input>
-                 </div>
-              </div>
-                
-              </div>
-            ) : currentStep === 3  ? (
-              <div>
-                    <div className="LocalisationSection">
-
-                  <label className="LabelDirections">Dirección Recogida
-                  </label>
-                <input className="FirstInput" type="text" 
-                 placeholder="Dirección Recogida"
-                 
-                    value={collectedAdresselected}
-                    onChange={value=>setCollectedAdresselected(value.target.value)}>
-                </input>
+                  />
+                  <div className="EmailSection">
+                    <label className="specialLableEmail">Email</label>
+                    <input
+                      className="EmailInput"
+                      type="email"
+                      id="email"
+                      placeholder="Email"
+                      value={emailSelected}
+                      onChange={(value) => setEmailSelected(value.target.value)}
+                      required
+                    ></input>
                   </div>
-
-
-                  <div className="LocalisationSection">
-                    <label className="LabelDirections">Dirección Entrega
-                    </label>
-
-                  <input className="FirstInput" type="text" 
-                   placeholder="Dirección Entrega"
-                   required
-                  value ={deliveryAdresselected}
-                    onChange={value=>setDeliveryAdresselected(value.target.value)}>
-                  </input>
-                    </div>
                 </div>
-              
+              </div>
+            ) : currentStep === 3 ? (
+              <div>
+                <div className="LocalisationSection">
+                  <label className="LabelDirections">Dirección Recogida</label>
+                  <input
+                    className="FirstInput"
+                    type="text"
+                    placeholder="Dirección Recogida"
+                    value={collectedAdresselected}
+                    onChange={(value) =>
+                      setCollectedAdresselected(value.target.value)
+                    }
+                  ></input>
+                </div>
+
+                <div className="LocalisationSection">
+                  <label className="LabelDirections">Dirección Entrega</label>
+
+                  <input
+                    className="FirstInput"
+                    type="text"
+                    placeholder="Dirección Entrega"
+                    required
+                    value={deliveryAdresselected}
+                    onChange={(value) =>
+                      setDeliveryAdresselected(value.target.value)
+                    }
+                  ></input>
+                </div>
+              </div>
             ) : currentStep === 4 ? (
               <div className="ForthSection">
                 <label className="labelComments">comentarios</label>
-                <textarea className="textArea"   
-                rows="4"
-                 cols="43"
-            
-                onChange={setCommentSelected}/>
-
+                <textarea
+                  className="textArea"
+                  rows="4"
+                  cols="43"
+                  onChange={setCommentSelected}
+                />
               </div>
             ) : (
               ""
             )}
-            
+
             <div className="bar_Bottons">
               {currentStep > 1 && currentStep < 5 ? (
                 <button
-                type="button"
+                  type="button"
                   className="primaryButtonPrv"
                   onClick={() => updateStep(currentStep - 1)}
-                 
                 >
                   {" "}
                   Previous Step
@@ -321,10 +320,9 @@ const handlClear=()=>{
               )}
               {currentStep >= 1 && currentStep < 4 ? (
                 <button
-                type="button"
+                  type="button"
                   className="primaryButtonNext"
                   onClick={() => updateStep(currentStep + 1)}
-               
                 >
                   {" "}
                   Next Step
@@ -333,7 +331,10 @@ const handlClear=()=>{
                 ""
               )}
               {currentStep === 4 ? (
-                <button type="submit" className="primaryButtonSubmit"> Submit</button>
+                <button type="submit" className="primaryButtonSubmit">
+                  {" "}
+                  Submit
+                </button>
               ) : (
                 ""
               )}
