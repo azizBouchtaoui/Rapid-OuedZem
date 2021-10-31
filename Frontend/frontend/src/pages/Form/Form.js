@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import "./Form.css";
 import StepNavigation from "./StepNavigation/stepNavigation";
 
@@ -134,13 +134,14 @@ const [errorMessage,setErrorMessage] = useState("");
         
 }
   const [selectedDay, setSelectedDay] = useState(utils().getToday());
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  const handleSubmitForm = () => {
+  
+    
    console.log(phoneSelected)
     if(  phoneSelected === undefined   )  { 
       setErrorMessage("Por favor complete el campo para su número de teléfono.")
-    UpdateCurrentStep(2)
+      UpdateCurrentStep(2)
+     
   }
     else if( emailSelected    === "" ){
       setErrorMessage("Por favor complete el campo para su correo electrónico ")
@@ -163,9 +164,21 @@ const [errorMessage,setErrorMessage] = useState("");
     
    //console.log(process.env.REACT_APP_SERVICE_ID +" , "+process.env.REACT_APP_TEMPLATE_ID +" , "+ process.env.REACT_APP_USER_ID)
   };
- 
-  
 
+ 
+   
+const handleSubmit= event =>{
+  event.preventDefault();
+  event.stopPropagation();
+  handleSubmitForm()
+}
+
+const handlClean=()=>{
+  setErrorMessage("")
+}
+useEffect(()=>{
+  handlClean()
+},[])
   //EmailJS 
   const form = useRef();
 
@@ -180,7 +193,7 @@ const [errorMessage,setErrorMessage] = useState("");
       });
   };
   return (
-    <form ref={form}  onSubmit={(e) => handleSubmitForm(e)}>
+    <form ref={form}  onSubmit={handleSubmit}>
       <div className="Box">
         <div className="UnderBox">
           <div className="step-progress">
@@ -226,8 +239,9 @@ const [errorMessage,setErrorMessage] = useState("");
                  <label className="specialLableEmail">Email</label>
                <input className="EmailInput" 
                type="email" id="email" 
-               placeholder="Email"       
-              onChange={setEmailSelected}
+               placeholder="Email"  
+               value={emailSelected}     
+              onChange={value=>setEmailSelected(value.target.value)}
               required>
                </input>
                  </div>
@@ -240,10 +254,11 @@ const [errorMessage,setErrorMessage] = useState("");
 
                   <label className="LabelDirections">Dirección Recogida
                   </label>
-                <input className="FirstInput" type="text"  placeholder="Dirección Recogida"
-                 required
-    
-                    onChange={setCollectedAdresselected}>
+                <input className="FirstInput" type="text" 
+                 placeholder="Dirección Recogida"
+                 
+                    value={collectedAdresselected}
+                    onChange={value=>setCollectedAdresselected(value.target.value)}>
                 </input>
                   </div>
 
@@ -255,8 +270,8 @@ const [errorMessage,setErrorMessage] = useState("");
                   <input className="FirstInput" type="text" 
                    placeholder="Dirección Entrega"
                    required
-                  
-                    onChange={setDeliveryAdresselected}>
+                  value ={deliveryAdresselected}
+                    onChange={value=>setDeliveryAdresselected(value.target.value)}>
                   </input>
                     </div>
                 </div>
@@ -264,7 +279,9 @@ const [errorMessage,setErrorMessage] = useState("");
             ) : currentStep === 4 ? (
               <div className="ForthSection">
                 <label className="labelComments">comentarios</label>
-                <textarea className="textArea"   rows="4" cols="43"
+                <textarea className="textArea"   
+                rows="4"
+                 cols="43"
             
                 onChange={setCommentSelected}/>
 
@@ -276,8 +293,10 @@ const [errorMessage,setErrorMessage] = useState("");
             <div className="bar_Bottons">
               {currentStep > 1 && currentStep < 5 ? (
                 <button
+                type="button"
                   className="primaryButtonPrv"
                   onClick={() => updateStep(currentStep - 1)}
+                  onChange={handlClean}
                 >
                   {" "}
                   Previous Step
@@ -287,8 +306,10 @@ const [errorMessage,setErrorMessage] = useState("");
               )}
               {currentStep >= 1 && currentStep < 4 ? (
                 <button
+                type="button"
                   className="primaryButtonNext"
                   onClick={() => updateStep(currentStep + 1)}
+                  onChange={handlClean}
                 >
                   {" "}
                   Next Step
@@ -297,7 +318,7 @@ const [errorMessage,setErrorMessage] = useState("");
                 ""
               )}
               {currentStep === 4 ? (
-                <button className="primaryButtonSubmit"> Submit</button>
+                <button type="submit" className="primaryButtonSubmit"> Submit</button>
               ) : (
                 ""
               )}
