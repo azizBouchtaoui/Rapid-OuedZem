@@ -125,10 +125,12 @@ const [errorMessage,setErrorMessage] = useState("");
  function emailValidation(email){ 
     const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if( regex.test(email) === false){
+      console.log(false)
       return false 
     }  
   else{
-     
+           console.log(true)
+
     return true
   }  
         
@@ -138,21 +140,35 @@ const [errorMessage,setErrorMessage] = useState("");
   
     
    console.log(phoneSelected)
+   console.log(emailSelected)
     if(  phoneSelected === undefined   )  { 
       setErrorMessage("Por favor complete el campo para su número de teléfono.")
       UpdateCurrentStep(2)
-     
+      setTimeout(() => {  handlClear() }, 5000);
+
   }
-    else if( emailSelected    === "" ){
-      setErrorMessage("Por favor complete el campo para su correo electrónico ")
-  UpdateCurrentStep(2)
+    else if( emailSelected    === "" || !emailValidation(emailSelected)){
+      if(emailSelected === ""){
+        setErrorMessage("Por favor complete el campo para su correo electrónico ")
+        UpdateCurrentStep(2)
+        setTimeout(() => {  handlClear() }, 5000);
+      }else{
+        setErrorMessage("Por favor ingrese una dirección de correo electrónico válida.")
+        UpdateCurrentStep(2)
+        setTimeout(() => {  handlClear() }, 5000);
+      }
+
     }
     else if(collectedAdresselected  === "" ){
       setErrorMessage("Por favor complete el campo de Dirección recogida ")
     UpdateCurrentStep(3)
+    setTimeout(() => {  handlClear() }, 5000);
+
     }else if(deliveryAdresselected === ""){
       setErrorMessage("Por favor complete el campo de Dirección entrega ")
       UpdateCurrentStep(3)
+      setTimeout(() => {  handlClear() }, 5000);
+
     }else {
       console.log(
         " Tu mensaje se ha enviado correctamente! "
@@ -162,9 +178,7 @@ const [errorMessage,setErrorMessage] = useState("");
     }
 
     
-   //console.log(process.env.REACT_APP_SERVICE_ID +" , "+process.env.REACT_APP_TEMPLATE_ID +" , "+ process.env.REACT_APP_USER_ID)
   };
-
  
    
 const handleSubmit= event =>{
@@ -173,12 +187,10 @@ const handleSubmit= event =>{
   handleSubmitForm()
 }
 
-const handlClean=()=>{
+const handlClear=()=>{
   setErrorMessage("")
 }
-useEffect(()=>{
-  handlClean()
-},[])
+ 
   //EmailJS 
   const form = useRef();
 
@@ -202,7 +214,10 @@ useEffect(()=>{
               currentStep={currentStep}
               updateStep={updateStep}
             ></StepNavigation>
-        <lable className="ErrorLabel">{errorMessage}</lable>
+            <div className="ErrorLabel">
+
+        <lable is="ErrorLabel"  >{errorMessage}</lable>
+            </div>
 
             {currentStep === 1 ? (
               <div className="FirstStep">
@@ -296,7 +311,7 @@ useEffect(()=>{
                 type="button"
                   className="primaryButtonPrv"
                   onClick={() => updateStep(currentStep - 1)}
-                  onChange={handlClean}
+                 
                 >
                   {" "}
                   Previous Step
@@ -309,7 +324,7 @@ useEffect(()=>{
                 type="button"
                   className="primaryButtonNext"
                   onClick={() => updateStep(currentStep + 1)}
-                  onChange={handlClean}
+               
                 >
                   {" "}
                   Next Step
