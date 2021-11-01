@@ -52,13 +52,13 @@
 
     background-position: 0;
   }
-  60%{
+  50%{
 
-    background-position: 180px
+    background-position: 100px
   }
   100%{
 
-    background-position: 200px
+    background-position: 280px
   }
 }
 
