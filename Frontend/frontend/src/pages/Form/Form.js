@@ -7,6 +7,7 @@ import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
+import PuffLoader from "react-spinners/PuffLoader";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
 init("user_mSZwbOX0gwnUgnf7qSMs2");
@@ -103,7 +104,7 @@ const myCustomLocale = {
   // is your language rtl or ltr?
   isRtl: false,
 };
-
+ 
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
@@ -113,7 +114,13 @@ const Form = () => {
   const [deliveryAdresselected, setDeliveryAdresselected] = useState("");
   const [commentSelected, setCommentSelected] = useState("");
 
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#26e310");
+
+
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [showLoading,setShowLoading] = useState(false);
 
   function updateStep(step) {
     UpdateCurrentStep(step);
@@ -175,6 +182,7 @@ const Form = () => {
       }, 5000);
     } else {
       console.log(" Tu mensaje se ha enviado correctamente! ");
+      setShowLoading(true)
       sendEmail();
     }
   };
@@ -203,12 +211,15 @@ const Form = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setLoading(false);
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
+
+  
   return (
     <form ref={form} onSubmit={handleSubmit}>
       <div className="Box">
@@ -342,6 +353,23 @@ const Form = () => {
           </div>
         </div>
       </div>
+    { showLoading ?  (
+      <div className="BoxTwo">
+      <div className="loaderCircle">
+    <PuffLoader color={color} loading={loading}   size={150} />
+      {!loading ? (
+        <div className="SuccessMessage">
+          <div className="LabelMessage">
+          Tu mensaje se ha enviado correctamente! 
+          </div>
+           <img className="ValidIcon" src="/Images/valid.png" alt ="ValidIcon"/>
+        </div>
+      ): ("")}
+      </div>
+
+    </div>
+    ): ("") }
+        
     </form>
   );
 };

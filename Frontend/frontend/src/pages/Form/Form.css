@@ -1,3 +1,39 @@
+.BoxTwo{
+  margin-top: 200px;
+  width: 500px;
+  height: 340px;
+  align-items: center;
+  position: fixed;
+  background:rgb(225 224 223);
+  border-radius: 5px;
+ 
+}
+.loaderCircle{
+ display: grid;
+ align-items: center;
+ justify-content: center;
+ height: 340px;
+}
+.SuccessMessage{
+  display: inline-flex;
+  position: absolute;
+}
+.ValidIcon{
+  width:15%;
+  align-self: center; 
+  margin-right: 90px;
+}
+.LabelMessage{
+  align-self: center;
+   font-family: "Trebuchet MS", sans-serif ;
+   margin-right: 10px;
+   margin-left: 30px;
+   font-size: 23px;
+   color:#0c6055;
+
+
+}
+
 .Box {
   margin-top: 200px;
 
