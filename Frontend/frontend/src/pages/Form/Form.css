@@ -15,23 +15,51 @@
  height: 340px;
 }
 .SuccessMessage{
-  display: inline-flex;
+ 
   position: absolute;
+  text-align: center;
 }
 .ValidIcon{
-  width:15%;
-  align-self: center; 
-  margin-right: 90px;
+  width:15%;  
+  margin-top: 50px;
+    
 }
 .LabelMessage{
   align-self: center;
-   font-family: "Trebuchet MS", sans-serif ;
+  font-family: "Merienda";
    margin-right: 10px;
    margin-left: 30px;
-   font-size: 23px;
-   color:#0c6055;
+   font-size: 19px;
+ 
+  position: absolute;
+  
+   background: linear-gradient(to right, #73a355 0, #00ff14 10%, #0c6055 20%);
+   background-position: 0;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: shine 3s infinite linear;
+   animation-fill-mode: forwards;
+   -webkit-text-size-adjust: none;
+   font-weight: 600; 
+   text-decoration: none;
+  white-space: nowrap;
+}
 
+ 
+@keyframes shine{
 
+  0%{
+
+    background-position: 0;
+  }
+  60%{
+
+    background-position: 180px
+  }
+  100%{
+
+    background-position: 200px
+  }
 }
 
 .Box {

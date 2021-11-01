@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Form.css";
 import StepNavigation from "./StepNavigation/stepNavigation";
-
+import "@fontsource/merienda";
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
-
+import {useTransition } from 'react-transition-state'
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import PuffLoader from "react-spinners/PuffLoader";
@@ -361,6 +361,7 @@ const Form = () => {
         <div className="SuccessMessage">
           <div className="LabelMessage">
           Tu mensaje se ha enviado correctamente! 
+           
           </div>
            <img className="ValidIcon" src="/Images/valid.png" alt ="ValidIcon"/>
         </div>
