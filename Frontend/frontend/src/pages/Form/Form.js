@@ -112,7 +112,7 @@ const Form = () => {
   const [emailSelected, setEmailSelected] = useState("");
   const [collectedAdresselected, setCollectedAdresselected] = useState("");
   const [deliveryAdresselected, setDeliveryAdresselected] = useState("");
-  const [commentSelected, setCommentSelected] = useState("");
+  const [commentSelected, setCommentSelected] = useState(" ");
 
   const [loading, setLoading] = useState(true);
   const [color, setColor] = useState("#26e310");
@@ -201,18 +201,17 @@ const Form = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    console.log(form.current)
+    const Date=selectedDay.day +" "+ selectedDay.month + " "+selectedDay.year
     console.log(form)
     console.log(e)
-   
-      emailjs.send("service_r0hbjo1","template_2jmtyma",{
-        message: "mes",
-        email: emailSelected,
-        phone: phoneSelected,
-        Date: selectedDay,
-        From: "from",
-        To: "to",
-        })
+    emailjs.send("service_r0hbjo1","template_2jmtyma",{
+      message:  commentSelected  ,
+      email:  "emailSelected"  ,
+      phone: phoneSelected,
+      Date: Date,
+      From: collectedAdresselected,
+      To: deliveryAdresselected,
+      })
       .then(
         (result) => {
           console.log(result.text);
@@ -315,8 +314,9 @@ const Form = () => {
                 <textarea
                   className="textArea"
                   rows="4"
-                  cols="43"
-                  onChange={setCommentSelected}
+                  cols="43" 
+                  onChange={(value) =>
+                    setCommentSelected(value.target.value)}
                 />
               </div>
             ) : (
