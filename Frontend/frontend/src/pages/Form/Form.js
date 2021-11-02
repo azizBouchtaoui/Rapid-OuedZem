@@ -201,13 +201,17 @@ const Form = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    emailjs
-      .sendForm(
-        "service_r0hbjo1",
-        "template_2jmtyma",
-        form.current,
-        process.env.REACT_APP_USER_ID
-      )
+    console.log(form.current)
+    console.log(form)
+    console.log(e)
+    emailjs.send("service_r0hbjo1","template_2jmtyma",{
+      from_name: "s",
+      message: "sss",
+      name: "Aziz BOUCHTAOUI",
+      email: "azizbouchtaoui1996@gmail.com",
+      phone: "0672916996",
+      Date: "442552",
+      })
       .then(
         (result) => {
           console.log(result.text);
@@ -216,7 +220,7 @@ const Form = () => {
         (error) => {
           console.log(error.text);
         }
-      );
+      ); 
   };
 
   
@@ -243,6 +247,7 @@ const Form = () => {
                   value={selectedDay}
                   onChange={(value) => setSelectedDay(value)}
                   locale={myCustomLocale} // custom locale object
+                  
                 />
               </div>
             ) : currentStep === 2 ? (
@@ -268,6 +273,7 @@ const Form = () => {
                       value={emailSelected}
                       onChange={(value) => setEmailSelected(value.target.value)}
                       required
+                      
                     ></input>
                   </div>
                 </div>
