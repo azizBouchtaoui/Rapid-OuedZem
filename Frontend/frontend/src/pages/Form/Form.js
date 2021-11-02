@@ -204,14 +204,15 @@ const Form = () => {
     console.log(form.current)
     console.log(form)
     console.log(e)
-    emailjs.send("service_r0hbjo1","template_2jmtyma",{
-      from_name: "s",
-      message: "sss",
-      name: "Aziz BOUCHTAOUI",
-      email: "azizbouchtaoui1996@gmail.com",
-      phone: "0672916996",
-      Date: "442552",
-      })
+   
+      emailjs.send("service_r0hbjo1","template_2jmtyma",{
+        message: "mes",
+        email: emailSelected,
+        phone: phoneSelected,
+        Date: selectedDay,
+        From: "from",
+        To: "to",
+        })
       .then(
         (result) => {
           console.log(result.text);
