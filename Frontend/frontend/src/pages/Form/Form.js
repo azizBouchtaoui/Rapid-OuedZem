@@ -4,7 +4,7 @@ import StepNavigation from "./StepNavigation/stepNavigation";
 import "@fontsource/merienda";
 import "./DatePicker.css";
 import DatePicker, { utils } from "norama-react-modern-calendar-datepicker";
-import {useTransition } from 'react-transition-state'
+import { useTransition } from "react-transition-state";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import PuffLoader from "react-spinners/PuffLoader";
@@ -104,7 +104,7 @@ const myCustomLocale = {
   // is your language rtl or ltr?
   isRtl: false,
 };
- 
+
 const Form = () => {
   const labelArray = ["Step 1", "Step 2", "Step 3", "Step 4"];
   const [currentStep, UpdateCurrentStep] = useState(1);
@@ -117,10 +117,9 @@ const Form = () => {
   const [loading, setLoading] = useState(true);
   const [color, setColor] = useState("#26e310");
 
-
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [showLoading,setShowLoading] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
 
   function updateStep(step) {
     UpdateCurrentStep(step);
@@ -182,7 +181,7 @@ const Form = () => {
       }, 5000);
     } else {
       console.log(" Tu mensaje se ha enviado correctamente! ");
-      setShowLoading(true)
+      setShowLoading(true);
       sendEmail();
     }
   };
@@ -201,16 +200,18 @@ const Form = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    const Date=selectedDay.day +" "+ selectedDay.month + " "+selectedDay.year
-    console.log(form)
-    console.log(e)
-    emailjs.send("service_r0hbjo1","template_2jmtyma",{
-      message:  commentSelected  ,
-      email:  "emailSelected"  ,
-      phone: phoneSelected,
-      Date: Date,
-      From: collectedAdresselected,
-      To: deliveryAdresselected,
+    const Date =
+      selectedDay.day + " " + selectedDay.month + " " + selectedDay.year;
+    console.log(form);
+    console.log(e);
+    emailjs
+      .send("service_r0hbjo1", "template_2jmtyma", {
+        message: commentSelected,
+        email: "emailSelected",
+        phone: phoneSelected,
+        Date: Date,
+        From: collectedAdresselected,
+        To: deliveryAdresselected,
       })
       .then(
         (result) => {
@@ -220,10 +221,9 @@ const Form = () => {
         (error) => {
           console.log(error.text);
         }
-      ); 
+      );
   };
 
-  
   return (
     <form ref={form} onSubmit={handleSubmit}>
       <div className="Box">
@@ -247,7 +247,6 @@ const Form = () => {
                   value={selectedDay}
                   onChange={(value) => setSelectedDay(value)}
                   locale={myCustomLocale} // custom locale object
-                  
                 />
               </div>
             ) : currentStep === 2 ? (
@@ -273,7 +272,6 @@ const Form = () => {
                       value={emailSelected}
                       onChange={(value) => setEmailSelected(value.target.value)}
                       required
-                      
                     ></input>
                   </div>
                 </div>
@@ -314,9 +312,8 @@ const Form = () => {
                 <textarea
                   className="textArea"
                   rows="4"
-                  cols="43" 
-                  onChange={(value) =>
-                    setCommentSelected(value.target.value)}
+                  cols="43"
+                  onChange={(value) => setCommentSelected(value.target.value)}
                 />
               </div>
             ) : (
@@ -360,24 +357,29 @@ const Form = () => {
           </div>
         </div>
       </div>
-    { showLoading ?  (
-      <div className="BoxTwo">
-      <div className="loaderCircle">
-    <PuffLoader color={color} loading={loading}   size={150} />
-      {!loading ? (
-        <div className="SuccessMessage">
-          <div className="LabelMessage">
-          Tu mensaje se ha enviado correctamente! 
-           
+      {showLoading ? (
+        <div className="BoxTwo">
+          <div className="loaderCircle">
+            <PuffLoader color={color} loading={loading} size={150} />
+            {!loading ? (
+              <div className="SuccessMessage">
+                <div className="LabelMessage">
+                  Tu mensaje se ha enviado correctamente!
+                </div>
+                <img
+                  className="ValidIcon"
+                  src="/Images/valid.png"
+                  alt="ValidIcon"
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-           <img className="ValidIcon" src="/Images/valid.png" alt ="ValidIcon"/>
         </div>
-      ): ("")}
-      </div>
-
-    </div>
-    ): ("") }
-        
+      ) : (
+        ""
+      )}
     </form>
   );
 };
