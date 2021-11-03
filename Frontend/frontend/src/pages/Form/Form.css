@@ -1,68 +1,61 @@
-.BoxTwo{
+.BoxTwo {
   margin-top: 200px;
   width: 500px;
   height: 340px;
   align-items: center;
   position: fixed;
-  background:rgb(225 224 223);
+  background: rgb(225 224 223);
   border-radius: 5px;
- 
 }
-.loaderCircle{
- display: grid;
- align-items: center;
- justify-content: center;
- height: 340px;
+.loaderCircle {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 340px;
 }
-.SuccessMessage{
- 
+.SuccessMessage {
   position: absolute;
   text-align: center;
 }
-.ValidIcon{
-  width:15%;  
+.ValidIcon {
+  width: 15%;
   margin-top: 50px;
-    
 }
-.LabelMessage{
+.LabelMessage {
   align-self: center;
   font-family: "Merienda";
-   margin-right: 10px;
-   margin-left: 30px;
-   font-size: 19px;
- 
+  margin-right: 10px;
+  margin-left: 30px;
+  font-size: 19px;
+
   position: absolute;
-  
-   background: linear-gradient(to right, #73a355 0, #00ff14 10%, #0c6055 20%);
-   background-position: 0;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   animation: shine 3s infinite linear;
-   animation-fill-mode: forwards;
-   -webkit-text-size-adjust: none;
-   font-weight: 600; 
-   text-decoration: none;
+
+  background: linear-gradient(to right, #73a355 0, #00ff14 10%, #0c6055 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  text-decoration: none;
   white-space: nowrap;
 }
 
- 
-@keyframes shine{
-
-  0%{
+@keyframes shine {
+  0% {
     background-position: 0;
   }
-  50%{
-    background-position: 100px
+  50% {
+    background-position: 100px;
   }
-  100%{
-    background-position: 280px
+  100% {
+    background-position: 280px;
   }
 }
 
 .Box {
   margin-top: 200px;
-
-
 
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
@@ -82,8 +75,6 @@
   height: 300px;
   border-radius: 10px;
 }
-
-
 
 .circle {
   width: 29px;
@@ -139,8 +130,6 @@
   bottom: 0;
   position: absolute;
   width: 100%;
-  
-   
 }
 
 .primaryButtonPrv {
@@ -151,7 +140,7 @@
   margin: 10px;
   color: white;
   border-radius: 4px;
-  cursor: pointer; 
+  cursor: pointer;
   bottom: 0;
 }
 .primaryButtonNext {
@@ -177,13 +166,13 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.ErrorLabel{
+.ErrorLabel {
   position: absolute;
   width: 100%;
   text-align: center;
   margin-top: -20px;
   font-weight: bold;
-  font-size:15px;
+  font-size: 15px;
   color: red;
 }
 
@@ -191,13 +180,13 @@
   margin-top: 55px;
   text-align: center;
 }
- 
-.FirstLabelDate{
+
+.FirstLabelDate {
   position: relative;
-  font-family: "Trebuchet MS", sans-serif ;
+  font-family: "Trebuchet MS", sans-serif;
   width: 60px;
   z-index: 200;
-  top:13px;
+  top: 13px;
   left: 90px;
   display: block;
   background: white;
@@ -220,16 +209,13 @@
   outline: none !important;
 }
 
-
- 
-
- .ScondSteplabel{
-  font-family: "Trebuchet MS", sans-serif ;
+.ScondSteplabel {
+  font-family: "Trebuchet MS", sans-serif;
   font-size: 1.1rem !important;
- 
+
   padding: 0;
   color: #fff;
- 
+
   line-height: 1.1;
   text-align: center;
   text-shadow: -0.1rem 0.1rem 0.2rem #4527a0;
@@ -238,12 +224,11 @@
 .Second {
   align-items: center;
   justify-content: center;
-  font-size:1.6rem;
+  font-size: 1.6rem;
   line-height: 1.8;
 }
-.react-tel-input{
+.react-tel-input {
   font-family: "Trebuchet MS", sans-serif !important;
-
 }
 .react-tel-input .special-label {
   font-family: "Trebuchet MS", sans-serif !important;
@@ -251,17 +236,13 @@
   border-radius: 30px;
   border-top: 1px solid #24a500 !important;
   color: #008000;
-
 }
-.form-control{
-  border-radius: 20px!important;
+.form-control {
+  border-radius: 20px !important;
   border: 1px solid #24a500 !important;
-
 }
- 
 
 .Input-text {
- 
   margin: 0;
   padding: 0.8rem 1.6rem;
   color: inherit;
@@ -271,14 +252,13 @@
   line-height: 1.8;
   border: none;
   border-radius: 0.4rem;
-  transition: box-shadow  300ms;
+  transition: box-shadow 300ms;
   margin-left: 10%;
   margin-right: 10%;
 }
- 
- 
-.EmailInput{
-  font-family: "Trebuchet MS", sans-serif ;
+
+.EmailInput {
+  font-family: "Trebuchet MS", sans-serif;
   padding-left: 5px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -286,44 +266,16 @@
   border-radius: 20px;
   color: green !important;
   font-weight: inherit;
-  font-size:19px;
-  width:300px;
-  background:#fff;
+  font-size: 19px;
+  width: 300px;
+  background: #fff;
 }
-.specialLableEmail{
-    position: relative;
-    font-family: "Trebuchet MS", sans-serif ;
-    width: 50px;
-    z-index: 1;
-    top:15px;
-    left: 25px;
-    display: block;
-    background: white;
-    padding: 0 5px;
-    font-size: 13px;
-    white-space: nowrap;
-    border-top: 1px solid #24a500;
-    border-radius: 20px;
-    text-align: center;
-    color: #008000;
-}
-
-.LocalisationSection{
-   
-  align-items: center;
-  justify-content: center;
-  font-size:1.3rem;
-  line-height: 1.8;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 20px;
-}
-.LabelDirections{
+.specialLableEmail {
   position: relative;
-  font-family: "Trebuchet MS", sans-serif ;
-  width:125px;
+  font-family: "Trebuchet MS", sans-serif;
+  width: 50px;
   z-index: 1;
-  top:15px;
+  top: 15px;
   left: 25px;
   display: block;
   background: white;
@@ -335,8 +287,35 @@
   text-align: center;
   color: #008000;
 }
-.FirstInput{
-  font-family: "Trebuchet MS", sans-serif ;
+
+.LocalisationSection {
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+}
+.LabelDirections {
+  position: relative;
+  font-family: "Trebuchet MS", sans-serif;
+  width: 125px;
+  z-index: 1;
+  top: 15px;
+  left: 25px;
+  display: block;
+  background: white;
+  padding: 0 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  border-top: 1px solid #24a500;
+  border-radius: 20px;
+  text-align: center;
+  color: #008000;
+}
+.FirstInput {
+  font-family: "Trebuchet MS", sans-serif;
   padding-left: 10px;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -346,19 +325,19 @@
   font-weight: inherit;
   width: 100%;
 }
-.ForthSection{
+.ForthSection {
   align-items: center;
   justify-content: center;
-  font-size:1rem; 
+  font-size: 1rem;
   margin-left: 10%;
-  margin-right: 10%; 
+  margin-right: 10%;
 }
-.labelComments{
+.labelComments {
   position: relative;
-  font-family: "Trebuchet MS", sans-serif ;
+  font-family: "Trebuchet MS", sans-serif;
   width: 100px;
   z-index: 1;
-  top:13px;
+  top: 13px;
   left: 25px;
   display: block;
   background: white;
@@ -369,14 +348,13 @@
   border-radius: 20px;
   text-align: center;
 }
-.textArea{
-  font-family: "Trebuchet MS", sans-serif ;
+.textArea {
+  font-family: "Trebuchet MS", sans-serif;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   border: 1px solid #24a500 !important;
   border-radius: 20px;
   color: #0f5132;
-  font-weight: inherit; 
-
+  font-weight: inherit;
 }

@@ -201,7 +201,7 @@ const Form = () => {
 
   const sendEmail = (e) => {
     const Date =
-      selectedDay.day + " " + selectedDay.month + " " + selectedDay.year;
+      selectedDay.day + "/" + selectedDay.month + "/" + selectedDay.year;
     console.log(form);
     console.log(e);
     emailjs
