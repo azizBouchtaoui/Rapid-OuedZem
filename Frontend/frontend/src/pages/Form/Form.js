@@ -140,8 +140,8 @@ const Form = () => {
   const [selectedDay, setSelectedDay] = useState(utils().getToday());
   const handleSubmitForm = () => {
     console.log(phoneSelected);
-    console.log(emailSelected);
-    if (phoneSelected === undefined) {
+
+    if (phoneSelected.length < 6 ) {
       setErrorMessage(
         "Por favor complete el campo para su número de teléfono."
       );
@@ -207,7 +207,7 @@ const Form = () => {
     emailjs
       .send("service_r0hbjo1", "template_2jmtyma", {
         message: commentSelected,
-        email: "emailSelected",
+        email:  emailSelected ,
         phone: phoneSelected,
         Date: Date,
         From: collectedAdresselected,

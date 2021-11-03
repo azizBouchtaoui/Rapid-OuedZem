@@ -47,7 +47,7 @@
     background-position: 0;
   }
   50% {
-    background-position: 320px;
+    background-position: 340px;
   }
   100% {
     background-position: 0;
@@ -59,8 +59,7 @@
 
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  font-family: "Oxygen";
-  width: 500px;
+  font-family: "Oxygen"; 
   height: 340px;
   align-items: center;
   position: fixed;
@@ -96,7 +95,7 @@
 }
 .stepBlock .circleWrapper {
   padding: 5px 40px;
-  position: relative;
+  position: sticky;
 }
 .selected .circle {
   color: black;
