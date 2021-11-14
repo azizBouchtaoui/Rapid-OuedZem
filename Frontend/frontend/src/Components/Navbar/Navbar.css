@@ -149,18 +149,15 @@ i {
   .hori-selector .left,
   .hori-selector .right {
     right: 10px;
-    
-      
-   
   }
   .hori-selector .left {
     top: -25px;
     left: auto;
-    background-color:white;
+    background-color: white;
   }
   .hori-selector .right {
     bottom: -25px;
-    background-color:white;
+    background-color: white;
   }
   .hori-selector .left:before {
     left: -25px;
