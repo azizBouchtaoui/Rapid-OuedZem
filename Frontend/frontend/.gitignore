@@ -4,7 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-config.json
 # testing
 /coverage
 
@@ -13,6 +12,7 @@ config.json
 
 # misc
 .DS_Store
+.json
 .env
 .env.local
 .env.development.local
