@@ -331,7 +331,6 @@ class Reservation extends Component {
                           <button
                             className="btnt"
                             onClick={this.scrollToBottom}
-                            
                           >
                             Recherche <i className="fab fa-wpexplorer" />
                           </button>
