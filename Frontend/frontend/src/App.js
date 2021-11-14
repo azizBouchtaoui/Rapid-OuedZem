@@ -8,8 +8,7 @@ import {
 import Navbar from "./Components/Navbar/Navbar";
 import Reservation from "./pages/Reservation/ReservationForm";
 
-import Home from "./pages/Home/Home";
-import Form from "./pages/Form/Form";
+import Home from "./pages/Home/Home"; 
 
  
 
@@ -29,10 +28,7 @@ const App = () => {
           </Route>
           <Route path="/Reservation" exact>
             <Reservation   />
-          </Route> 
-          <Route path="/Form" exact>
-            <Form />
-          </Route>
+          </Route>  
           <Redirect to="/" />
         </Switch>
       </main>
