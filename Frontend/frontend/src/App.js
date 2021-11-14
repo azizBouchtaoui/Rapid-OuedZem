@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,27 +8,20 @@ import {
 import Navbar from "./Components/Navbar/Navbar";
 import Reservation from "./pages/Reservation/ReservationForm";
 
-import Home from "./pages/Home/Home"; 
-
- 
+import Home from "./pages/Home/Home";
 
 const App = () => {
- 
- 
-  
-   
-
   return (
     <Router>
-      <Navbar  />
+      <Navbar />
       <main>
         <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/Reservation" exact>
-            <Reservation   />
-          </Route>  
+            <Reservation />
+          </Route>
           <Redirect to="/" />
         </Switch>
       </main>
