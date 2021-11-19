@@ -88,7 +88,7 @@ const Navbar = () => {
     var destinationsComp = $("#Destinations");
     var serviceComp = $("#Services");
     var footerComp = $("#About");
-
+    console.log(document.documentElement.scrollTop)
     if (
       document.documentElement.scrollTop >= 0 &&
       document.documentElement.scrollTop <= mainSectionComp[0].clientHeight
@@ -131,7 +131,7 @@ const Navbar = () => {
   }, [activeTab]);
 
   return (
-    <nav className={` ${"navbar navbar-expand-lg navbar-mainbg"} `}>
+    <nav className={`   ${show && "navbar navbar-expand-lg navbar-mainbg"} `}>
       <HashLink smooth to="/#MainSection" className="navbar-brand navbar-logo">
         Rapid OUEDZEM
       </HashLink>
