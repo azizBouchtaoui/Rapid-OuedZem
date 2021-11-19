@@ -21,7 +21,6 @@
   top: 0;
   left: 0;
 }
-
 .box {
   position: relative;
   width: 70%;
@@ -40,7 +39,6 @@
   background-color: #111;
   border-radius: 10px;
 }
-
 .close-icon {
   content: "x";
   cursor: pointer;
@@ -66,7 +64,6 @@
   align-content: center;
   align-items: center;
 }
-
 .formInput {
   background: white;
   margin: 15px;
