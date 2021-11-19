@@ -5,7 +5,6 @@
   margin-top: -1rem;
   padding-bottom: 10rem;
 }
-
 .section1__Container-card {
   background: linear-gradient(45deg, #43597a 0%, #7298eb 100%);
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
@@ -14,7 +13,6 @@
   text-decoration: none;
   border-radius: 4px;
 }
-
 .section1__Container-card:hover {
   transform: scale(1.06);
   transition: all 0.3s ease-out;
@@ -28,19 +26,16 @@
   justify-content: center;
   align-content: center;
 }
-
 .section1__wrapper {
   display: flex;
   flex-direction: column;
   position: relative;
   margin-top: -100px;
 }
-
 .section1__heading {
   color: #1c2237;
   margin-bottom: 50px;
 }
-
 .section1__Container-cardInfo {
   display: flex;
   flex-direction: column;
