@@ -23,7 +23,7 @@ const callPost = (url, body) => {
     headers: { "Content-Type": "application/json" },
   }).then(handleres);
 };
-
+/*
 const callPut = (url, body) => {
   return fetch(url, {
     method: "PUT",
@@ -32,12 +32,14 @@ const callPut = (url, body) => {
   }).then(handleres);
 };
 
+
+
 const callDelete = (url) => {
   return fetch(url, {
     method: "DELETE",
   }).then(handleres);
 };
-
+*/
 const handleres = (res) => {
   if (res.ok) {
     console.log("is OK");
