@@ -1,16 +1,12 @@
 import React, {
   useCallback,
   useEffect,
-  useState,
-  useContext,
-  useRef,
+  useState, 
 } from "react";
 import "./Navbar.css";
 import $ from "jquery";
-import { HashLink } from "react-router-hash-link";
-import { store, useGlobalState } from "state-pool";
-
-import Home from "../../pages/Home/Home";
+import { HashLink } from "react-router-hash-link"; 
+ 
 const Navbar = () => {
   /*
   const myRef = useRef()
@@ -87,7 +83,7 @@ const Navbar = () => {
     var mainSectionComp = $("#MainSection");
     var destinationsComp = $("#Destinations");
     var serviceComp = $("#Services");
-    var footerComp = $("#About"); 
+    //var footerComp = $("#About"); 
     if (
       document.documentElement.scrollTop >= 0 &&
       document.documentElement.scrollTop <= mainSectionComp[0].clientHeight
