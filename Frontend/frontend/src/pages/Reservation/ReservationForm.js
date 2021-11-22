@@ -231,7 +231,6 @@ class Reservation extends Component {
                                     value="option2"
                                     checked={
                                       this.state.selectedOption === "option2"
-                    
                                     }
                                     onChange={this.handleOptionChange}
                                   />
