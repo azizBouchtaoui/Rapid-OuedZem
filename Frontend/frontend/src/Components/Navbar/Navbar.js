@@ -87,8 +87,7 @@ const Navbar = () => {
     var mainSectionComp = $("#MainSection");
     var destinationsComp = $("#Destinations");
     var serviceComp = $("#Services");
-    var footerComp = $("#About");
-    console.log(document.documentElement.scrollTop)
+    var footerComp = $("#About"); 
     if (
       document.documentElement.scrollTop >= 0 &&
       document.documentElement.scrollTop <= mainSectionComp[0].clientHeight
