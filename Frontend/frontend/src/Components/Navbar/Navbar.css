@@ -146,24 +146,22 @@ i {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
   }
-  .hori-selector .left  {
-    right: 10px; 
-    
+  .hori-selector .left {
+    right: 10px;
   }
   .hori-selector .right {
-    right: 10px; 
-     
+    right: 10px;
   }
   .hori-selector .left {
     top: -25px;
-    left: auto; 
+    left: auto;
   }
   .hori-selector .right {
-    bottom: -25px; 
+    bottom: -25px;
   }
   .hori-selector .left:before {
     left: -25px;
-    top: -25px; 
+    top: -25px;
     box-shadow: 20px 30px 0 0 white;
   }
   .hori-selector .right:before {
